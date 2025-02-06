@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { ConfigProvider, ConfigProviderProps } from 'antd';
+import ruRu from 'antd/locale/ru_RU';
+import { Helmet } from 'react-helmet-async';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import './App.css';
+
+import { Main } from '@/app/Main.tsx';
+
+type Locale = ConfigProviderProps['locale'];
 
 function App() {
-  const [count, setCount] = useState(0)
+	const locale: Locale = ruRu;
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+	return (
+		<div id='app'>
+			<Helmet></Helmet>
+
+			<ConfigProvider locale={locale}>
+				<BrowserRouter basename='/'>
+					<Routes>
+						<Route
+							path='/'
+							element={<Main />}
+						/>
+					</Routes>
+				</BrowserRouter>
+			</ConfigProvider>
+		</div>
+	);
 }
 
-export default App
+export default App;

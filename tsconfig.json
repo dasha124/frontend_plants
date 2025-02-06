@@ -1,7 +1,49 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+	"compilerOptions": {
+		"plugins": [{ "name": "typescript-plugin-css-modules" }],
+		"target": "ES2020",
+		"useDefineForClassFields": true,
+		"lib": ["ES2020", "DOM", "DOM.Iterable"],
+		"module": "ESNext",
+		"skipLibCheck": true,
+
+		"moduleResolution": "bundler",
+		"allowImportingTsExtensions": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"jsx": "react-jsx",
+
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noFallthroughCasesInSwitch": true,
+
+		"baseUrl": "src",
+		"paths": {
+			"@/*": ["./*"],
+			"api": ["api/*"],
+			"app": ["app/*"],
+			"features": ["features/*"],
+			"assets": ["assets/*"],
+			"components": ["components/*"],
+			"config": ["config/*"],
+			"contexts": ["contexts/*"],
+			"hooks": ["hooks/*"],
+			"lib": ["lib/*"],
+			"pages": ["pages/*"],
+			"states": ["states/*"],
+			"styles": ["styles/*"],
+			"types": ["types/*"],
+			"utils": ["utils/*"]
+		}
+	},
+	"include": [
+		"src",
+		"vite.config.ts",
+		"eslint.config.js",
+		"postcss.config.js",
+		"tailwind.config.ts"
+	],
+	"references": [{ "path": "./tsconfig.node.json" }]
 }

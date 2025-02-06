@@ -7,10 +7,19 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+package-lock.json
+
 node_modules
 dist
 dist-ssr
 *.local
+
+# pwa
+vite.config.d.ts
+vite.config.js
+tsconfig.node.tsbuildinfo
+tsconfig.tsbuildinfo
+
 
 # Editor directories and files
 .vscode/*
@@ -22,3 +31,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+.env
