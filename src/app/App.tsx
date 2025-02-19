@@ -2,13 +2,17 @@ import { ConfigProvider, ConfigProviderProps } from 'antd';
 import ruRu from 'antd/locale/ru_RU';
 import { Helmet } from 'react-helmet-async';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import './App.css';
 
-import { Main } from '@/app/Main.tsx';
+import { PlantPage } from '@/pages/plant/ui';
+import { PlantsPage } from '@/pages/plants/ui';
+import { TypePlantsPage } from '@/pages/typePlants/ui';
+import { Navbar } from '@/widgets/navbar/ui';
+
+import './App.css';
 
 type Locale = ConfigProviderProps['locale'];
 
-function App() {
+export const App = () => {
 	const locale: Locale = ruRu;
 
 	return (
@@ -17,16 +21,23 @@ function App() {
 
 			<ConfigProvider locale={locale}>
 				<BrowserRouter basename='/'>
+					<Navbar />
 					<Routes>
 						<Route
-							path='/'
-							element={<Main />}
+							path='/plants'
+							element={<PlantsPage />}
+						/>
+						<Route
+							path='/plants/:id'
+							element={<PlantPage />}
+						/>
+						<Route
+							path='/type_plants'
+							element={<TypePlantsPage />}
 						/>
 					</Routes>
 				</BrowserRouter>
 			</ConfigProvider>
 		</div>
 	);
-}
-
-export default App;
+};

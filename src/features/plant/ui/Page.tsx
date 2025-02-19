@@ -1,4 +1,10 @@
-export const Page = () => {
+import React from 'react';
+
+type Props = {
+	id: string;
+};
+
+export const Page: React.FC<Props> = ({ id }) => {
 	return (
 		<div>
 			<h1
@@ -6,7 +12,7 @@ export const Page = () => {
 					'p-4 bg-zinc-950 text-white text-center text-4xl font-bold mt-10'
 				}
 			>
-				Page
+				{`Plant ${id} Page`}
 			</h1>
 		</div>
 	);
