@@ -7,6 +7,6 @@ type Props = {
 	typePlant: TypePlantShortInfo;
 };
 
-export const TypePlantItem: React.FC<Props> = () => {
-	return <Link to={`/plants/`}></Link>;
+export const TypePlantItem: React.FC<Props> = ({ typePlant }) => {
+	return <Link to={`/plants/`}>{typePlant.name}</Link>;
 };
