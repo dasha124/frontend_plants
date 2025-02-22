@@ -1,4 +1,4 @@
-export type TypePlantShortInfo = {
+export type TTypePlantShortInfo = {
 	id: string;
 	name: string;
 };

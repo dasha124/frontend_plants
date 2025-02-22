@@ -1,6 +1,6 @@
-import { TypePlantShortInfo } from '@/features/typePlants/model';
+import { TTypePlantShortInfo } from '@/features/typePlants/model';
 
-const items: TypePlantShortInfo[] = [
+const items: TTypePlantShortInfo[] = [
 	{
 		id: '1',
 		name: 'Розы',
@@ -9,7 +9,7 @@ const items: TypePlantShortInfo[] = [
 		id: '2',
 		name: 'Сливы',
 	},
-    {
+	{
 		id: '3',
 		name: 'Трава',
 	},

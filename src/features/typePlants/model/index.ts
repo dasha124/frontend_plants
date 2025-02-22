@@ -1,2 +1,2 @@
 export { useTypePlants } from './useTypePlants';
-export type { TypePlantShortInfo } from './TypePlantShortInfo';
+export type { TTypePlantShortInfo } from './TypePlantShortInfo';

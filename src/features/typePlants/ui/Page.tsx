@@ -1,5 +1,5 @@
 import { useTypePlants } from '@/features/typePlants/model';
-import { TypePlantItem } from '@/features/typePlants/ui/TypePlantItem.tsx';
+import { TypePlantItem } from '@/features/typePlants/ui/';
 
 export const Page = () => {
 	const { items } = useTypePlants();
