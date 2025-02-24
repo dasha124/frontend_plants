@@ -1,7 +1,12 @@
-import { AppstoreOutlined, MailOutlined } from '@ant-design/icons';
+import {
+	IconListDetails,
+	IconLogin2,
+	IconLogout2,
+	IconPlant,
+	IconUser,
+} from '@tabler/icons-react';
 import type { MenuProps } from 'antd';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -9,57 +14,29 @@ const items: MenuItem[] = [
 	{
 		label: 'Виды растений',
 		key: 'typePlants',
-		icon: <AppstoreOutlined />,
+		icon: <IconListDetails width={20} />,
 	},
 	{
 		label: 'Растения',
 		key: 'plants',
-		icon: <MailOutlined />,
+		icon: <IconPlant />,
 	},
-	// {
-	// 	label: 'Мои коллекции',
-	// 	key: 'SubMenu',
-	// 	icon: <SettingOutlined />,
-	// 	children: [
-	// 		{
-	// 			type: 'group',
-	// 			label: 'Item 1',
-	// 			children: [
-	// 				{ label: 'Option 1', key: 'setting:1' },
-	// 				{ label: 'Option 2', key: 'setting:2' },
-	// 			],
-	// 		},
-	// 		{
-	// 			type: 'group',
-	// 			label: 'Item 2',
-	// 			children: [
-	// 				{ label: 'Option 3', key: 'setting:3' },
-	// 				{ label: 'Option 4', key: 'setting:4' },
-	// 			],
-	// 		},
-	// 	],
-	// },
-	// {
-	// 	key: 'alipay',
-	// 	label: (
-	// 		<a
-	// 			href='https://ant.design'
-	// 			target='_blank'
-	// 			rel='noopener noreferrer'
-	// 		>
-	// 			Navigation Four - Link
-	// 		</a>
-	// 	),
-	// },
+	{
+		label: 'Аккаунт',
+		key: 'account',
+		icon: <IconUser />,
+		children: [
+			{ label: 'Войти', key: 'login', icon: <IconLogout2 /> },
+			{ label: 'Выйти', key: 'logout', icon: <IconLogin2 /> },
+		],
+	},
 ];
 
 export const useNavbar = () => {
 	const navigate = useNavigate();
-
-	const [item, setItem] = useState('');
+	const location = useLocation();
 
 	const onClick: MenuProps['onClick'] = (e) => {
-		setItem(e.key);
 		switch (e.key) {
 			case 'typePlants':
 				navigate('/type_plants');
@@ -70,5 +47,17 @@ export const useNavbar = () => {
 		}
 	};
 
-	return { onClick, item, items };
+	const getActiveKey = () => {
+		const path = location.pathname.split('/').slice(0, 2).join('/');
+		switch (path) {
+			case '/type_plants':
+				return ['typePlants'];
+			case '/plants':
+				return ['plants'];
+			default:
+				return [];
+		}
+	};
+
+	return { onClick, getActiveKey, items };
 };

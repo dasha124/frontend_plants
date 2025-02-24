@@ -3,12 +3,12 @@ import { Menu } from 'antd';
 import { useNavbar } from '@/widgets/navbar/model';
 
 export const Navbar = () => {
-	const { onClick, item, items } = useNavbar();
+	const { onClick, getActiveKey, items } = useNavbar();
 
 	return (
 		<Menu
 			onClick={onClick}
-			selectedKeys={[item]}
+			selectedKeys={getActiveKey()}
 			mode='horizontal'
 			items={items}
 		/>
