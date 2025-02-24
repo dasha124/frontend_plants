@@ -1,5 +1,5 @@
 import { usePlants } from '@/features/plants/model';
-import { PlantItem } from '@/features/plants/ui/PlantItem.tsx';
+import { PlantItem } from '@/features/plants/ui';
 
 export const Page = () => {
 	const { items } = usePlants();
