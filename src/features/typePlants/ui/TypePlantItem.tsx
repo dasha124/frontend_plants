@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { TTypePlantShortInfo } from '@/features/typePlants/model';
+import { TypePlantsInfo } from '@/entities/typePlants/model';
 
 type Props = {
-	typePlant: TTypePlantShortInfo;
+	typePlant: TypePlantsInfo;
 };
 
 export const TypePlantItem: React.FC<Props> = ({ typePlant }) => {

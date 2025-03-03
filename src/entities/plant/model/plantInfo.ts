@@ -3,6 +3,11 @@ export type TPlantInfoApi = {
 	plant_name: string;
 };
 
+export type TPlantShortInfo = {
+	id: string;
+	name: string;
+};
+
 export type TPlantInfoModel = {
 	id: string;
 	name: string;

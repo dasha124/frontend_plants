@@ -1,21 +1,21 @@
 import { useCallback, useEffect, useState } from 'react';
 
 import { PlantsService } from '@/entities/plant/api';
-import { TypePlantsInfo } from '@/entities/typePlants/model';
+import { PlantInfo } from '@/entities/plant/model';
 import { showToast } from '@/shared/utils';
 
-export const useTypePlants = () => {
-	const [typePlants, setTypePlants] = useState<TypePlantsInfo[]>([]);
+export const usePlant = (id: string) => {
+	const [plantInfo, setPlantInfo] = useState<PlantInfo | null>(null);
 	const [isLoaded, setIsLoaded] = useState(false);
 
-	const loadTypePlants = useCallback(async () => {
+	const loadPlantInfo = useCallback(async (id: string) => {
 		try {
 			const plantsService = new PlantsService();
 
-			const receivedTypePlants = await plantsService.getPlantTypes();
-			setTypePlants(receivedTypePlants);
+			const plant = await plantsService.getPlantInfo(id);
+			setPlantInfo(plant);
 		} catch (error: unknown) {
-			setTypePlants([]);
+			setPlantInfo(null);
 
 			if (error instanceof Error) {
 				showToast('error', error.message);
@@ -28,8 +28,8 @@ export const useTypePlants = () => {
 	}, []);
 
 	useEffect(() => {
-		loadTypePlants();
-	}, [loadTypePlants]);
+		loadPlantInfo(id);
+	}, [id, loadPlantInfo]);
 
-	return { typePlants, isLoaded };
+	return { plantInfo, isLoaded };
 };
