@@ -1,4 +1,4 @@
-import { ConfigProvider, ConfigProviderProps } from 'antd';
+import { ConfigProvider, ConfigProviderProps, theme } from 'antd';
 import ruRu from 'antd/locale/ru_RU';
 import { Helmet } from 'react-helmet-async';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -21,14 +21,8 @@ export const App = () => {
 			<Helmet></Helmet>
 
 			<ConfigProvider
-				theme={{
-					token: {
-						colorPrimary: '#1f1f1f',
-						colorBgBase: '#000000',
-						colorTextBase: '#ffffff',
-					},
-				}}
 				locale={locale}
+				theme={{ algorithm: theme.darkAlgorithm }}
 			>
 				<ToastProvider>
 					<BrowserRouter basename='/'>

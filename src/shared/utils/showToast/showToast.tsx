@@ -1,4 +1,4 @@
-import { ConfigProvider, theme, notification } from 'antd';
+import { notification } from 'antd';
 import type { NotificationPlacement } from 'antd/es/notification/interface';
 import React from 'react';
 
@@ -35,14 +35,10 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({
 	};
 
 	return (
-		<ConfigProvider
-			theme={{
-				algorithm: theme.darkAlgorithm,
-			}}
-		>
+		<>
 			{contextHolder}
 			{children}
-		</ConfigProvider>
+		</>
 	);
 };
 
