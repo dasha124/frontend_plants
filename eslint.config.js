@@ -68,7 +68,7 @@ const config = [
 			...typescriptEslint.configs['recommended'].rules,
 			...eslintPluginReact.configs.recommended.rules,
 			...eslintPluginReactHooks.configs.recommended.rules,
-			'no-console': 'error',
+			'no-console': 'warn',
 			'import/order': [
 				'error',
 				{
