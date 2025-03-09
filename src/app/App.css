@@ -11,4 +11,5 @@ body {
 .ant-menu-item, .ant-menu-submenu-title {
 	display: flex !important;
 	align-items: center;
+	height: 100%;
 }
