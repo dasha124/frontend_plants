@@ -7,26 +7,26 @@ import { ERequestMethods } from '@/shared/model/enums';
 import collectionMocked from './mocks/collection.json';
 import collectionsMocked from './mocks/collections.json';
 
-export class CollsService extends ServiceBase {
-	private static instance: CollsService;
+export class CollectionsService extends ServiceBase {
+	private static instance: CollectionsService;
 	private baseUrl = '/api/collections/';
 
 	constructor() {
 		super();
-		if (CollsService.instance) {
-			return CollsService.instance;
+		if (CollectionsService.instance) {
+			return CollectionsService.instance;
 		}
 
-		CollsService.instance = this;
+		CollectionsService.instance = this;
 		this.config = [
 			{
 				name: 'getCollections',
-				url: `${this.baseUrl}`,
+				url: this.baseUrl,
 				method: ERequestMethods.GET,
 			},
 			{
 				name: 'getCollection',
-				url: `${this.baseUrl}`,
+				url: this.baseUrl,
 				method: ERequestMethods.GET,
 			},
 		];

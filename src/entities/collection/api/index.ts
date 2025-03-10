@@ -1,1 +1,1 @@
-export { CollsService } from './CollsService';
+export { CollectionsService } from './CollectionsService';
