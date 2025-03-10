@@ -1,0 +1,1 @@
+export { CollsService } from './CollsService';
