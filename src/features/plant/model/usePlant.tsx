@@ -1,3 +1,4 @@
+import { CollapseProps } from 'antd';
 import { useCallback, useEffect, useState } from 'react';
 
 import { PlantsService } from '@/entities/plant/api';
@@ -7,6 +8,28 @@ import { showToast } from '@/shared/utils';
 export const usePlant = (id: string) => {
 	const [plantInfo, setPlantInfo] = useState<PlantInfo | null>(null);
 	const [isLoaded, setIsLoaded] = useState(false);
+
+	const properties: CollapseProps['items'] = plantInfo
+		? [
+				{
+					key: '1',
+					label: 'Дополнительная информация',
+					children: plantInfo.properties.add.map((item, index) => (
+						<p key={index}>{item}</p>
+					)),
+				},
+				{
+					key: '2',
+					label: 'Восприимчивость к вредителям',
+					children: <p>{plantInfo.properties.pests}</p>,
+				},
+				{
+					key: '3',
+					label: 'Токсичность',
+					children: <p>{plantInfo.properties.toxic}</p>,
+				},
+			]
+		: [];
 
 	const loadPlantInfo = useCallback(async (id: string) => {
 		try {
@@ -31,5 +54,5 @@ export const usePlant = (id: string) => {
 		loadPlantInfo(id);
 	}, [id, loadPlantInfo]);
 
-	return { plantInfo, isLoaded };
+	return { isLoaded, plantInfo, properties };
 };

@@ -9,7 +9,7 @@ export const Page = () => {
 	return (
 		<RenderIf
 			condition={isLoaded}
-			className={cn('flex flex-col gap-2')}
+			className={cn('flex flex-wrap w-full justify-center gap-4')}
 		>
 			{typePlants.map((item) => (
 				<TypePlantItem

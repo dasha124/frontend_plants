@@ -1,3 +1,4 @@
+import { Collapse } from 'antd';
 import React from 'react';
 
 import { usePlant } from '@/features/plant/model';
@@ -8,7 +9,7 @@ type Props = {
 };
 
 export const Page: React.FC<Props> = ({ id }) => {
-	const { plantInfo, isLoaded } = usePlant(id);
+	const { isLoaded, plantInfo, properties } = usePlant(id);
 
 	return (
 		<RenderIf condition={isLoaded}>
@@ -17,8 +18,12 @@ export const Page: React.FC<Props> = ({ id }) => {
 					'p-4 bg-zinc-950 text-white text-center text-4xl font-bold mt-10'
 				}
 			>
-				{JSON.stringify(plantInfo)}
+				{plantInfo?.name}
 			</h1>
+			<Collapse
+				items={properties}
+				className={'text-white'}
+			/>
 		</RenderIf>
 	);
 };
