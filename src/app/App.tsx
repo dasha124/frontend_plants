@@ -29,9 +29,11 @@ export const App = () => {
 					<BrowserRouter basename='/'>
 						<Navbar />
 						<div
-							className={cn(
-								'flex flex-col height-[calc(100vh - 46px)] overflow-y-auto',
-							)}
+							style={{
+								marginTop: 'calc(46px + 1rem)',
+								marginBottom: '1rem',
+							}}
+							className={cn('flex flex-col mb-4')}
 						>
 							<Routes>
 								<Route
