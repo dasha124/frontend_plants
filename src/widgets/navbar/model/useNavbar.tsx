@@ -1,4 +1,5 @@
 import {
+	IconLayoutGridAdd,
 	IconListDetails,
 	IconLogin2,
 	IconLogout2,
@@ -20,6 +21,11 @@ const items: MenuItem[] = [
 		label: 'Растения',
 		key: 'plants',
 		icon: <IconPlant />,
+	},
+	{
+		label: 'Коллекции',
+		key: 'collections',
+		icon: <IconLayoutGridAdd />,
 	},
 	{
 		label: 'Аккаунт',
@@ -44,6 +50,9 @@ export const useNavbar = () => {
 			case 'plants':
 				navigate('/plants');
 				break;
+			case 'collections':
+				navigate('/collections');
+				break;
 		}
 	};
 
@@ -54,6 +63,8 @@ export const useNavbar = () => {
 				return ['typePlants'];
 			case '/plants':
 				return ['plants'];
+			case '/collections':
+				return ['collections'];
 			default:
 				return [];
 		}
