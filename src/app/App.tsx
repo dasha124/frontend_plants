@@ -35,7 +35,7 @@ export const App = () => {
 								marginTop: 'calc(46px + 1rem)',
 								marginBottom: '1rem',
 							}}
-							className={cn('flex flex-col mb-4')}
+							className={cn('flex flex-col mb-4 text-white')}
 						>
 							<Routes>
 								<Route

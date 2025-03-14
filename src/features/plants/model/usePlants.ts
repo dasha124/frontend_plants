@@ -13,7 +13,7 @@ export const usePlants = () => {
 			const plantsService = new PlantsService();
 
 			const items = await plantsService.getPlants();
-			setPlants(items);
+			setPlants(items.map((item) => item.toShortInfo()));
 		} catch (error: unknown) {
 			setPlants([]);
 
