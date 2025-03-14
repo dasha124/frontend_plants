@@ -1,7 +1,7 @@
 import { usePlants } from '@/features/plants/model';
-import { PlantItem } from '@/features/plants/ui';
 import { cn } from '@/shared/lib';
 import { RenderIf } from '@/shared/utils';
+import { PlantItem } from '@/widgets/plantItem/ui';
 
 export const Page = () => {
 	const { plants, isLoaded } = usePlants();

@@ -1,0 +1,1 @@
+export { PlantItem } from './PlantItem';
