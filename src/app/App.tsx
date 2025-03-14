@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { PlantPage } from '@/pages/plant/ui';
 import { PlantsPage } from '@/pages/plants/ui';
 import { TypePlantsPage } from '@/pages/typePlants/ui';
+import { cn } from '@/shared/lib';
 import { ToastProvider } from '@/shared/utils';
 import { Navbar } from '@/widgets/navbar/ui';
 
@@ -27,20 +28,28 @@ export const App = () => {
 				<ToastProvider>
 					<BrowserRouter basename='/'>
 						<Navbar />
-						<Routes>
-							<Route
-								path='/plants'
-								element={<PlantsPage />}
-							/>
-							<Route
-								path='/plants/:id'
-								element={<PlantPage />}
-							/>
-							<Route
-								path='/type_plants'
-								element={<TypePlantsPage />}
-							/>
-						</Routes>
+						<div
+							style={{
+								marginTop: 'calc(46px + 1rem)',
+								marginBottom: '1rem',
+							}}
+							className={cn('flex flex-col mb-4')}
+						>
+							<Routes>
+								<Route
+									path='/plants'
+									element={<PlantsPage />}
+								/>
+								<Route
+									path='/plants/:id'
+									element={<PlantPage />}
+								/>
+								<Route
+									path='/type_plants'
+									element={<TypePlantsPage />}
+								/>
+							</Routes>
+						</div>
 					</BrowserRouter>
 				</ToastProvider>
 			</ConfigProvider>

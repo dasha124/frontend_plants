@@ -22,10 +22,9 @@
 		"baseUrl": "src",
 		"paths": {
 			"@/*": ["./*"],
-			"api": ["api/*"],
 			"app": ["app/*"],
-			"features": ["features/*"],
 			"assets": ["assets/*"],
+			"features": ["features/*"],
 			"components": ["components/*"],
 			"config": ["config/*"],
 			"contexts": ["contexts/*"],

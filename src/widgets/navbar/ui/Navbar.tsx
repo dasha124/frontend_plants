@@ -6,11 +6,13 @@ export const Navbar = () => {
 	const { onClick, getActiveKey, items } = useNavbar();
 
 	return (
-		<Menu
-			onClick={onClick}
-			selectedKeys={getActiveKey()}
-			mode='horizontal'
-			items={items}
-		/>
+		<div className={'fixed top-0 left-0 z-50 w-full'}>
+			<Menu
+				onClick={onClick}
+				selectedKeys={getActiveKey()}
+				mode='horizontal'
+				items={items}
+			/>
+		</div>
 	);
 };

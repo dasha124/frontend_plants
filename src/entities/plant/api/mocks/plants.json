@@ -1,2211 +1,1579 @@
 [
-  {
-    "plant_id": 40,
-    "plant_name": "Фонтанная трава \"Рыжая Голова\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Декоративные травы",
-    "plant_type": "Фонтанная трава",
-    "image_url_plant": "http://localhost:9000/logo/Фонтанная трава \"Рыжая Голова\".png",
-    "general_info": "Фонтанная трава \"Рыжая Голова\" — очаровательная многолетняя трава, образующая плотный пучок изящно изогнутых линейных листьев. Летом они темно-зеленые, осенью становятся золотистыми, а зимой выцветают до желтовато-коричневого цвета. В середине и конце лета над листьями появляются эффектные дымчатые, темно-красные, напоминающие крупные лисохвосты цветы. Они выгибаются наружу из пучка листьев и особенно эффектны при подсветке сзади. Они отлично подходят для срезки свежих и сухих композиций. Требуя очень небольшого ухода и обеспечивая почти постоянную драму в саду, эта компактная трава для теплого сезона отлично подходит для почвопокровных масс, но также может использоваться в качестве акцентного растения в садах и в контейнерах.",
-    "properties": {
-      "add": [
-        "Эффектный",
-        "Композиции из сухих цветов"
-      ],
-      "pests": "Не восприимчив к вредителем.",
-      "toxic": "Не токсично",
-      "water": "Средняя",
-      "height": "90 см - 120 см",
-      "season": [
-        "Весна",
-        "Лето",
-        "Осень"
-      ],
-      "spread": "60 см - 90 см",
-      "pH siol": [
-        "Кислотный",
-        "Щелочной",
-        "Нейтральный"
-      ],
-      "diseases": "Не восприимчив к болезням",
-      "drainage": [
-        "Влажный, хорошо дренированный"
-      ],
-      "position": [
-        "Полное солнце",
-        "Частичное солнце"
-      ],
-      "in garden": [
-        "Грядки",
-        "Бордюры",
-        "Пруды"
-      ],
-      "soil type": [
-        "Мел",
-        "Суглинок",
-        "Песок"
-      ],
-      "tolerance": [
-        "Засуха",
-        "Влажная почва"
-      ],
-      "maintenance": "Низкий",
-      "propagation": "Размножают делением в середине весны."
-    }
-  },
-  {
-    "plant_id": 42,
-    "plant_name": "Папоротник Адиатум",
-    "plant_class": "Садовое",
-    "plant_subclass": "Папоротники",
-    "plant_type": "Папоротник",
-    "image_url_plant": "http://localhost:9000/logo/Папоротник Адиатум.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 43,
-    "plant_name": "Папоротник Адиатум западный",
-    "plant_class": "Садовое",
-    "plant_subclass": "Папоротники",
-    "plant_type": "Папоротник",
-    "image_url_plant": "http://localhost:9000/logo/Папоротник Адиатум западный.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 44,
-    "plant_name": "Папоротник Бостонский",
-    "plant_class": "Садовое",
-    "plant_subclass": "Папоротники",
-    "plant_type": "Папоротник",
-    "image_url_plant": "http://localhost:9000/logo/Папоротник Бостонский.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 45,
-    "plant_name": "Бамбук голубой",
-    "plant_class": "Садовое",
-    "plant_subclass": "Бамбук",
-    "plant_type": "Бамбук",
-    "image_url_plant": "http://localhost:9000/logo/Бамбук голубой.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 46,
-    "plant_name": "Бамбук желтый",
-    "plant_class": "Садовое",
-    "plant_subclass": "Бамбук",
-    "plant_type": "Бамбук",
-    "image_url_plant": "http://localhost:9000/logo/Бамбук желтый.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 47,
-    "plant_name": "Бамбук \"Живот Будды\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Бамбук",
-    "plant_type": "Бамбук",
-    "image_url_plant": "http://localhost:9000/logo/Бамбук \"Живот Будды\".png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 48,
-    "plant_name": "Бамбук зелено-серый",
-    "plant_class": "Садовое",
-    "plant_subclass": "Бамбук",
-    "plant_type": "Бамбук",
-    "image_url_plant": "http://localhost:9000/logo/Бамбук зелено-серый.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 49,
-    "plant_name": "Бамбук золотистый гавайский",
-    "plant_class": "Садовое",
-    "plant_subclass": "Бамбук",
-    "plant_type": "Бамбук",
-    "image_url_plant": "http://localhost:9000/logo/Бамбук золотистый гавайский.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 50,
-    "plant_name": "Вербена Королевский Красный",
-    "plant_class": "Садовое",
-    "plant_subclass": "Однолетние растения",
-    "plant_type": "Вербена",
-    "image_url_plant": "http://localhost:9000/logo/Вербена Королевский Красный.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 51,
-    "plant_name": "Вербена персиковая",
-    "plant_class": "Садовое",
-    "plant_subclass": "Однолетние растения",
-    "plant_type": "Вербена",
-    "image_url_plant": "http://localhost:9000/logo/Вербена персиковая.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 52,
-    "plant_name": "Вербена прерийная",
-    "plant_class": "Садовое",
-    "plant_subclass": "Однолетние растения",
-    "plant_type": "Вербена",
-    "image_url_plant": "http://localhost:9000/logo/Вербена прерийная.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 53,
-    "plant_name": "Вербена сиреневая",
-    "plant_class": "Садовое",
-    "plant_subclass": "Однолетние растения",
-    "plant_type": "Вербена",
-    "image_url_plant": "http://localhost:9000/logo/Вербена сиреневая.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 54,
-    "plant_name": "Вербена Супербена Бургунди",
-    "plant_class": "Садовое",
-    "plant_subclass": "Однолетние растения",
-    "plant_type": "Вербена",
-    "image_url_plant": "http://localhost:9000/logo/Вербена Супербена Бургунди.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 55,
-    "plant_name": "Вербена Темный Голубой",
-    "plant_class": "Садовое",
-    "plant_subclass": "Однолетние растения",
-    "plant_type": "Вербена",
-    "image_url_plant": "http://localhost:9000/logo/Вербена Темный Голубой.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 56,
-    "plant_name": "Циния \"Королева лосося\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Однолетние растения",
-    "plant_type": "Циния",
-    "image_url_plant": "http://localhost:9000/logo/Циния \"Королева лосося\".png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 32,
-    "plant_name": "Гималайская трава",
-    "plant_class": "Садовое",
-    "plant_subclass": "Декоративные травы",
-    "plant_type": "Серебряные травы",
-    "image_url_plant": "http://localhost:9000/logo/Гималайская трава.png",
-    "general_info": "Родом из Гималаев, Гималайская трава — очень красивая декоративная трава, выращиваемая ради ее нежных шелковистых, кремовых цветочных перьев, которые появляются в конце лета. Изящно изгибаясь над пышной листвой зеленых листьев, они сохраняются до осени и сохраняют архитектурность в течение всей зимы. Очень необычная трава, которая привносит элегантность и долгий сезон интереса в сад. Потрясающий центр внимания в саду!",
-    "properties": {
-      "add": [
-        "Эффектный"
-      ],
-      "pests": "Не восприимчив к вредителем.",
-      "toxic": "Не токсично",
-      "water": "Средняя",
-      "height": "120 см - 150 см",
-      "season": [
-        "Зима",
-        "Лето",
-        "Осень"
-      ],
-      "spread": "90 см - 120 см",
-      "pH siol": [
-        "Кислотный",
-        "Щелочной",
-        "Нейтральный"
-      ],
-      "diseases": "Не восприимчив к болезням",
-      "drainage": [
-        "Влажный, хорошо дренированный",
-        "Хорошо дренированный"
-      ],
-      "position": [
-        "Полное солнце"
-      ],
-      "in garden": [
-        "Грядки",
-        "Бордюры"
-      ],
-      "soil type": [
-        "Мел",
-        "Глина",
-        "Суглинок",
-        "Песок"
-      ],
-      "tolerance": [
-        "Полная тень"
-      ],
-      "maintenance": "Низкий",
-      "propagation": "Размножается семенами, высеваемыми в горшки в холодном парнике весной или делением весной. Может медленно укореняться."
-    }
-  },
-  {
-    "plant_id": 16,
-    "plant_name": "Американская жимолость",
-    "plant_class": "Садовое",
-    "plant_subclass": "Альпинисты",
-    "plant_type": "Жимолость",
-    "image_url_plant": "http://localhost:9000/logo/Американская жимолость.png",
-    "general_info": "Американская жимолость с насыщенным сильным ароматом гвоздики — это великолепное листопадное вьющееся растение с мутовками трубчатых цветков длиной 5 см, которые раскрываются белыми, а затем становятся кремово-желтыми с красным, розовым или фиолетовым оттенком. Цветы, которые появляются последовательно с конца весны до первых заморозков, в конечном итоге уступают место красным ягодам. Эта энергичная жимолость имеет листву из полувечнозеленых, темно-зеленых и овальных листьев. Идеально подходит для перголы или арки или в качестве фона на стене или заборе.",
-    "properties": {
-      "add": [
-        "Ароматный",
-        "Фруктово-ягодный",
-        "Эффектный",
-        "Яркий"
-      ],
-      "pests": "Может быть восприимчив к жимолостной тле , трипсам и тепличной белокрылке.",
-      "toxic": "Не токсично",
-      "water": "Средняя",
-      "height": "6,1 м - 7,6 м",
-      "season": [
-        "Весна",
-        "Лето",
-        "Осень"
-      ],
-      "spread": "0,9 м - 1,2 м",
-      "pH siol": [
-        "Кислотный",
-        "Щелочной",
-        "Нейтральный"
-      ],
-      "diseases": "Может быть восприимчив к мучнистой росе , грибковой пятнистости листьев, серебристому листу и медовому грибку (редко).",
-      "drainage": [
-        "Влажный, хорошо дренированный"
-      ],
-      "position": [
-        "Полное солнце",
-        "Частичное солнце"
-      ],
-      "in garden": [
-        "Беседки",
-        "Решетки",
-        "Стены и заборы"
-      ],
-      "soil type": [
-        "Мел",
-        "Глина",
-        "Суглинок",
-        "Песок"
-      ],
-      "tolerance": [],
-      "maintenance": "Низкий",
-      "propagation": "Размножают отводками или черенками лиственных пород осенью."
-    }
-  },
-  {
-    "plant_id": 21,
-    "plant_name": "Клематис \"Анна Луиза\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Альпинисты",
-    "plant_type": "Клематис",
-    "image_url_plant": "http://localhost:9000/logo/Клематис \"Анна Луиза\".png",
-    "general_info": "Обильноцветущий, клематис 'Анна Луиза' производит массу пухлых розовых цветов, до 15 см в поперечнике, с заостренными или округлыми лепестками. Раскрываясь, насыщенно-розовые, шесть широких чашелистиков постепенно выцветают до розового цвета жевательной резинки, но остаются украшенными более темными средними жилками. Цветение происходит двумя волнами: сначала поздней весной или ранним летом, затем поздним летом и ранней осенью. Теневыносливый, компактный габитус этого крупноцветкового клематиса делает его идеальным для небольших садов или контейнеров. Сочетайте его с розами флорибунда для великолепных комбинаций.",
-    "properties": {
-      "add": [
-        "Эффектный",
-        "Яркий"
-      ],
-      "pests": "Может быть подвержен воздействию тли , улиток и гусениц; лепестки могут быть съедены уховертками.",
-      "toxic": "Потенциально вредно. Раздражает кожу.",
-      "water": "Средняя",
-      "height": "90 см - 150 см",
-      "season": [
-        "Весна",
-        "Лето",
-        "Осень"
-      ],
-      "spread": "60 см",
-      "pH siol": [
-        "Щелочной",
-        "Нейтральный"
-      ],
-      "diseases": "Может быть восприимчив к медовому грибку (редко), увяданию клематиса и слизистому поносу клематиса.",
-      "drainage": [
-        "Влажный, хорошо дренированный"
-      ],
-      "position": [
-        "Полное солнце",
-        "Частичное солнце"
-      ],
-      "in garden": [
-        "Живые изгороди и экраны",
-        "Беседки",
-        "Решетки",
-        "Вдоль стен"
-      ],
-      "soil type": [
-        "Мел",
-        "Глина",
-        "Суглинок",
-        "Песок"
-      ],
-      "tolerance": [],
-      "maintenance": "Низкий",
-      "propagation": "Размножают отводками или черенками лиственных пород осенью."
-    }
-  },
-  {
-    "plant_id": 27,
-    "plant_name": "Кактус Опунция",
-    "plant_class": "Садовое",
-    "plant_subclass": "Кактусы, суккуленты",
-    "plant_type": "Кактус",
-    "image_url_plant": "http://localhost:9000/logo/Кактус Опунция.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 28,
-    "plant_name": "Кактус Сагуаро",
-    "plant_class": "Садовое",
-    "plant_subclass": "Кактусы, суккуленты",
-    "plant_type": "Кактус",
-    "image_url_plant": "http://localhost:9000/logo/Кактус Сагуаро.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 29,
-    "plant_name": "Кактус Маммилярия",
-    "plant_class": "Садовое",
-    "plant_subclass": "Кактусы, суккуленты",
-    "plant_type": "Кактус",
-    "image_url_plant": "http://localhost:9000/logo/Кактус Маммилярия.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 57,
-    "plant_name": "Циния Розовый Цветок Бенари",
-    "plant_class": "Садовое",
-    "plant_subclass": "Однолетние растения",
-    "plant_type": "Циния",
-    "image_url_plant": "http://localhost:9000/logo/Циния Розовый Цветок Бенари.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 58,
-    "plant_name": "Циния Скарлет",
-    "plant_class": "Садовое",
-    "plant_subclass": "Однолетние растения",
-    "plant_type": "Циния",
-    "image_url_plant": "http://localhost:9000/logo/Циния Скарлет.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 59,
-    "plant_name": "Циния Эльдорадо",
-    "plant_class": "Садовое",
-    "plant_subclass": "Однолетние растения",
-    "plant_type": "Циния",
-    "image_url_plant": "http://localhost:9000/logo/Циния Эльдорадо.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 60,
-    "plant_name": "Герань душистая",
-    "plant_class": "Садовое",
-    "plant_subclass": "Однолетние растения",
-    "plant_type": "Герань",
-    "image_url_plant": "http://localhost:9000/logo/Герань душистая.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 61,
-    "plant_name": "Герань Кимоно",
-    "plant_class": "Садовое",
-    "plant_subclass": "Однолетние растения",
-    "plant_type": "Герань",
-    "image_url_plant": "http://localhost:9000/logo/Герань Кимоно.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 62,
-    "plant_name": "Герань королевская",
-    "plant_class": "Садовое",
-    "plant_subclass": "Однолетние растения",
-    "plant_type": "Герань",
-    "image_url_plant": "http://localhost:9000/logo/Герань королевская.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 63,
-    "plant_name": "Герань Красная Американа",
-    "plant_class": "Садовое",
-    "plant_subclass": "Однолетние растения",
-    "plant_type": "Герань",
-    "image_url_plant": "http://localhost:9000/logo/Герань Красная Американа.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 64,
-    "plant_name": "Бархатцы \"Большая Золотая Утка\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Однолетние растения",
-    "plant_type": "Бархатцы",
-    "image_url_plant": "http://localhost:9000/logo/Бархатцы \"Большая Золотая Утка\".png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 65,
-    "plant_name": "Бархатцы \"Большая Оранжевая Утка\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Однолетние растения",
-    "plant_type": "Бархатцы",
-    "image_url_plant": "http://localhost:9000/logo/Бархатцы \"Большая Оранжевая Утка\".png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 66,
-    "plant_name": "Бархатцы \"Легион Чести\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Однолетние растения",
-    "plant_type": "Бархатцы",
-    "image_url_plant": "http://localhost:9000/logo/Бархатцы \"Легион Чести\".png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 67,
-    "plant_name": "Бархатцы французские",
-    "plant_class": "Садовое",
-    "plant_subclass": "Однолетние растения",
-    "plant_type": "Бархатцы",
-    "image_url_plant": "http://localhost:9000/logo/Бархатцы французские.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 68,
-    "plant_name": "Космея абрикосовая",
-    "plant_class": "Садовое",
-    "plant_subclass": "Однолетние растения",
-    "plant_type": "Космея",
-    "image_url_plant": "http://localhost:9000/logo/Космея абрикосовая.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 69,
-    "plant_name": "Космея Глория",
-    "plant_class": "Садовое",
-    "plant_subclass": "Однолетние растения",
-    "plant_type": "Космея",
-    "image_url_plant": "http://localhost:9000/logo/Космея Глория.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 70,
-    "plant_name": "Космея \"Конфетная Полоска\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Однолетние растения",
-    "plant_type": "Космея",
-    "image_url_plant": "http://localhost:9000/logo/Космея \"Конфетная Полоска\".png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 71,
-    "plant_name": "Космея \"Соната Кармин\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Однолетние растения",
-    "plant_type": "Космея",
-    "image_url_plant": "http://localhost:9000/logo/Космея \"Соната Кармин\".png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 72,
-    "plant_name": "Космея шоколадная",
-    "plant_class": "Садовое",
-    "plant_subclass": "Однолетние растения",
-    "plant_type": "Космея",
-    "image_url_plant": "http://localhost:9000/logo/Космея шоколадная.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 73,
-    "plant_name": "Гиацинт \"Белая Жемчужина\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Лампочки",
-    "plant_type": "Гиацинт",
-    "image_url_plant": "http://localhost:9000/logo/Гиацинт \"Белая Жемчужина\".png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 74,
-    "plant_name": "Гиацинт голландский",
-    "plant_class": "Садовое",
-    "plant_subclass": "Лампочки",
-    "plant_type": "Гиацинт",
-    "image_url_plant": "http://localhost:9000/logo/Гиацинт голландский.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 75,
-    "plant_name": "Гиацинт \"Голубая Звезда\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Лампочки",
-    "plant_type": "Гиацинт",
-    "image_url_plant": "http://localhost:9000/logo/Гиацинт \"Голубая Звезда\".png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 76,
-    "plant_name": "Гиацинт махровый",
-    "plant_class": "Садовое",
-    "plant_subclass": "Лампочки",
-    "plant_type": "Гиацинт",
-    "image_url_plant": "http://localhost:9000/logo/Гиацинт махровый.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 77,
-    "plant_name": "Гиацинт \"Фондант\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Лампочки",
-    "plant_type": "Гиацинт",
-    "image_url_plant": "http://localhost:9000/logo/Гиацинт \"Фондант\".png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 78,
-    "plant_name": "Лилия Белая тигровая",
-    "plant_class": "Садовое",
-    "plant_subclass": "Лампочки",
-    "plant_type": "Лилия",
-    "image_url_plant": "http://localhost:9000/logo/Лилия Белая тигровая.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 79,
-    "plant_name": "Лилия карликовая",
-    "plant_class": "Садовое",
-    "plant_subclass": "Лампочки",
-    "plant_type": "Лилия",
-    "image_url_plant": "http://localhost:9000/logo/Лилия карликовая.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 80,
-    "plant_name": "Лилия \"Флавия\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Лампочки",
-    "plant_type": "Лилия",
-    "image_url_plant": "http://localhost:9000/logo/Лилия \"Флавия\".png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 81,
-    "plant_name": "Нарцисс \"Акцент\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Лампочки",
-    "plant_type": "Нарцисс",
-    "image_url_plant": "http://localhost:9000/logo/Нарцисс \"Акцент\".png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 82,
-    "plant_name": "Нарцисс \"Бритиш Гэмбл\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Лампочки",
-    "plant_type": "Нарцисс",
-    "image_url_plant": "http://localhost:9000/logo/Нарцисс \"Бритиш Гэмбл\".png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 83,
-    "plant_name": "Нарцисс \"Король Альфред\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Лампочки",
-    "plant_type": "Нарцисс",
-    "image_url_plant": "http://localhost:9000/logo/Нарцисс \"Король Альфред\".png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 84,
-    "plant_name": "Нарцисс крупнокорончатый",
-    "plant_class": "Садовое",
-    "plant_subclass": "Лампочки",
-    "plant_type": "Нарцисс",
-    "image_url_plant": "http://localhost:9000/logo/Нарцисс крупнокорончатый.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 85,
-    "plant_name": "Подснежник \"Аткинсии\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Лампочки",
-    "plant_type": "Подснежник",
-    "image_url_plant": "http://localhost:9000/logo/Подснежник \"Аткинсии\".png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 86,
-    "plant_name": "Подснежник складчатый",
-    "plant_class": "Садовое",
-    "plant_subclass": "Лампочки",
-    "plant_type": "Подснежник",
-    "image_url_plant": "http://localhost:9000/logo/Подснежник складчатый.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 87,
-    "plant_name": "Тюльпан \"Абигейл\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Лампочки",
-    "plant_type": "Тюльпан",
-    "image_url_plant": "http://localhost:9000/logo/Тюльпан \"Абигейл\".png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 88,
-    "plant_name": "Тюльпан \"Попугай\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Лампочки",
-    "plant_type": "Тюльпан",
-    "image_url_plant": "http://localhost:9000/logo/Тюльпан \"Попугай\".png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 89,
-    "plant_name": "Тюльпан попугайный",
-    "plant_class": "Садовое",
-    "plant_subclass": "Лампочки",
-    "plant_type": "Тюльпан",
-    "image_url_plant": "http://localhost:9000/logo/Тюльпан попугайный.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 90,
-    "plant_name": "Тюльпан \"Салмон Паррот\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Лампочки",
-    "plant_type": "Тюльпан",
-    "image_url_plant": "http://localhost:9000/logo/Тюльпан \"Салмон Паррот\".png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 91,
-    "plant_name": "Тюльпан \"Триумф\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Лампочки",
-    "plant_type": "Тюльпан",
-    "image_url_plant": "http://localhost:9000/logo/Тюльпан \"Триумф\".png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 92,
-    "plant_name": "Алоэ африканское",
-    "plant_class": "Садовое",
-    "plant_subclass": "Кактусы, суккуленты",
-    "plant_type": "Алоэ",
-    "image_url_plant": "http://localhost:9000/logo/Алоэ африканское.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 93,
-    "plant_name": "Алоэ \"Байнеса\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Кактусы, суккуленты",
-    "plant_type": "Алоэ",
-    "image_url_plant": "http://localhost:9000/logo/Алоэ \"Байнеса\".png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 94,
-    "plant_name": "Алоэ \"Петрикола\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Кактусы, суккуленты",
-    "plant_type": "Алоэ",
-    "image_url_plant": "http://localhost:9000/logo/Алоэ \"Петрикола\".png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 95,
-    "plant_name": "Алоэ траский",
-    "plant_class": "Садовое",
-    "plant_subclass": "Кактусы, суккуленты",
-    "plant_type": "Алоэ",
-    "image_url_plant": "http://localhost:9000/logo/Алоэ траский.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 96,
-    "plant_name": "Сансевиерия \"Лунный Свет\"",
-    "plant_class": "Домашнее",
-    "plant_subclass": "Суккулент комнатный",
-    "plant_type": "Суккулент Змеиное растение (Сансевиерия)",
-    "image_url_plant": "http://localhost:9000/logo/Сансевиерия \"Лунный Свет\".png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 97,
-    "plant_name": "Сансевиерия \"Пестрая Змея\"",
-    "plant_class": "Домашнее",
-    "plant_subclass": "Суккулент комнатный",
-    "plant_type": "Суккулент Змеиное растение (Сансевиерия)",
-    "image_url_plant": "http://localhost:9000/logo/Сансевиерия \"Пестрая Змея\".png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 98,
-    "plant_name": "Сансевиерия \"Птичье Гнездо\"",
-    "plant_class": "Домашнее",
-    "plant_subclass": "Суккулент комнатный",
-    "plant_type": "Суккулент Змеиное растение (Сансевиерия)",
-    "image_url_plant": "http://localhost:9000/logo/Сансевиерия \"Птичье Гнездо\".png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 99,
-    "plant_name": "Каланхоэ мраморное",
-    "plant_class": "Домашнее",
-    "plant_subclass": "Суккулент комнатный",
-    "plant_type": "Суккулент Каланхоэ",
-    "image_url_plant": "http://localhost:9000/logo/Каланхоэ мраморное.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 100,
-    "plant_name": "Каланхоэ \"Панда\"",
-    "plant_class": "Домашнее",
-    "plant_subclass": "Суккулент комнатный",
-    "plant_type": "Суккулент Каланхоэ",
-    "image_url_plant": "http://localhost:9000/logo/Каланхоэ \"Панда\".png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 101,
-    "plant_name": "Каланхоэ \"Федченко\"",
-    "plant_class": "Домашнее",
-    "plant_subclass": "Суккулент комнатный",
-    "plant_type": "Суккулент Каланхоэ",
-    "image_url_plant": "http://localhost:9000/logo/Каланхоэ \"Федченко\".png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 102,
-    "plant_name": "Каланхоэ цветочное",
-    "plant_class": "Домашнее",
-    "plant_subclass": "Суккулент комнатный",
-    "plant_type": "Суккулент Каланхоэ",
-    "image_url_plant": "http://localhost:9000/logo/Каланхоэ цветочное.png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 103,
-    "plant_name": "Эхеверия \"Имбиката\"",
-    "plant_class": "Домашнее",
-    "plant_subclass": "Суккулент комнатный",
-    "plant_type": "Суккулент Эхеверия",
-    "image_url_plant": "http://localhost:9000/logo/Эхеверия \"Имбиката\".png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 104,
-    "plant_name": "Эхеверия \"Типпи\"",
-    "plant_class": "Домашнее",
-    "plant_subclass": "Суккулент комнатный",
-    "plant_type": "Суккулент Эхеверия",
-    "image_url_plant": "http://localhost:9000/logo/Эхеверия \"Типпи\".png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 105,
-    "plant_name": "Эхеверия \"Черный Принц\"",
-    "plant_class": "Домашнее",
-    "plant_subclass": "Суккулент комнатный",
-    "plant_type": "Суккулент Эхеверия",
-    "image_url_plant": "http://localhost:9000/logo/Эхеверия \"Черный Принц\".png",
-    "general_info": "Это мох",
-    "properties": {
-      "light": "Partial side",
-      "toxic": false
-    }
-  },
-  {
-    "plant_id": 22,
-    "plant_name": "Клематис \"Асагасуми\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Альпинисты",
-    "plant_type": "Клематис",
-    "image_url_plant": "http://localhost:9000/logo/Клематис \"Асагасуми\".png",
-    "general_info": "Элегантный клематис «Асагасуми» — сорт клематиса с крупными цветами средней силы роста, с яркими жемчужно-белыми цветами диаметром 12–15 см, украшенными бледно-розовой полосой в центре чашелистиков и выступающими желтыми пыльниками. За цветами следуют крупные, эффектные серебристые семенные головки, которые добавляют растению еще большего интереса. Цветение происходит двумя волнами: сначала в конце весны и начале лета, затем в конце лета и начале осени. Этот теневыносливый клематис идеально подходит для беседок, решеток, пергол и других садовых конструкций. Отлично подходит для выращивания в виде небольших кустарников. «Асагасуми» означает «утренний туман» на японском языке.",
-    "properties": {
-      "add": [
-        "Эффектный",
-        "Яркий"
-      ],
-      "pests": "Может быть подвержен воздействию тли , улиток и гусениц; лепестки могут быть съедены уховертками.",
-      "toxic": "Потенциально вредно. Раздражает кожу.",
-      "water": "Средняя",
-      "height": "2,1 м - 3 м",
-      "season": [
-        "Весна",
-        "Лето",
-        "Осень"
-      ],
-      "spread": "3 м",
-      "pH siol": [
-        "Щелочной",
-        "Нейтральный"
-      ],
-      "diseases": "Может быть восприимчив к медовому грибку (редко), увяданию клематиса и слизистому поносу клематиса.",
-      "drainage": [
-        "Влажный, хорошо дренированный"
-      ],
-      "position": [
-        "Частичное солнце"
-      ],
-      "in garden": [
-        "Беседки",
-        "Решетки",
-        "Вдоль стен",
-        "Клумбы"
-      ],
-      "soil type": [
-        "Мел",
-        "Глина",
-        "Суглинок",
-        "Песок"
-      ],
-      "tolerance": [],
-      "maintenance": "Низкий",
-      "propagation": "Размножают отводками или черенками лиственных пород осенью."
-    }
-  },
-  {
-    "plant_id": 35,
-    "plant_name": "Хаконехлоа золотая",
-    "plant_class": "Садовое",
-    "plant_subclass": "Декоративные травы",
-    "plant_type": "Японская лесная трава",
-    "image_url_plant": "http://localhost:9000/logo/Хаконехлоа золотая.png",
-    "general_info": "Добавляя всплеск цвета в любой сад или контейнер, это блестящая золотая трава, которая буквально сияет в тени. Ее яркая листва образует каскадный холмик изящно изогнутых, тонких лезвий, которые, как правило, становятся зеленовато-желтыми в тени и чисто золотыми на солнце. Сохраняя свой яркий цвет с весны до лета, он приобретает розоватый румянец с приходом осени и в конечном итоге становится золотисто-коричневым зимой, прежде чем умереть на земле. Но какая прекрасная смерть с его листвой, освещающей унылые уголки сада до самой зимы. Нежные на вид, красновато-коричневые цветоносы появляются в конце лета, но обычно незаметны среди листьев. Чрезвычайно приспосабливающаяся, трава Ханакое — настоящая красавица для теневых сочетаний.",
-    "properties": {
-      "add": [
-        "Эффектный",
-        "Вечнозеленый"
-      ],
-      "pests": "Не восприимчив к вредителем.",
-      "toxic": "Не токсично",
-      "water": "Средняя",
-      "height": "25 см - 60 см",
-      "season": [
-        "Весна",
-        "Лето",
-        "Осень"
-      ],
-      "spread": "30 см - 60 см",
-      "pH siol": [
-        "Кислотный",
-        "Щелочной",
-        "Нейтральный"
-      ],
-      "diseases": "Не восприимчив к болезням",
-      "drainage": [
-        "Влажный, хорошо дренированный"
-      ],
-      "position": [
-        "Полное солнце",
-        "Частичное солнце",
-        "Тень"
-      ],
-      "in garden": [
-        "Грядки",
-        "Бордюры",
-        "Окантовка"
-      ],
-      "soil type": [
-        "Мел",
-        "Глина",
-        "Суглинок",
-        "Песок"
-      ],
-      "tolerance": [
-        "Полная тень"
-      ],
-      "maintenance": "Низкий",
-      "propagation": "Размножают делением в середине весны."
-    }
-  },
-  {
-    "plant_id": 38,
-    "plant_name": "Фонтанная трава \"Бордовый кролик\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Декоративные травы",
-    "plant_type": "Фонтанная трава",
-    "image_url_plant": "http://localhost:9000/logo/Фонтанная трава \"Бордовый кролик\".png",
-    "general_info": "Фонтанная трава \"Бордовый кролик\" идеально подходит для небольших садов, это миниатюрная многолетняя трава, образующая плотный пучок изящно изогнутых линейных листьев. Ярко-зеленые летом, они краснеют по мере развития сезона, становясь полностью пылающе-красными осенью. Эффектная листва обычно остается привлекательной до заморозков. В середине и конце лета над листьями появляются эффектные серебристо-белые цветочные колоски, напоминающие маленькие лисохвосты. Они выгибаются наружу из пучка листьев и особенно эффектны при подсветке сзади. Они отлично подходят для срезки свежих и сухих композиций. Требуя очень мало ухода и обеспечивая почти непрерывную драму в саду, эта компактная трава для теплого сезона отлично подходит для контейнеров или передней части бордюра.",
-    "properties": {
-      "add": [
-        "Эффектный",
-        "Композиции из сухих цветов"
-      ],
-      "pests": "Не восприимчив к вредителем.",
-      "toxic": "Не токсично",
-      "water": "Средняя",
-      "height": "30 см - 60 см",
-      "season": [
-        "Весна",
-        "Лето",
-        "Осень"
-      ],
-      "spread": "30 см - 60 см",
-      "pH siol": [
-        "Кислотный",
-        "Щелочной",
-        "Нейтральный"
-      ],
-      "diseases": "Не восприимчив к болезням",
-      "drainage": [
-        "Влажный, хорошо дренированный"
-      ],
-      "position": [
-        "Полное солнце",
-        "Частичное солнце"
-      ],
-      "in garden": [
-        "Грядки",
-        "Бордюры",
-        "Пруды"
-      ],
-      "soil type": [
-        "Мел",
-        "Суглинок",
-        "Песок"
-      ],
-      "tolerance": [
-        "Засуха",
-        "Влажная почва"
-      ],
-      "maintenance": "Низкий",
-      "propagation": "Размножают делением в середине весны."
-    }
-  },
-  {
-    "plant_id": 37,
-    "plant_name": "Хаконехлоа Николас",
-    "plant_class": "Садовое",
-    "plant_subclass": "Декоративные травы",
-    "plant_type": "Японская лесная трава",
-    "image_url_plant": "http://localhost:9000/logo/Хаконехлоа Николас.png",
-    "general_info": "Настоящая красавица для тенистых сочетаний, трава Хаконэ \"Николас\" - очень интересная японская лесная трава. Образуя компактный каскадный холмик изящно изогнутых, тонких лезвий, ее сплошная зеленая листва в течение весны и лета становится ярко-красной, оранжевой и золотой, как только наступает более прохладная погода осенью. Чем прохладнее погода, тем более раскаленной становится листва, прежде чем умереть на земле. Но какая красивая смерть с ее листвой, освещающей унылые уголки сада до самой зимы. Нежные на вид желто-зеленые цветочные колоски появляются в конце лета, но обычно незаметны среди листьев. Чрезвычайно приспосабливающаяся, Хаконэ \"Николас\" творит чудеса в любом саду или контейнере.",
-    "properties": {
-      "add": [
-        "Эффектный",
-        "Вечнозеленый"
-      ],
-      "pests": "Не восприимчив к вредителем.",
-      "toxic": "Не токсично",
-      "water": "Средняя",
-      "height": "25 см - 60 см",
-      "season": [
-        "Весна",
-        "Лето",
-        "Осень"
-      ],
-      "spread": "30 см - 60 см",
-      "pH siol": [
-        "Кислотный",
-        "Щелочной",
-        "Нейтральный"
-      ],
-      "diseases": "Не восприимчив к болезням",
-      "drainage": [
-        "Влажный, хорошо дренированный"
-      ],
-      "position": [
-        "Полное солнце",
-        "Частичное солнце",
-        "Тень"
-      ],
-      "in garden": [
-        "Грядки",
-        "Бордюры",
-        "Окантовка"
-      ],
-      "soil type": [
-        "Мел",
-        "Глина",
-        "Суглинок",
-        "Песок"
-      ],
-      "tolerance": [
-        "Полная тень"
-      ],
-      "maintenance": "Низкий",
-      "propagation": "Размножают делением в середине весны."
-    }
-  },
-  {
-    "plant_id": 39,
-    "plant_name": "Фонтанная трава \"Пустынная равнина\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Декоративные травы",
-    "plant_type": "Фонтанная трава",
-    "image_url_plant": "http://localhost:9000/logo/Фонтанная трава \"Пустынная равнина\".png",
-    "general_info": "Фонтанная трава \"Пустынная равнина\" — крупная многолетняя трава, образующая плотный вертикальный вазообразный куст изящно изогнутых линейных листьев. Ярко-зеленые летом, они краснеют по мере развития сезона, прежде чем осенью измениться на теплые оттенки оранжевого и золотого. Эффектная листва обычно остается привлекательной до заморозков. В середине и конце лета над листьями появляются крупные дымчато-фиолетовые цветки-хвощи, длиной 12 см, напоминающие большие лисохвосты. Выгибаясь наружу из куста листвы, они с возрастом становятся загорелыми и особенно эффектны при подсветке сзади. Они отлично подходят для срезки свежих и сухих композиций. Требуя очень мало ухода и обеспечивая почти непрерывную драму в саду, эта компактная трава для теплого сезона отлично подходит для создания почвопокровных масс, но также может использоваться в качестве акцентного растения в садах и в контейнерах.\n",
-    "properties": {
-      "add": [
-        "Эффектный",
-        "Композиции из сухих цветов"
-      ],
-      "pests": "Не восприимчив к вредителем.",
-      "toxic": "Не токсично",
-      "water": "Средняя",
-      "height": "90 см - 120 см",
-      "season": [
-        "Весна",
-        "Лето",
-        "Осень"
-      ],
-      "spread": "90 см - 120 см",
-      "pH siol": [
-        "Кислотный",
-        "Щелочной",
-        "Нейтральный"
-      ],
-      "diseases": "Не восприимчив к болезням",
-      "drainage": [
-        "Влажный, хорошо дренированный"
-      ],
-      "position": [
-        "Полное солнце",
-        "Частичное солнце"
-      ],
-      "in garden": [
-        "Грядки",
-        "Бордюры",
-        "Пруды"
-      ],
-      "soil type": [
-        "Мел",
-        "Суглинок",
-        "Песок"
-      ],
-      "tolerance": [
-        "Засуха",
-        "Влажная почва"
-      ],
-      "maintenance": "Низкий",
-      "propagation": "Размножают делением в середине весны."
-    }
-  },
-  {
-    "plant_id": 1,
-    "plant_name": "Глициния брахиботрис \"Мурасаки-Капитан\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Альпинисты",
-    "plant_type": "Глициния",
-    "image_url_plant": "http://localhost:9000/logo/Глициния брахиботрис \"Мурасаки-Капитан\".png",
-    "general_info": "Сильно пахнущая - это превосходное энергичное вьющееся растение, цветущее в начале сезона, она производит красивые свисающие побеги, до 20 см в длину, наполненные сине-фиолетовыми цветами, они производят эффектное цветочное зрелище.",
-    "properties": {
-      "add": [
-        "Ароматный",
-        "Яркий"
-      ],
-      "pests": "Может быть восприимчив к тле , тепличному красному паутинному клещу и щитовкам , включая глициниевую щитовку.",
-      "toxic": "Токсично для собак, кошек, лошадей",
-      "water": "Средняя",
-      "height": "3 м - 7,6 м",
-      "season": [
-        "Весна",
-        "Лето"
-      ],
-      "spread": "1.2 м - 6,1 м",
-      "pH siol": [
-        "Кислотный",
-        "Щелочной",
-        "Нейтральный"
-      ],
-      "diseases": "Может быть восприимчив к медовому грибку (редко), фитофторозной корневой гнили, коралловой пятнистости , грибковой пятнистости листьев, вирусным заболеваниям и мучнистой росе.",
-      "drainage": [
-        "Влажный, хорошо дренированный"
-      ],
-      "position": [
-        "Полное солнце",
-        "Частичное солнце"
-      ],
-      "in garden": [
-        "Беседки",
-        "Решетки",
-        "Стены и заборы"
-      ],
-      "soil type": [
-        "Мел",
-        "Глина",
-        "Суглинок",
-        "Песок"
-      ],
-      "tolerance": [
-        "Засуха"
-      ],
-      "maintenance": "Высокий",
-      "propagation": "Размножается отводками, черенками хвойных и лиственных пород или прививкой."
-    }
-  },
-  {
-    "plant_id": 2,
-    "plant_name": "Японская глициния \"Каролина\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Альпинисты",
-    "plant_type": "Глициния",
-    "image_url_plant": "http://localhost:9000/logo/глициния японская.png",
-    "general_info": "Цветущая раньше большинства других сортов глицинии, глициния «Caroline» — это листопадное вьющееся растение с красивыми локонами длиной 15–30 см с чудесно ароматными, похожими на горох, сиренево-голубыми цветами. Цветущие в конце весны или в начале лета, кисти цветут более или менее одновременно, создавая эффектное цветочное зрелище. За крупными цветами следуют привлекательные, похожие на бобы стручки, которые созревают в конце лета и могут сохраняться до зимы. Не менее привлекательна густая листва ярко-зеленых, перистых листьев с обычно 11 листочками, которые появляются серо-зелеными и становятся золотисто-желтыми осенью.",
-    "properties": {
-      "add": [
-        "Ароматный",
-        "Яркий"
-      ],
-      "pests": "Может быть восприимчив к тле , тепличному красному паутинному клещу и щитовкам , включая глициниевую щитовку.",
-      "toxic": "Токсично для собак, кошек, лошадей",
-      "water": "Средняя",
-      "height": "4 м - 9,1 м",
-      "season": [
-        "Весна",
-        "Лето"
-      ],
-      "spread": "4 м - 7,6 м",
-      "pH siol": [
-        "Кислотный",
-        "Щелочной",
-        "Нейтральный"
-      ],
-      "diseases": "Может быть восприимчив к медовому грибку (редко), фитофторозной корневой гнили, коралловой пятнистости , грибковой пятнистости листьев, вирусным заболеваниям и мучнистой росе.",
-      "drainage": [
-        "Влажный, хорошо дренированный"
-      ],
-      "position": [
-        "Полное солнце",
-        "Частичное солнце"
-      ],
-      "in garden": [
-        "Беседки",
-        "Решетки",
-        "Стены и заборы"
-      ],
-      "soil type": [
-        "Мел",
-        "Глина",
-        "Суглинок",
-        "Песок"
-      ],
-      "tolerance": [
-        "Засуха"
-      ],
-      "maintenance": "Высокий",
-      "propagation": "Размножается отводками, черенками хвойных и лиственных пород или прививкой."
-    }
-  },
-  {
-    "plant_id": 3,
-    "plant_name": "Китайская глициния",
-    "plant_class": "Садовое",
-    "plant_subclass": "Альпинисты",
-    "plant_type": "Глициния",
-    "image_url_plant": "http://localhost:9000/logo/Китайская глициния.png",
-    "general_info": "Сладковато-ароматная Китайская глициния — это обильноцветущая листопадная лиана, образующая массы свисающих соцветий длиной до 30 см, наполненных душистыми, похожими на горох, сине-фиолетовыми цветами. Появляясь до листьев в конце весны - начале лета, они цветут многократно в течение лета. За ними следуют привлекательные, бархатистые, похожие на бобы стручки длиной 15 см, которые созревают осенью и могут сохраняться до зимы. Не менее привлекательна листва светло-зеленых, перистых листьев, которые состоят из 7–13 листочков.",
-    "properties": {
-      "add": [
-        "Ароматный",
-        "Яркий"
-      ],
-      "pests": "Может быть восприимчив к тле , тепличному красному паутинному клещу и щитовкам , включая глициниевую щитовку.",
-      "toxic": "Токсично для собак, кошек, лошадей",
-      "water": "Средняя",
-      "height": "3 м - 9,1 м",
-      "season": [
-        "Весна",
-        "Лето"
-      ],
-      "spread": "3 м - 4,6 м",
-      "pH siol": [
-        "Кислотный",
-        "Щелочной",
-        "Нейтральный"
-      ],
-      "diseases": "Может быть восприимчив к медовому грибку (редко), фитофторозной корневой гнили, коралловой пятнистости , грибковой пятнистости листьев, вирусным заболеваниям и мучнистой росе.",
-      "drainage": [
-        "Влажный, хорошо дренированный"
-      ],
-      "position": [
-        "Полное солнце",
-        "Частичное солнце"
-      ],
-      "in garden": [
-        "Беседки",
-        "Решетки",
-        "Стены и заборы"
-      ],
-      "soil type": [
-        "Мел",
-        "Глина",
-        "Суглинок",
-        "Песок"
-      ],
-      "tolerance": [
-        "Засуха"
-      ],
-      "maintenance": "Высокий",
-      "propagation": "Размножается отводками, черенками хвойных и лиственных пород или прививкой."
-    }
-  },
-  {
-    "plant_id": 4,
-    "plant_name": "Шелковая глициния",
-    "plant_class": "Садовое",
-    "plant_subclass": "Альпинисты",
-    "plant_type": "Глициния",
-    "image_url_plant": "http://localhost:9000/logo/Шелковая глициния.png",
-    "general_info": "Обладающая сильным ароматом, Шелковая глициния — великолепная вьющаяся лиана с цветками невероятной красоты. Он производит массы свисающих брызг длиной до 15 см, ароматных, похожих на горошину, белоснежных цветков с заметным желтым пятном. Цветут более или менее одновременно поздней весной или в начале лета, когда появляются листья, они производят драматическая цветочная экспозиция. За цветами следуют привлекательные, бархатистые бобовидные стручки длиной 20 см, которые созревают в конце лета и могут сохраняться до зимы. Густая листва экзотического вида, свежей зелени, особенно привлекательны перистые листья с 11 опушенными листочками.",
-    "properties": {
-      "add": [
-        "Ароматный",
-        "Яркий"
-      ],
-      "pests": "Может быть восприимчив к тле , тепличному красному паутинному клещу и щитовкам , включая глициниевую щитовку.",
-      "toxic": "Токсично для собак, кошек, лошадей",
-      "water": "Средняя",
-      "height": "3 м - 12,2 м",
-      "season": [
-        "Весна",
-        "Лето"
-      ],
-      "spread": "1,2 м - 9,1 м",
-      "pH siol": [
-        "Кислотный",
-        "Щелочной",
-        "Нейтральный"
-      ],
-      "diseases": "Может быть восприимчив к медовому грибку (редко), фитофторозной корневой гнили, коралловой пятнистости , грибковой пятнистости листьев, вирусным заболеваниям и мучнистой росе.",
-      "drainage": [
-        "Влажный, хорошо дренированный"
-      ],
-      "position": [
-        "Полное солнце",
-        "Частичное солнце"
-      ],
-      "in garden": [
-        "Беседки",
-        "Решетки",
-        "Стены и заборы"
-      ],
-      "soil type": [
-        "Мел",
-        "Глина",
-        "Суглинок",
-        "Песок"
-      ],
-      "tolerance": [
-        "Засуха"
-      ],
-      "maintenance": "Высокий",
-      "propagation": "Размножается отводками, черенками хвойных и лиственных пород или прививкой."
-    }
-  },
-  {
-    "plant_id": 36,
-    "plant_name": "Хаконехлоа Наоми",
-    "plant_class": "Садовое",
-    "plant_subclass": "Декоративные травы",
-    "plant_type": "Японская лесная трава",
-    "image_url_plant": "http://localhost:9000/logo/Хаконехлоа Наоми.png",
-    "general_info": "Недавно представленный большой интерес сорт травы Хаконэ \"Наоми\" образует компактный каскадный холмик изящно изогнутых, тонких лезвий, красиво пестрых кремово-желтых и зеленых в течение весны и лета. Как только наступает более прохладная погода осенью, мягкая листва постепенно становится ярко-фиолетово-красной, создавая восхитительный взрыв красок. Чем прохладнее погода, тем красочнее становится листва. Нежные на вид, красновато-коричневые цветочные колоски появляются в конце лета, но обычно незаметны среди листьев. Чрезвычайно приспосабливающаяся Хаконэ \"Наоми\" творит чудеса в любом саду или контейнере.",
-    "properties": {
-      "add": [
-        "Эффектный",
-        "Вечнозеленый"
-      ],
-      "pests": "Не восприимчив к вредителем.",
-      "toxic": "Не токсично",
-      "water": "Средняя",
-      "height": "20 см - 60 см",
-      "season": [
-        "Весна",
-        "Лето",
-        "Осень"
-      ],
-      "spread": "30 см - 60 см",
-      "pH siol": [
-        "Кислотный",
-        "Щелочной",
-        "Нейтральный"
-      ],
-      "diseases": "Не восприимчив к болезням",
-      "drainage": [
-        "Влажный, хорошо дренированный"
-      ],
-      "position": [
-        "Полное солнце",
-        "Частичное солнце",
-        "Тень"
-      ],
-      "in garden": [
-        "Грядки",
-        "Бордюры",
-        "Окантовка"
-      ],
-      "soil type": [
-        "Мел",
-        "Глина",
-        "Суглинок",
-        "Песок"
-      ],
-      "tolerance": [
-        "Полная тень"
-      ],
-      "maintenance": "Низкий",
-      "propagation": "Размножают делением в середине весны."
-    }
-  },
-  {
-    "plant_id": 33,
-    "plant_name": "Дикобразная трава",
-    "plant_class": "Садовое",
-    "plant_subclass": "Декоративные травы",
-    "plant_type": "Серебряные травы",
-    "image_url_plant": "http://localhost:9000/logo/Дикобразная трава.png",
-    "general_info": "Дикобразная трава — очень характерная декоративная трава с пестрой листвой, демонстрирующей необычные горизонтальные мягкие желтые кольца вдоль изящно изогнутых листьев, пока она не станет бледно-коричневой осенью. Ее дополняют привлекательные розоватые перья, которые появляются ранней осенью и становятся серебристыми по мере созревания. Этот сорт похож на Miscanthus 'Zebrinus' по отметинам на листьях, но более прямостоячий по габитусу и компактный.",
-    "properties": {
-      "add": [
-        "Эффектный"
-      ],
-      "pests": "Не восприимчив к вредителем.",
-      "toxic": "Не токсично",
-      "water": "Средняя",
-      "height": "180 см - 240 см",
-      "season": [
-        "Зима",
-        "Лето",
-        "Осень"
-      ],
-      "spread": "90 см - 150 см",
-      "pH siol": [
-        "Кислотный",
-        "Щелочной",
-        "Нейтральный"
-      ],
-      "diseases": "Не восприимчив к болезням",
-      "drainage": [
-        "Влажный, хорошо дренированный",
-        "Хорошо дренированный"
-      ],
-      "position": [
-        "Полное солнце"
-      ],
-      "in garden": [
-        "Грядки",
-        "Бордюры"
-      ],
-      "soil type": [
-        "Мел",
-        "Глина",
-        "Суглинок",
-        "Песок"
-      ],
-      "tolerance": [
-        "Полная тень"
-      ],
-      "maintenance": "Низкий",
-      "propagation": "Размножается семенами, высеваемыми в горшки в холодном парнике весной или делением весной. Может медленно укореняться."
-    }
-  },
-  {
-    "plant_id": 34,
-    "plant_name": "Трава Гана",
-    "plant_class": "Садовое",
-    "plant_subclass": "Декоративные травы",
-    "plant_type": "Серебряные травы",
-    "image_url_plant": "http://localhost:9000/logo/Трава Гана.png",
-    "general_info": "Один из лучших по цвету осенью, отмеченный наградами китайский серебристый злак Гана - очень привлекательная декоративная трава, выращиваемая ради своих красноватых цветочных перьев, которые видны с конца лета. Они деликатно меняют цвет на серебристо-белый по мере созревания и обеспечивают хороший зимний интерес. Они грациозно возвышаются, значительно выше элегантной листвы узких, изогнутых, ярко-зеленых листьев, которые осенью становятся красивыми от красно-бордовых до золотисто-желтых. Очень полезная декоративная трава!",
-    "properties": {
-      "add": [
-        "Эффектный"
-      ],
-      "pests": "Не восприимчив к вредителем.",
-      "toxic": "Не токсично",
-      "water": "Средняя",
-      "height": "150 см - 180 см",
-      "season": [
-        "Зима",
-        "Лето",
-        "Осень"
-      ],
-      "spread": "120 см - 150 см",
-      "pH siol": [
-        "Кислотный",
-        "Щелочной",
-        "Нейтральный"
-      ],
-      "diseases": "Не восприимчив к болезням",
-      "drainage": [
-        "Влажный, хорошо дренированный",
-        "Хорошо дренированный"
-      ],
-      "position": [
-        "Полное солнце"
-      ],
-      "in garden": [
-        "Грядки",
-        "Бордюры"
-      ],
-      "soil type": [
-        "Мел",
-        "Глина",
-        "Суглинок",
-        "Песок"
-      ],
-      "tolerance": [
-        "Полная тень"
-      ],
-      "maintenance": "Низкий",
-      "propagation": "Размножается семенами, высеваемыми в горшки в холодном парнике весной или делением весной. Может медленно укореняться."
-    }
-  },
-  {
-    "plant_id": 15,
-    "plant_name": "Мандариновая жимолость",
-    "plant_class": "Садовое",
-    "plant_subclass": "Альпинисты",
-    "plant_type": "Жимолость",
-    "image_url_plant": "http://localhost:9000/logo/Мандариновая жимолость.png",
-    "general_info": "Мандариновая жимолость — вьющаяся листопадная лиана с крупными мутовками блестящих цветов, ярко-мандаринового цвета снаружи и желто-оранжевого цвета внутри. Обильно цветущие в начале лета, они продолжают периодически цвести до осени. Листва овальных листьев, появляющаяся на свету, имеет поразительный медно-фиолетовый цвет, созревает до глянцевой темно-зеленой. Эта энергичная, но неагрессивная жимолость быстро растет и быстро добавит очарования вашим беседкам, заборам или перголам.",
-    "properties": {
-      "add": [
-        "Эффектный",
-        "Яркий"
-      ],
-      "pests": "Может быть восприимчив к жимолостной тле , трипсам и тепличной белокрылке.",
-      "toxic": "Не токсично",
-      "water": "Средняя",
-      "height": "4,6 м - 6,1 м",
-      "season": [
-        "Осень",
-        "Лето"
-      ],
-      "spread": "1,2 м - 1,8 м",
-      "pH siol": [
-        "Кислотный",
-        "Щелочной",
-        "Нейтральный"
-      ],
-      "diseases": "Может быть восприимчив к мучнистой росе , грибковой пятнистости листьев, серебристому листу и медовому грибку (редко).",
-      "drainage": [
-        "Влажный, хорошо дренированный"
-      ],
-      "position": [
-        "Полное солнце",
-        "Частичное солнце"
-      ],
-      "in garden": [
-        "Беседки",
-        "Решетки",
-        "Стены и заборы"
-      ],
-      "soil type": [
-        "Суглинок"
-      ],
-      "tolerance": [],
-      "maintenance": "Низкий",
-      "propagation": "Размножают отводками или черенками лиственных пород осенью."
-    }
-  },
-  {
-    "plant_id": 17,
-    "plant_name": "Жимолость съедобная",
-    "plant_class": "Садовое",
-    "plant_subclass": "Альпинисты",
-    "plant_type": "Жимолость",
-    "image_url_plant": "http://localhost:9000/logo/Жимолость съедобная.png",
-    "general_info": "Представленная Университетом Саскачевана, Жимолость съедобная представляет собой компактный листопадный кустарник с привлекательными серо-зелеными листьями и небольшими воронкообразными, слегка ароматными белыми цветами ранней весной. Цветки сменяются темно-синими ягодами, которые созревают в конце весны или в начале лета. Плоды этой канадской жимолости крупные со сладким вкусом дикой черники. По вкусу и внешнему виду они похожи на чернику, их можно есть прямо с куста или собирать для использования в джемах, пирогах или соках. В идеале жимолость следует высаживать парами или группами, так как это увеличит скорость опыления и урожайность плодов. Рекомендуются сорта жимолости Polar Jewel или Polar Spring. Ручное опыление является хорошей альтернативой, поскольку ранней весной активность насекомых-опылителей низкая: слегка проведите по цветам небольшой мягкой кисточкой.",
-    "properties": {
-      "add": [
-        "Ароматный",
-        "Фруктово-ягодный",
-        "Эффектный",
-        "Яркий"
-      ],
-      "pests": "Может быть восприимчив к жимолостной тле , трипсам и тепличной белокрылке.",
-      "toxic": "Не токсично",
-      "water": "Средняя",
-      "height": "60 см - 90 см",
-      "season": [
-        "Весна",
-        "Лето",
-        "Осень"
-      ],
-      "spread": "60 см - 90 см",
-      "pH siol": [
-        "Кислотный",
-        "Щелочной",
-        "Нейтральный"
-      ],
-      "diseases": "Может быть восприимчив к мучнистой росе , грибковой пятнистости листьев, серебристому листу и медовому грибку (редко).",
-      "drainage": [
-        "Влажный, хорошо дренированный"
-      ],
-      "position": [
-        "Полное солнце",
-        "Частичное солнце"
-      ],
-      "in garden": [
-        "Живые изгороди и экраны"
-      ],
-      "soil type": [
-        "Мел",
-        "Глина",
-        "Суглинок",
-        "Песок"
-      ],
-      "tolerance": [],
-      "maintenance": "Низкий",
-      "propagation": "Размножают отводками или черенками лиственных пород осенью."
-    }
-  },
-  {
-    "plant_id": 18,
-    "plant_name": "Гладколистная жимолость",
-    "plant_class": "Садовое",
-    "plant_subclass": "Альпинисты",
-    "plant_type": "Жимолость",
-    "image_url_plant": "http://localhost:9000/logo/Гладколистная жимолость.png",
-    "general_info": "Гладколистная жимолость, также известная как красная жимолость или гибкая жимолость, — это эффектная листопадная вьющаяся лиана, характеризующаяся красными или оранжевыми трубчатыми цветами. Это относительно малоизвестный вид жимолости, но он привносит уникальный эстетический штрих в любой ландшафт, который он украшает.",
-    "properties": {
-      "add": [
-        "Ароматный",
-        "Фруктово-ягодный",
-        "Эффектный",
-        "Яркий"
-      ],
-      "pests": "Может быть восприимчив к жимолостной тле , трипсам и тепличной белокрылке.",
-      "toxic": "Не токсично",
-      "water": "Средняя",
-      "height": "90 см - 3 м",
-      "season": [
-        "Весна",
-        "Лето"
-      ],
-      "spread": "90 см - 180 см",
-      "pH siol": [
-        "Нейтральный"
-      ],
-      "diseases": "Может быть восприимчив к мучнистой росе , грибковой пятнистости листьев, серебристому листу и медовому грибку (редко).",
-      "drainage": [
-        "Влажный, хорошо дренированный",
-        "Хорошо дренированный"
-      ],
-      "position": [
-        "Полное солнце",
-        "Частичное солнце"
-      ],
-      "in garden": [
-        "Живые изгороди и экраны",
-        "Беседки",
-        "Решетки",
-        "Вдоль стен"
-      ],
-      "soil type": [
-        "Суглинок",
-        "Песок"
-      ],
-      "tolerance": [],
-      "maintenance": "Низкий",
-      "propagation": "Размножают отводками или черенками лиственных пород осенью."
-    }
-  },
-  {
-    "plant_id": 19,
-    "plant_name": "Черная жимолость",
-    "plant_class": "Садовое",
-    "plant_subclass": "Альпинисты",
-    "plant_type": "Жимолость",
-    "image_url_plant": "http://localhost:9000/logo/Черная жимолость.png",
-    "general_info": "Привлекательная и приятная для глаз, Черная жимолость — это долгоживущий листопадный кустарник с крепкими побегами, покрытыми супротивными, ярко-зелеными, эллиптическими листьями длиной 12 см. С ранней весны до конца лета, в зависимости от местоположения, появляются маленькие, изящные желтые цветы длиной 2,5 см, свисающие парами, окруженные двумя листовыми прицветниками. Прицветники меняют цвет с зеленого на блестящий темно-красный в конце лета по мере созревания плодов. Цветы уступают место парам маленьких, пухлых фиолетовых или черных ягод, которые неприятно горькие на вкус. Отлично подходят для диких животных, цветы являются источником нектара для колибри и бабочек. Ягоды едят медведи, мелкие млекопитающие, пернатая дичь, включая перепелов и тетеревов, и певчие птицы. Родом из северной и западной части Северной Америки, Черная жимолость растет на влажных лесных опушках, болотах, берегах рек и луговых опушках, на высоте от уровня моря вдоль Тихоокеанского побережья до субальпийских участков в горах. Черная жимолость — ценный кустарник для контроля эрозии ручьев и восстановления прибрежных зон, болот, топей, влажных лесов, кустарниковых болот и песчаных прибрежных зон в пределах своего родного ареала. Как и многие виды жимолости, Черная жимолость также является привлекательным декоративным растением для сада. Его цветы наиболее желанны летом, когда многие другие растения уже отцвели.",
-    "properties": {
-      "add": [
-        "Ароматный",
-        "Фруктово-ягодный",
-        "Эффектный",
-        "Яркий"
-      ],
-      "pests": "Может быть восприимчив к жимолостной тле , трипсам и тепличной белокрылке.",
-      "toxic": "Не токсично",
-      "water": "Средняя",
-      "height": "180 см - 4,6 м",
-      "season": [
-        "Весна",
-        "Лето",
-        "Осень"
-      ],
-      "spread": "180 см - 3 м",
-      "pH siol": [
-        "Кислотный",
-        "Щелочной",
-        "Нейтральный"
-      ],
-      "diseases": "Может быть восприимчив к мучнистой росе , грибковой пятнистости листьев, серебристому листу и медовому грибку (редко).",
-      "drainage": [
-        "Влажный, хорошо дренированный",
-        "Хорошо дренированный"
-      ],
-      "position": [
-        "Полное солнце",
-        "Частичное солнце"
-      ],
-      "in garden": [
-        "Живые изгороди и экраны",
-        "Беседки",
-        "Решетки",
-        "Вдоль стен"
-      ],
-      "soil type": [
-        "Мел",
-        "Глина",
-        "Суглинок",
-        "Песок"
-      ],
-      "tolerance": [],
-      "maintenance": "Низкий",
-      "propagation": "Размножают отводками или черенками лиственных пород осенью."
-    }
-  },
-  {
-    "plant_id": 20,
-    "plant_name": "Клематис \"Абилин\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Альпинисты",
-    "plant_type": "Клематис",
-    "image_url_plant": "http://localhost:9000/logo/Клематис \"Абилин\".png",
-    "general_info": "Захватывающий, клематис \"Абилин\" - компактный, листопадный плетистый сорт, покрытый обилием звездообразных, ярко-розовых цветов, до 12 см, с более глубокой розовой центральной полосой. Элегантно взъерошенные чашелистики окружают контрастный пучок вычурных масляно-желтых тычинок. Цветущий с конца весны до начала лета и с конца лета до осени, этот крупноцветковый клематис идеально подходит для небольших садов, контейнеров и выглядит потрясающе в сочетании с небольшими кустарниками.",
-    "properties": {
-      "add": [
-        "Эффектный",
-        "Яркий"
-      ],
-      "pests": "Может быть подвержен воздействию тли , улиток и гусениц; лепестки могут быть съедены уховертками.",
-      "toxic": "Потенциально вредно. Раздражает кожу.",
-      "water": "Средняя",
-      "height": "90 см - 1,2 м",
-      "season": [
-        "Весна",
-        "Лето",
-        "Осень"
-      ],
-      "spread": "30 см - 60 см",
-      "pH siol": [
-        "Щелочной",
-        "Нейтральный"
-      ],
-      "diseases": "Может быть восприимчив к медовому грибку (редко), увяданию клематиса и слизистому поносу клематиса.",
-      "drainage": [
-        "Влажный, хорошо дренированный",
-        "Хорошо дренированный"
-      ],
-      "position": [
-        "Полное солнце",
-        "Частичное солнце"
-      ],
-      "in garden": [
-        "Живые изгороди и экраны",
-        "Беседки",
-        "Решетки",
-        "Вдоль стен"
-      ],
-      "soil type": [
-        "Мел",
-        "Глина",
-        "Суглинок",
-        "Песок"
-      ],
-      "tolerance": [],
-      "maintenance": "Низкий",
-      "propagation": "Размножают отводками или черенками лиственных пород осенью."
-    }
-  },
-  {
-    "plant_id": 23,
-    "plant_name": "Клематис \"Яблоневый Цвет\"",
-    "plant_class": "Садовое",
-    "plant_subclass": "Альпинисты",
-    "plant_type": "Клематис",
-    "image_url_plant": "http://localhost:9000/logo/Клематис Яблоневый Цвет.png",
-    "general_info": "Один из самых популярных вечнозеленых клематисов, отмеченный наградами  Клематис \"Яблоневый Цвет\" — очень крупный вьющийся сорт с массой восхитительных, пахнущих миндалем цветов, диаметром 5 см и великолепной листвой. Распускаясь из почти красных бутонов, отдельные цветы постепенно меняют цвет с бледно-розового на белый по мере созревания. Если погода остается прохладной, цветение продолжается в течение 2–4 недель. Не менее привлекательная листва кожистых, восковых, вечнозеленых листьев приобретает бронзовый оттенок, прежде чем стать средне-зеленой. Тяжелые листья, шелестя на ветру, красиво перекрывают друг друга и образуют прекрасный экран круглый год. Клематис 'Яблоневый цвет' обильно цветет с начала до середины весны. Этот энергичный и быстрорастущий, этот раноцветущий клематис идеально подходит для покрытия стены, решетки, забора или перголы. Посадите его там, где вы сможете наслаждаться его ароматом: возле дверного проема, вдоль дорожки, возле вашего патио или террасы. Потрясающее растение, дарящее месяцы удовольствия.",
-    "properties": {
-      "add": [
-        "Эффектный",
-        "Яркий"
-      ],
-      "pests": "Может быть подвержен воздействию тли , улиток и гусениц; лепестки могут быть съедены уховертками.",
-      "toxic": "Потенциально вредно. Раздражает кожу.",
-      "water": "Средняя",
-      "height": "6,1 м - 12,2 м",
-      "season": [
-        "Весна"
-      ],
-      "spread": "3 м",
-      "pH siol": [
-        "Щелочной",
-        "Нейтральный"
-      ],
-      "diseases": "Может быть восприимчив к медовому грибку (редко), увяданию клематиса и слизистому поносу клематиса.",
-      "drainage": [
-        "Влажный, хорошо дренированный"
-      ],
-      "position": [
-        "Полное солнце"
-      ],
-      "in garden": [
-        "Живые изгороди и экраны",
-        "Беседки",
-        "Решетки",
-        "Вдоль стен"
-      ],
-      "soil type": [
-        "Мел",
-        "Глина",
-        "Суглинок",
-        "Песок"
-      ],
-      "tolerance": [],
-      "maintenance": "Низкий",
-      "propagation": "Размножают отводками или черенками лиственных пород осенью."
-    }
-  },
-  {
-    "plant_id": 25,
-    "plant_name": "Китайская виргинская лиана",
-    "plant_class": "Садовое",
-    "plant_subclass": "Альпинисты",
-    "plant_type": "Плющ",
-    "image_url_plant": "http://localhost:9000/logo/Китайская виргинская лиана.png",
-    "general_info": "Отмеченный наградами Китайская виргинская лиана — это энергичное, быстрорастущее листопадное вьющееся растение с темными бархатистыми сине-зелеными листьями с 3-5 листочками, украшенными красивыми серебристыми прожилками и глубокими бордовыми нижними сторонами. Осенью листва приобретает яркие оттенки красного до красновато-фиолетового. Обычно скрытые листвой зеленовато-белые цветы появляются в верхних пазухах листьев в конце весны — начале лета. Они уступают место круглым, мясистым, сине-черным ягодам, которые видны только после того, как листья опадут, и только если их не склевали птицы. Китайский виргинский плющ более эстетичен, чем девичий виноград пятилистный и девичий виноград трехострый, и не такой пышный, поэтому лучше подходит для выращивания в небольших садах.",
-    "properties": {
-      "add": [
-        "Фруктово-ягодный",
-        "Эффектный"
-      ],
-      "pests": "Может быть подвержен заражению красным паутинным клещом и виноградным долгоносиком.",
-      "toxic": "Вредно при употреблении в пищу, раздражает кожу.",
-      "water": "Средняя",
-      "height": "6,1м - 9,1 м",
-      "season": [
-        "Весна",
-        "Лето",
-        "Осень"
-      ],
-      "spread": "3 м - 10 м",
-      "pH siol": [
-        "Кислотный",
-        "Щелочной",
-        "Нейтральный"
-      ],
-      "diseases": "Может быть восприимчив к медовому грибку.",
-      "drainage": [
-        "Влажный, хорошо дренированный",
-        "Хорошо дренированный"
-      ],
-      "position": [
-        "Полное солнце",
-        "Частичное солнце",
-        "Тень"
-      ],
-      "in garden": [
-        "Беседки",
-        "Решетки",
-        "Вдоль стен",
-        "Заборы",
-        "Склоны"
-      ],
-      "soil type": [
-        "Мел",
-        "Глина",
-        "Суглинок",
-        "Песок"
-      ],
-      "tolerance": [
-        "Полная тень",
-        "Глинистая почва"
-      ],
-      "maintenance": "Средний",
-      "propagation": "Размножают отводками или черенками лиственных пород."
-    }
-  },
-  {
-    "plant_id": 24,
-    "plant_name": "Бостонский плющ",
-    "plant_class": "Садовое",
-    "plant_subclass": "Альпинисты",
-    "plant_type": "Плющ",
-    "image_url_plant": "http://localhost:9000/logo/Бостонский плющ.png",
-    "general_info": "Известный своими более мелкими листьями, чем у вида, Бостонский плющ — очень энергичное, быстрорастущее листопадное вьющееся растение, которое может похвастаться в основном яйцевидными или трехлопастными, богатыми блестящими темно-зелеными листьями шириной 6 дюймов (15 см), которые осенью приобретают яркие оттенки малинового, алого и бордового. Обычно скрытые листвой, зеленовато-белые цветы появляются в верхних пазухах листьев в конце весны — начале лета. Они уступают место круглым, мясистым, сине-черным ягодам, которые видны только после того, как листья опадут, и если их не склевали птицы. Полувечнозеленое растение в районах с мягкой зимой. Бостонский плющ можно использовать как вьющуюся лиану или почвопокровное растение, его листья покрывают любую поверхность пышной зеленью, прежде чем осенью покрыться впечатляющими цветами. Однако высаживайте это растение осторожно. Его усики заканчиваются клейкими кончиками, что позволяет этой лиане прикрепляться к стенам и затрудняет ее удаление. Хотя усики не проникают в сами стены и не повреждают их, их практически невозможно оторвать от стен, не забрав с собой часть стен.",
-    "properties": {
-      "add": [
-        "Фруктово-ягодный",
-        "Эффектный",
-        "Полувечнозеленое"
-      ],
-      "pests": "Может быть подвержен заражению красным паутинным клещом и виноградным долгоносиком.",
-      "toxic": "Вредно при употреблении в пищу, раздражает кожу.",
-      "water": "Средняя",
-      "height": "9,1 м - 15,3 м",
-      "season": [
-        "Весна",
-        "Лето",
-        "Осень"
-      ],
-      "spread": "1,5 м - 3 м",
-      "pH siol": [
-        "Кислотный",
-        "Щелочной",
-        "Нейтральный"
-      ],
-      "diseases": "Может быть восприимчив к медовому грибку.",
-      "drainage": [
-        "Влажный, хорошо дренированный",
-        "Хорошо дренированный"
-      ],
-      "position": [
-        "Полное солнце",
-        "Частичное солнце",
-        "Тень"
-      ],
-      "in garden": [
-        "Беседки",
-        "Решетки",
-        "Вдоль стен",
-        "Заборы",
-        "Склоны"
-      ],
-      "soil type": [
-        "Мел",
-        "Глина",
-        "Суглинок",
-        "Песок"
-      ],
-      "tolerance": [
-        "Полная тень",
-        "Глинистая почва",
-        "Каменистая почва",
-        "Засуха"
-      ],
-      "maintenance": "Средний",
-      "propagation": "Размножают отводками или черенками лиственных пород."
-    }
-  },
-  {
-    "plant_id": 26,
-    "plant_name": "Кактус-ёж кружевной",
-    "plant_class": "Садовое",
-    "plant_subclass": "Кактусы, суккуленты",
-    "plant_type": "Кактус",
-    "image_url_plant": "http://localhost:9000/logo/Кактус-ёж.png",
-    "general_info": "Кружевной кактус — небольшой цилиндрический кактус с характерными ребрами и плотным покрытием из шипов, прижатых к стеблю. Несмотря на относительно небольшой размер, он хорошо известен своими крупными, ярко окрашенными цветами, обычно розовыми, фиолетовыми или пурпурными, которые могут покрывать значительную часть растения, создавая впечатляющее цветочное зрелище. Этот кактус также известен своей привычкой расти группами, часто образуя небольшие группы из 12 отдельных стеблей, растущих близко друг к другу.\n",
-    "properties": {
-      "add": [
-        "Ароматный",
-        "Эффектный",
-        "Вечнозеленый"
-      ],
-      "pests": "Может быть подвержен мучнистым червецам и тлям.",
-      "toxic": "Нетоксичен для людей и животных, однако его колючки могут вызывать физическое раздражение, лучше всего обращаться с растением в перчатках. ",
-      "water": "Низкая",
-      "height": "8 см - 30 см",
-      "season": [
-        "Зима",
-        "Весна",
-        "Лето",
-        "Осень"
-      ],
-      "spread": "5 см - 10 см",
-      "pH siol": [
-        "Кислотный",
-        "Щелочной",
-        "Нейтральный"
-      ],
-      "diseases": "Может быть подвержен корневой гнили.",
-      "drainage": [
-        "Хорошо дренированный"
-      ],
-      "position": [
-        "Полное солнце"
-      ],
-      "in garden": [
-        "Грядки",
-        "Бордюры",
-        "Контейнеры"
-      ],
-      "soil type": [
-        "Суглинок",
-        "Песок"
-      ],
-      "tolerance": [
-        "Засуха",
-        "Сухая почва",
-        "Каменистая почва"
-      ],
-      "cultivation": "Выращивайте в свободно дренируемом кактусовом компосте в теплом и солнечном месте на подоконнике или в теплице или оранжерее. Регулярно поливайте летом, реже в холодные месяцы и подкармливайте удобрением для кактусов летом. Пересаживайте примерно раз в два года. Не переносит заболачивания и повреждения корней, так как корни мелкие и слабые.",
-      "maintenance": "Низкий",
-      "propagation": "Размножается отводками или семенами. Не трогайте корни."
-    }
-  }
+	{
+		"plant_id": 40,
+		"plant_name": "Фонтанная трава \"Рыжая Голова\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Декоративные травы",
+		"plant_type": "Фонтанная трава",
+		"image_url_plant": "http://localhost:9000/logo/Фонтанная трава \"Рыжая Голова\".png",
+		"general_info": "Фонтанная трава \"Рыжая Голова\" — очаровательная многолетняя трава, образующая плотный пучок изящно изогнутых линейных листьев. Летом они темно-зеленые, осенью становятся золотистыми, а зимой выцветают до желтовато-коричневого цвета. В середине и конце лета над листьями появляются эффектные дымчатые, темно-красные, напоминающие крупные лисохвосты цветы. Они выгибаются наружу из пучка листьев и особенно эффектны при подсветке сзади. Они отлично подходят для срезки свежих и сухих композиций. Требуя очень небольшого ухода и обеспечивая почти постоянную драму в саду, эта компактная трава для теплого сезона отлично подходит для почвопокровных масс, но также может использоваться в качестве акцентного растения в садах и в контейнерах.",
+		"properties": {
+			"add": ["Эффектный", "Композиции из сухих цветов"],
+			"pests": "Не восприимчив к вредителем.",
+			"toxic": "Не токсично",
+			"water": "Средняя",
+			"height": "90 см - 120 см",
+			"season": ["Весна", "Лето", "Осень"],
+			"spread": "60 см - 90 см",
+			"ph_soil": ["Кислотный", "Щелочной", "Нейтральный"],
+			"diseases": "Не восприимчив к болезням",
+			"drainage": ["Влажный, хорошо дренированный"],
+			"position": ["Полное солнце", "Частичное солнце"],
+			"in_garden": ["Грядки", "Бордюры", "Пруды"],
+			"soil_type": ["Мел", "Суглинок", "Песок"],
+			"tolerance": ["Засуха", "Влажная почва"],
+			"maintenance": "Низкий",
+			"propagation": "Размножают делением в середине весны."
+		}
+	},
+	{
+		"plant_id": 42,
+		"plant_name": "Папоротник Адиатум",
+		"plant_class": "Садовое",
+		"plant_subclass": "Папоротники",
+		"plant_type": "Папоротник",
+		"image_url_plant": "http://localhost:9000/logo/Папоротник Адиатум.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 43,
+		"plant_name": "Папоротник Адиатум западный",
+		"plant_class": "Садовое",
+		"plant_subclass": "Папоротники",
+		"plant_type": "Папоротник",
+		"image_url_plant": "http://localhost:9000/logo/Папоротник Адиатум западный.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 44,
+		"plant_name": "Папоротник Бостонский",
+		"plant_class": "Садовое",
+		"plant_subclass": "Папоротники",
+		"plant_type": "Папоротник",
+		"image_url_plant": "http://localhost:9000/logo/Папоротник Бостонский.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 45,
+		"plant_name": "Бамбук голубой",
+		"plant_class": "Садовое",
+		"plant_subclass": "Бамбук",
+		"plant_type": "Бамбук",
+		"image_url_plant": "http://localhost:9000/logo/Бамбук голубой.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 46,
+		"plant_name": "Бамбук желтый",
+		"plant_class": "Садовое",
+		"plant_subclass": "Бамбук",
+		"plant_type": "Бамбук",
+		"image_url_plant": "http://localhost:9000/logo/Бамбук желтый.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 47,
+		"plant_name": "Бамбук \"Живот Будды\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Бамбук",
+		"plant_type": "Бамбук",
+		"image_url_plant": "http://localhost:9000/logo/Бамбук \"Живот Будды\".png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 48,
+		"plant_name": "Бамбук зелено-серый",
+		"plant_class": "Садовое",
+		"plant_subclass": "Бамбук",
+		"plant_type": "Бамбук",
+		"image_url_plant": "http://localhost:9000/logo/Бамбук зелено-серый.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 49,
+		"plant_name": "Бамбук золотистый гавайский",
+		"plant_class": "Садовое",
+		"plant_subclass": "Бамбук",
+		"plant_type": "Бамбук",
+		"image_url_plant": "http://localhost:9000/logo/Бамбук золотистый гавайский.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 50,
+		"plant_name": "Вербена Королевский Красный",
+		"plant_class": "Садовое",
+		"plant_subclass": "Однолетние растения",
+		"plant_type": "Вербена",
+		"image_url_plant": "http://localhost:9000/logo/Вербена Королевский Красный.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 51,
+		"plant_name": "Вербена персиковая",
+		"plant_class": "Садовое",
+		"plant_subclass": "Однолетние растения",
+		"plant_type": "Вербена",
+		"image_url_plant": "http://localhost:9000/logo/Вербена персиковая.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 52,
+		"plant_name": "Вербена прерийная",
+		"plant_class": "Садовое",
+		"plant_subclass": "Однолетние растения",
+		"plant_type": "Вербена",
+		"image_url_plant": "http://localhost:9000/logo/Вербена прерийная.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 53,
+		"plant_name": "Вербена сиреневая",
+		"plant_class": "Садовое",
+		"plant_subclass": "Однолетние растения",
+		"plant_type": "Вербена",
+		"image_url_plant": "http://localhost:9000/logo/Вербена сиреневая.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 54,
+		"plant_name": "Вербена Супербена Бургунди",
+		"plant_class": "Садовое",
+		"plant_subclass": "Однолетние растения",
+		"plant_type": "Вербена",
+		"image_url_plant": "http://localhost:9000/logo/Вербена Супербена Бургунди.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 55,
+		"plant_name": "Вербена Темный Голубой",
+		"plant_class": "Садовое",
+		"plant_subclass": "Однолетние растения",
+		"plant_type": "Вербена",
+		"image_url_plant": "http://localhost:9000/logo/Вербена Темный Голубой.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 56,
+		"plant_name": "Циния \"Королева лосося\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Однолетние растения",
+		"plant_type": "Циния",
+		"image_url_plant": "http://localhost:9000/logo/Циния \"Королева лосося\".png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 32,
+		"plant_name": "Гималайская трава",
+		"plant_class": "Садовое",
+		"plant_subclass": "Декоративные травы",
+		"plant_type": "Серебряные травы",
+		"image_url_plant": "http://localhost:9000/logo/Гималайская трава.png",
+		"general_info": "Родом из Гималаев, Гималайская трава — очень красивая декоративная трава, выращиваемая ради ее нежных шелковистых, кремовых цветочных перьев, которые появляются в конце лета. Изящно изгибаясь над пышной листвой зеленых листьев, они сохраняются до осени и сохраняют архитектурность в течение всей зимы. Очень необычная трава, которая привносит элегантность и долгий сезон интереса в сад. Потрясающий центр внимания в саду!",
+		"properties": {
+			"add": ["Эффектный"],
+			"pests": "Не восприимчив к вредителем.",
+			"toxic": "Не токсично",
+			"water": "Средняя",
+			"height": "120 см - 150 см",
+			"season": ["Зима", "Лето", "Осень"],
+			"spread": "90 см - 120 см",
+			"ph_soil": ["Кислотный", "Щелочной", "Нейтральный"],
+			"diseases": "Не восприимчив к болезням",
+			"drainage": ["Влажный, хорошо дренированный", "Хорошо дренированный"],
+			"position": ["Полное солнце"],
+			"in_garden": ["Грядки", "Бордюры"],
+			"soil_type": ["Мел", "Глина", "Суглинок", "Песок"],
+			"tolerance": ["Полная тень"],
+			"maintenance": "Низкий",
+			"propagation": "Размножается семенами, высеваемыми в горшки в холодном парнике весной или делением весной. Может медленно укореняться."
+		}
+	},
+	{
+		"plant_id": 16,
+		"plant_name": "Американская жимолость",
+		"plant_class": "Садовое",
+		"plant_subclass": "Альпинисты",
+		"plant_type": "Жимолость",
+		"image_url_plant": "http://localhost:9000/logo/Американская жимолость.png",
+		"general_info": "Американская жимолость с насыщенным сильным ароматом гвоздики — это великолепное листопадное вьющееся растение с мутовками трубчатых цветков длиной 5 см, которые раскрываются белыми, а затем становятся кремово-желтыми с красным, розовым или фиолетовым оттенком. Цветы, которые появляются последовательно с конца весны до первых заморозков, в конечном итоге уступают место красным ягодам. Эта энергичная жимолость имеет листву из полувечнозеленых, темно-зеленых и овальных листьев. Идеально подходит для перголы или арки или в качестве фона на стене или заборе.",
+		"properties": {
+			"add": ["Ароматный", "Фруктово-ягодный", "Эффектный", "Яркий"],
+			"pests": "Может быть восприимчив к жимолостной тле , трипсам и тепличной белокрылке.",
+			"toxic": "Не токсично",
+			"water": "Средняя",
+			"height": "6,1 м - 7,6 м",
+			"season": ["Весна", "Лето", "Осень"],
+			"spread": "0,9 м - 1,2 м",
+			"ph_soil": ["Кислотный", "Щелочной", "Нейтральный"],
+			"diseases": "Может быть восприимчив к мучнистой росе , грибковой пятнистости листьев, серебристому листу и медовому грибку (редко).",
+			"drainage": ["Влажный, хорошо дренированный"],
+			"position": ["Полное солнце", "Частичное солнце"],
+			"in_garden": ["Беседки", "Решетки", "Стены и заборы"],
+			"soil_type": ["Мел", "Глина", "Суглинок", "Песок"],
+			"tolerance": [],
+			"maintenance": "Низкий",
+			"propagation": "Размножают отводками или черенками лиственных пород осенью."
+		}
+	},
+	{
+		"plant_id": 21,
+		"plant_name": "Клематис \"Анна Луиза\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Альпинисты",
+		"plant_type": "Клематис",
+		"image_url_plant": "http://localhost:9000/logo/Клематис \"Анна Луиза\".png",
+		"general_info": "Обильноцветущий, клематис 'Анна Луиза' производит массу пухлых розовых цветов, до 15 см в поперечнике, с заостренными или округлыми лепестками. Раскрываясь, насыщенно-розовые, шесть широких чашелистиков постепенно выцветают до розового цвета жевательной резинки, но остаются украшенными более темными средними жилками. Цветение происходит двумя волнами: сначала поздней весной или ранним летом, затем поздним летом и ранней осенью. Теневыносливый, компактный габитус этого крупноцветкового клематиса делает его идеальным для небольших садов или контейнеров. Сочетайте его с розами флорибунда для великолепных комбинаций.",
+		"properties": {
+			"add": ["Эффектный", "Яркий"],
+			"pests": "Может быть подвержен воздействию тли , улиток и гусениц; лепестки могут быть съедены уховертками.",
+			"toxic": "Потенциально вредно. Раздражает кожу.",
+			"water": "Средняя",
+			"height": "90 см - 150 см",
+			"season": ["Весна", "Лето", "Осень"],
+			"spread": "60 см",
+			"ph_soil": ["Щелочной", "Нейтральный"],
+			"diseases": "Может быть восприимчив к медовому грибку (редко), увяданию клематиса и слизистому поносу клематиса.",
+			"drainage": ["Влажный, хорошо дренированный"],
+			"position": ["Полное солнце", "Частичное солнце"],
+			"in_garden": [
+				"Живые изгороди и экраны",
+				"Беседки",
+				"Решетки",
+				"Вдоль стен"
+			],
+			"soil_type": ["Мел", "Глина", "Суглинок", "Песок"],
+			"tolerance": [],
+			"maintenance": "Низкий",
+			"propagation": "Размножают отводками или черенками лиственных пород осенью."
+		}
+	},
+	{
+		"plant_id": 27,
+		"plant_name": "Кактус Опунция",
+		"plant_class": "Садовое",
+		"plant_subclass": "Кактусы, суккуленты",
+		"plant_type": "Кактус",
+		"image_url_plant": "http://localhost:9000/logo/Кактус Опунция.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 28,
+		"plant_name": "Кактус Сагуаро",
+		"plant_class": "Садовое",
+		"plant_subclass": "Кактусы, суккуленты",
+		"plant_type": "Кактус",
+		"image_url_plant": "http://localhost:9000/logo/Кактус Сагуаро.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 29,
+		"plant_name": "Кактус Маммилярия",
+		"plant_class": "Садовое",
+		"plant_subclass": "Кактусы, суккуленты",
+		"plant_type": "Кактус",
+		"image_url_plant": "http://localhost:9000/logo/Кактус Маммилярия.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 57,
+		"plant_name": "Циния Розовый Цветок Бенари",
+		"plant_class": "Садовое",
+		"plant_subclass": "Однолетние растения",
+		"plant_type": "Циния",
+		"image_url_plant": "http://localhost:9000/logo/Циния Розовый Цветок Бенари.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 58,
+		"plant_name": "Циния Скарлет",
+		"plant_class": "Садовое",
+		"plant_subclass": "Однолетние растения",
+		"plant_type": "Циния",
+		"image_url_plant": "http://localhost:9000/logo/Циния Скарлет.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 59,
+		"plant_name": "Циния Эльдорадо",
+		"plant_class": "Садовое",
+		"plant_subclass": "Однолетние растения",
+		"plant_type": "Циния",
+		"image_url_plant": "http://localhost:9000/logo/Циния Эльдорадо.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 60,
+		"plant_name": "Герань душистая",
+		"plant_class": "Садовое",
+		"plant_subclass": "Однолетние растения",
+		"plant_type": "Герань",
+		"image_url_plant": "http://localhost:9000/logo/Герань душистая.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 61,
+		"plant_name": "Герань Кимоно",
+		"plant_class": "Садовое",
+		"plant_subclass": "Однолетние растения",
+		"plant_type": "Герань",
+		"image_url_plant": "http://localhost:9000/logo/Герань Кимоно.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 62,
+		"plant_name": "Герань королевская",
+		"plant_class": "Садовое",
+		"plant_subclass": "Однолетние растения",
+		"plant_type": "Герань",
+		"image_url_plant": "http://localhost:9000/logo/Герань королевская.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 63,
+		"plant_name": "Герань Красная Американа",
+		"plant_class": "Садовое",
+		"plant_subclass": "Однолетние растения",
+		"plant_type": "Герань",
+		"image_url_plant": "http://localhost:9000/logo/Герань Красная Американа.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 64,
+		"plant_name": "Бархатцы \"Большая Золотая Утка\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Однолетние растения",
+		"plant_type": "Бархатцы",
+		"image_url_plant": "http://localhost:9000/logo/Бархатцы \"Большая Золотая Утка\".png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 65,
+		"plant_name": "Бархатцы \"Большая Оранжевая Утка\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Однолетние растения",
+		"plant_type": "Бархатцы",
+		"image_url_plant": "http://localhost:9000/logo/Бархатцы \"Большая Оранжевая Утка\".png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 66,
+		"plant_name": "Бархатцы \"Легион Чести\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Однолетние растения",
+		"plant_type": "Бархатцы",
+		"image_url_plant": "http://localhost:9000/logo/Бархатцы \"Легион Чести\".png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 67,
+		"plant_name": "Бархатцы французские",
+		"plant_class": "Садовое",
+		"plant_subclass": "Однолетние растения",
+		"plant_type": "Бархатцы",
+		"image_url_plant": "http://localhost:9000/logo/Бархатцы французские.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 68,
+		"plant_name": "Космея абрикосовая",
+		"plant_class": "Садовое",
+		"plant_subclass": "Однолетние растения",
+		"plant_type": "Космея",
+		"image_url_plant": "http://localhost:9000/logo/Космея абрикосовая.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 69,
+		"plant_name": "Космея Глория",
+		"plant_class": "Садовое",
+		"plant_subclass": "Однолетние растения",
+		"plant_type": "Космея",
+		"image_url_plant": "http://localhost:9000/logo/Космея Глория.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 70,
+		"plant_name": "Космея \"Конфетная Полоска\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Однолетние растения",
+		"plant_type": "Космея",
+		"image_url_plant": "http://localhost:9000/logo/Космея \"Конфетная Полоска\".png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 71,
+		"plant_name": "Космея \"Соната Кармин\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Однолетние растения",
+		"plant_type": "Космея",
+		"image_url_plant": "http://localhost:9000/logo/Космея \"Соната Кармин\".png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 72,
+		"plant_name": "Космея шоколадная",
+		"plant_class": "Садовое",
+		"plant_subclass": "Однолетние растения",
+		"plant_type": "Космея",
+		"image_url_plant": "http://localhost:9000/logo/Космея шоколадная.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 73,
+		"plant_name": "Гиацинт \"Белая Жемчужина\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Лампочки",
+		"plant_type": "Гиацинт",
+		"image_url_plant": "http://localhost:9000/logo/Гиацинт \"Белая Жемчужина\".png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 74,
+		"plant_name": "Гиацинт голландский",
+		"plant_class": "Садовое",
+		"plant_subclass": "Лампочки",
+		"plant_type": "Гиацинт",
+		"image_url_plant": "http://localhost:9000/logo/Гиацинт голландский.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 75,
+		"plant_name": "Гиацинт \"Голубая Звезда\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Лампочки",
+		"plant_type": "Гиацинт",
+		"image_url_plant": "http://localhost:9000/logo/Гиацинт \"Голубая Звезда\".png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 76,
+		"plant_name": "Гиацинт махровый",
+		"plant_class": "Садовое",
+		"plant_subclass": "Лампочки",
+		"plant_type": "Гиацинт",
+		"image_url_plant": "http://localhost:9000/logo/Гиацинт махровый.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 77,
+		"plant_name": "Гиацинт \"Фондант\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Лампочки",
+		"plant_type": "Гиацинт",
+		"image_url_plant": "http://localhost:9000/logo/Гиацинт \"Фондант\".png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 78,
+		"plant_name": "Лилия Белая тигровая",
+		"plant_class": "Садовое",
+		"plant_subclass": "Лампочки",
+		"plant_type": "Лилия",
+		"image_url_plant": "http://localhost:9000/logo/Лилия Белая тигровая.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 79,
+		"plant_name": "Лилия карликовая",
+		"plant_class": "Садовое",
+		"plant_subclass": "Лампочки",
+		"plant_type": "Лилия",
+		"image_url_plant": "http://localhost:9000/logo/Лилия карликовая.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 80,
+		"plant_name": "Лилия \"Флавия\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Лампочки",
+		"plant_type": "Лилия",
+		"image_url_plant": "http://localhost:9000/logo/Лилия \"Флавия\".png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 81,
+		"plant_name": "Нарцисс \"Акцент\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Лампочки",
+		"plant_type": "Нарцисс",
+		"image_url_plant": "http://localhost:9000/logo/Нарцисс \"Акцент\".png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 82,
+		"plant_name": "Нарцисс \"Бритиш Гэмбл\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Лампочки",
+		"plant_type": "Нарцисс",
+		"image_url_plant": "http://localhost:9000/logo/Нарцисс \"Бритиш Гэмбл\".png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 83,
+		"plant_name": "Нарцисс \"Король Альфред\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Лампочки",
+		"plant_type": "Нарцисс",
+		"image_url_plant": "http://localhost:9000/logo/Нарцисс \"Король Альфред\".png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 84,
+		"plant_name": "Нарцисс крупнокорончатый",
+		"plant_class": "Садовое",
+		"plant_subclass": "Лампочки",
+		"plant_type": "Нарцисс",
+		"image_url_plant": "http://localhost:9000/logo/Нарцисс крупнокорончатый.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 85,
+		"plant_name": "Подснежник \"Аткинсии\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Лампочки",
+		"plant_type": "Подснежник",
+		"image_url_plant": "http://localhost:9000/logo/Подснежник \"Аткинсии\".png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 86,
+		"plant_name": "Подснежник складчатый",
+		"plant_class": "Садовое",
+		"plant_subclass": "Лампочки",
+		"plant_type": "Подснежник",
+		"image_url_plant": "http://localhost:9000/logo/Подснежник складчатый.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 87,
+		"plant_name": "Тюльпан \"Абигейл\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Лампочки",
+		"plant_type": "Тюльпан",
+		"image_url_plant": "http://localhost:9000/logo/Тюльпан \"Абигейл\".png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 88,
+		"plant_name": "Тюльпан \"Попугай\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Лампочки",
+		"plant_type": "Тюльпан",
+		"image_url_plant": "http://localhost:9000/logo/Тюльпан \"Попугай\".png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 89,
+		"plant_name": "Тюльпан попугайный",
+		"plant_class": "Садовое",
+		"plant_subclass": "Лампочки",
+		"plant_type": "Тюльпан",
+		"image_url_plant": "http://localhost:9000/logo/Тюльпан попугайный.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 90,
+		"plant_name": "Тюльпан \"Салмон Паррот\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Лампочки",
+		"plant_type": "Тюльпан",
+		"image_url_plant": "http://localhost:9000/logo/Тюльпан \"Салмон Паррот\".png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 91,
+		"plant_name": "Тюльпан \"Триумф\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Лампочки",
+		"plant_type": "Тюльпан",
+		"image_url_plant": "http://localhost:9000/logo/Тюльпан \"Триумф\".png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 92,
+		"plant_name": "Алоэ африканское",
+		"plant_class": "Садовое",
+		"plant_subclass": "Кактусы, суккуленты",
+		"plant_type": "Алоэ",
+		"image_url_plant": "http://localhost:9000/logo/Алоэ африканское.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 93,
+		"plant_name": "Алоэ \"Байнеса\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Кактусы, суккуленты",
+		"plant_type": "Алоэ",
+		"image_url_plant": "http://localhost:9000/logo/Алоэ \"Байнеса\".png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 94,
+		"plant_name": "Алоэ \"Петрикола\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Кактусы, суккуленты",
+		"plant_type": "Алоэ",
+		"image_url_plant": "http://localhost:9000/logo/Алоэ \"Петрикола\".png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 95,
+		"plant_name": "Алоэ траский",
+		"plant_class": "Садовое",
+		"plant_subclass": "Кактусы, суккуленты",
+		"plant_type": "Алоэ",
+		"image_url_plant": "http://localhost:9000/logo/Алоэ траский.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 96,
+		"plant_name": "Сансевиерия \"Лунный Свет\"",
+		"plant_class": "Домашнее",
+		"plant_subclass": "Суккулент комнатный",
+		"plant_type": "Суккулент Змеиное растение (Сансевиерия)",
+		"image_url_plant": "http://localhost:9000/logo/Сансевиерия \"Лунный Свет\".png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 97,
+		"plant_name": "Сансевиерия \"Пестрая Змея\"",
+		"plant_class": "Домашнее",
+		"plant_subclass": "Суккулент комнатный",
+		"plant_type": "Суккулент Змеиное растение (Сансевиерия)",
+		"image_url_plant": "http://localhost:9000/logo/Сансевиерия \"Пестрая Змея\".png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 98,
+		"plant_name": "Сансевиерия \"Птичье Гнездо\"",
+		"plant_class": "Домашнее",
+		"plant_subclass": "Суккулент комнатный",
+		"plant_type": "Суккулент Змеиное растение (Сансевиерия)",
+		"image_url_plant": "http://localhost:9000/logo/Сансевиерия \"Птичье Гнездо\".png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 99,
+		"plant_name": "Каланхоэ мраморное",
+		"plant_class": "Домашнее",
+		"plant_subclass": "Суккулент комнатный",
+		"plant_type": "Суккулент Каланхоэ",
+		"image_url_plant": "http://localhost:9000/logo/Каланхоэ мраморное.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 100,
+		"plant_name": "Каланхоэ \"Панда\"",
+		"plant_class": "Домашнее",
+		"plant_subclass": "Суккулент комнатный",
+		"plant_type": "Суккулент Каланхоэ",
+		"image_url_plant": "http://localhost:9000/logo/Каланхоэ \"Панда\".png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 101,
+		"plant_name": "Каланхоэ \"Федченко\"",
+		"plant_class": "Домашнее",
+		"plant_subclass": "Суккулент комнатный",
+		"plant_type": "Суккулент Каланхоэ",
+		"image_url_plant": "http://localhost:9000/logo/Каланхоэ \"Федченко\".png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 102,
+		"plant_name": "Каланхоэ цветочное",
+		"plant_class": "Домашнее",
+		"plant_subclass": "Суккулент комнатный",
+		"plant_type": "Суккулент Каланхоэ",
+		"image_url_plant": "http://localhost:9000/logo/Каланхоэ цветочное.png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 103,
+		"plant_name": "Эхеверия \"Имбиката\"",
+		"plant_class": "Домашнее",
+		"plant_subclass": "Суккулент комнатный",
+		"plant_type": "Суккулент Эхеверия",
+		"image_url_plant": "http://localhost:9000/logo/Эхеверия \"Имбиката\".png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 104,
+		"plant_name": "Эхеверия \"Типпи\"",
+		"plant_class": "Домашнее",
+		"plant_subclass": "Суккулент комнатный",
+		"plant_type": "Суккулент Эхеверия",
+		"image_url_plant": "http://localhost:9000/logo/Эхеверия \"Типпи\".png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 105,
+		"plant_name": "Эхеверия \"Черный Принц\"",
+		"plant_class": "Домашнее",
+		"plant_subclass": "Суккулент комнатный",
+		"plant_type": "Суккулент Эхеверия",
+		"image_url_plant": "http://localhost:9000/logo/Эхеверия \"Черный Принц\".png",
+		"general_info": "Это мох",
+		"properties": {
+			"light": "Partial side",
+			"toxic": false
+		}
+	},
+	{
+		"plant_id": 22,
+		"plant_name": "Клематис \"Асагасуми\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Альпинисты",
+		"plant_type": "Клематис",
+		"image_url_plant": "http://localhost:9000/logo/Клематис \"Асагасуми\".png",
+		"general_info": "Элегантный клематис «Асагасуми» — сорт клематиса с крупными цветами средней силы роста, с яркими жемчужно-белыми цветами диаметром 12–15 см, украшенными бледно-розовой полосой в центре чашелистиков и выступающими желтыми пыльниками. За цветами следуют крупные, эффектные серебристые семенные головки, которые добавляют растению еще большего интереса. Цветение происходит двумя волнами: сначала в конце весны и начале лета, затем в конце лета и начале осени. Этот теневыносливый клематис идеально подходит для беседок, решеток, пергол и других садовых конструкций. Отлично подходит для выращивания в виде небольших кустарников. «Асагасуми» означает «утренний туман» на японском языке.",
+		"properties": {
+			"add": ["Эффектный", "Яркий"],
+			"pests": "Может быть подвержен воздействию тли , улиток и гусениц; лепестки могут быть съедены уховертками.",
+			"toxic": "Потенциально вредно. Раздражает кожу.",
+			"water": "Средняя",
+			"height": "2,1 м - 3 м",
+			"season": ["Весна", "Лето", "Осень"],
+			"spread": "3 м",
+			"ph_soil": ["Щелочной", "Нейтральный"],
+			"diseases": "Может быть восприимчив к медовому грибку (редко), увяданию клематиса и слизистому поносу клематиса.",
+			"drainage": ["Влажный, хорошо дренированный"],
+			"position": ["Частичное солнце"],
+			"in_garden": ["Беседки", "Решетки", "Вдоль стен", "Клумбы"],
+			"soil_type": ["Мел", "Глина", "Суглинок", "Песок"],
+			"tolerance": [],
+			"maintenance": "Низкий",
+			"propagation": "Размножают отводками или черенками лиственных пород осенью."
+		}
+	},
+	{
+		"plant_id": 35,
+		"plant_name": "Хаконехлоа золотая",
+		"plant_class": "Садовое",
+		"plant_subclass": "Декоративные травы",
+		"plant_type": "Японская лесная трава",
+		"image_url_plant": "http://localhost:9000/logo/Хаконехлоа золотая.png",
+		"general_info": "Добавляя всплеск цвета в любой сад или контейнер, это блестящая золотая трава, которая буквально сияет в тени. Ее яркая листва образует каскадный холмик изящно изогнутых, тонких лезвий, которые, как правило, становятся зеленовато-желтыми в тени и чисто золотыми на солнце. Сохраняя свой яркий цвет с весны до лета, он приобретает розоватый румянец с приходом осени и в конечном итоге становится золотисто-коричневым зимой, прежде чем умереть на земле. Но какая прекрасная смерть с его листвой, освещающей унылые уголки сада до самой зимы. Нежные на вид, красновато-коричневые цветоносы появляются в конце лета, но обычно незаметны среди листьев. Чрезвычайно приспосабливающаяся, трава Ханакое — настоящая красавица для теневых сочетаний.",
+		"properties": {
+			"add": ["Эффектный", "Вечнозеленый"],
+			"pests": "Не восприимчив к вредителем.",
+			"toxic": "Не токсично",
+			"water": "Средняя",
+			"height": "25 см - 60 см",
+			"season": ["Весна", "Лето", "Осень"],
+			"spread": "30 см - 60 см",
+			"ph_soil": ["Кислотный", "Щелочной", "Нейтральный"],
+			"diseases": "Не восприимчив к болезням",
+			"drainage": ["Влажный, хорошо дренированный"],
+			"position": ["Полное солнце", "Частичное солнце", "Тень"],
+			"in_garden": ["Грядки", "Бордюры", "Окантовка"],
+			"soil_type": ["Мел", "Глина", "Суглинок", "Песок"],
+			"tolerance": ["Полная тень"],
+			"maintenance": "Низкий",
+			"propagation": "Размножают делением в середине весны."
+		}
+	},
+	{
+		"plant_id": 38,
+		"plant_name": "Фонтанная трава \"Бордовый кролик\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Декоративные травы",
+		"plant_type": "Фонтанная трава",
+		"image_url_plant": "http://localhost:9000/logo/Фонтанная трава \"Бордовый кролик\".png",
+		"general_info": "Фонтанная трава \"Бордовый кролик\" идеально подходит для небольших садов, это миниатюрная многолетняя трава, образующая плотный пучок изящно изогнутых линейных листьев. Ярко-зеленые летом, они краснеют по мере развития сезона, становясь полностью пылающе-красными осенью. Эффектная листва обычно остается привлекательной до заморозков. В середине и конце лета над листьями появляются эффектные серебристо-белые цветочные колоски, напоминающие маленькие лисохвосты. Они выгибаются наружу из пучка листьев и особенно эффектны при подсветке сзади. Они отлично подходят для срезки свежих и сухих композиций. Требуя очень мало ухода и обеспечивая почти непрерывную драму в саду, эта компактная трава для теплого сезона отлично подходит для контейнеров или передней части бордюра.",
+		"properties": {
+			"add": ["Эффектный", "Композиции из сухих цветов"],
+			"pests": "Не восприимчив к вредителем.",
+			"toxic": "Не токсично",
+			"water": "Средняя",
+			"height": "30 см - 60 см",
+			"season": ["Весна", "Лето", "Осень"],
+			"spread": "30 см - 60 см",
+			"ph_soil": ["Кислотный", "Щелочной", "Нейтральный"],
+			"diseases": "Не восприимчив к болезням",
+			"drainage": ["Влажный, хорошо дренированный"],
+			"position": ["Полное солнце", "Частичное солнце"],
+			"in_garden": ["Грядки", "Бордюры", "Пруды"],
+			"soil_type": ["Мел", "Суглинок", "Песок"],
+			"tolerance": ["Засуха", "Влажная почва"],
+			"maintenance": "Низкий",
+			"propagation": "Размножают делением в середине весны."
+		}
+	},
+	{
+		"plant_id": 37,
+		"plant_name": "Хаконехлоа Николас",
+		"plant_class": "Садовое",
+		"plant_subclass": "Декоративные травы",
+		"plant_type": "Японская лесная трава",
+		"image_url_plant": "http://localhost:9000/logo/Хаконехлоа Николас.png",
+		"general_info": "Настоящая красавица для тенистых сочетаний, трава Хаконэ \"Николас\" - очень интересная японская лесная трава. Образуя компактный каскадный холмик изящно изогнутых, тонких лезвий, ее сплошная зеленая листва в течение весны и лета становится ярко-красной, оранжевой и золотой, как только наступает более прохладная погода осенью. Чем прохладнее погода, тем более раскаленной становится листва, прежде чем умереть на земле. Но какая красивая смерть с ее листвой, освещающей унылые уголки сада до самой зимы. Нежные на вид желто-зеленые цветочные колоски появляются в конце лета, но обычно незаметны среди листьев. Чрезвычайно приспосабливающаяся, Хаконэ \"Николас\" творит чудеса в любом саду или контейнере.",
+		"properties": {
+			"add": ["Эффектный", "Вечнозеленый"],
+			"pests": "Не восприимчив к вредителем.",
+			"toxic": "Не токсично",
+			"water": "Средняя",
+			"height": "25 см - 60 см",
+			"season": ["Весна", "Лето", "Осень"],
+			"spread": "30 см - 60 см",
+			"ph_soil": ["Кислотный", "Щелочной", "Нейтральный"],
+			"diseases": "Не восприимчив к болезням",
+			"drainage": ["Влажный, хорошо дренированный"],
+			"position": ["Полное солнце", "Частичное солнце", "Тень"],
+			"in_garden": ["Грядки", "Бордюры", "Окантовка"],
+			"soil_type": ["Мел", "Глина", "Суглинок", "Песок"],
+			"tolerance": ["Полная тень"],
+			"maintenance": "Низкий",
+			"propagation": "Размножают делением в середине весны."
+		}
+	},
+	{
+		"plant_id": 39,
+		"plant_name": "Фонтанная трава \"Пустынная равнина\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Декоративные травы",
+		"plant_type": "Фонтанная трава",
+		"image_url_plant": "http://localhost:9000/logo/Фонтанная трава \"Пустынная равнина\".png",
+		"general_info": "Фонтанная трава \"Пустынная равнина\" — крупная многолетняя трава, образующая плотный вертикальный вазообразный куст изящно изогнутых линейных листьев. Ярко-зеленые летом, они краснеют по мере развития сезона, прежде чем осенью измениться на теплые оттенки оранжевого и золотого. Эффектная листва обычно остается привлекательной до заморозков. В середине и конце лета над листьями появляются крупные дымчато-фиолетовые цветки-хвощи, длиной 12 см, напоминающие большие лисохвосты. Выгибаясь наружу из куста листвы, они с возрастом становятся загорелыми и особенно эффектны при подсветке сзади. Они отлично подходят для срезки свежих и сухих композиций. Требуя очень мало ухода и обеспечивая почти непрерывную драму в саду, эта компактная трава для теплого сезона отлично подходит для создания почвопокровных масс, но также может использоваться в качестве акцентного растения в садах и в контейнерах.\n",
+		"properties": {
+			"add": ["Эффектный", "Композиции из сухих цветов"],
+			"pests": "Не восприимчив к вредителем.",
+			"toxic": "Не токсично",
+			"water": "Средняя",
+			"height": "90 см - 120 см",
+			"season": ["Весна", "Лето", "Осень"],
+			"spread": "90 см - 120 см",
+			"ph_soil": ["Кислотный", "Щелочной", "Нейтральный"],
+			"diseases": "Не восприимчив к болезням",
+			"drainage": ["Влажный, хорошо дренированный"],
+			"position": ["Полное солнце", "Частичное солнце"],
+			"in_garden": ["Грядки", "Бордюры", "Пруды"],
+			"soil_type": ["Мел", "Суглинок", "Песок"],
+			"tolerance": ["Засуха", "Влажная почва"],
+			"maintenance": "Низкий",
+			"propagation": "Размножают делением в середине весны."
+		}
+	},
+	{
+		"plant_id": 1,
+		"plant_name": "Глициния брахиботрис \"Мурасаки-Капитан\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Альпинисты",
+		"plant_type": "Глициния",
+		"image_url_plant": "http://localhost:9000/logo/Глициния брахиботрис \"Мурасаки-Капитан\".png",
+		"general_info": "Сильно пахнущая - это превосходное энергичное вьющееся растение, цветущее в начале сезона, она производит красивые свисающие побеги, до 20 см в длину, наполненные сине-фиолетовыми цветами, они производят эффектное цветочное зрелище.",
+		"properties": {
+			"add": ["Ароматный", "Яркий"],
+			"pests": "Может быть восприимчив к тле , тепличному красному паутинному клещу и щитовкам , включая глициниевую щитовку.",
+			"toxic": "Токсично для собак, кошек, лошадей",
+			"water": "Средняя",
+			"height": "3 м - 7,6 м",
+			"season": ["Весна", "Лето"],
+			"spread": "1.2 м - 6,1 м",
+			"ph_soil": ["Кислотный", "Щелочной", "Нейтральный"],
+			"diseases": "Может быть восприимчив к медовому грибку (редко), фитофторозной корневой гнили, коралловой пятнистости , грибковой пятнистости листьев, вирусным заболеваниям и мучнистой росе.",
+			"drainage": ["Влажный, хорошо дренированный"],
+			"position": ["Полное солнце", "Частичное солнце"],
+			"in_garden": ["Беседки", "Решетки", "Стены и заборы"],
+			"soil_type": ["Мел", "Глина", "Суглинок", "Песок"],
+			"tolerance": ["Засуха"],
+			"maintenance": "Высокий",
+			"propagation": "Размножается отводками, черенками хвойных и лиственных пород или прививкой."
+		}
+	},
+	{
+		"plant_id": 2,
+		"plant_name": "Японская глициния \"Каролина\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Альпинисты",
+		"plant_type": "Глициния",
+		"image_url_plant": "http://localhost:9000/logo/глициния японская.png",
+		"general_info": "Цветущая раньше большинства других сортов глицинии, глициния «Caroline» — это листопадное вьющееся растение с красивыми локонами длиной 15–30 см с чудесно ароматными, похожими на горох, сиренево-голубыми цветами. Цветущие в конце весны или в начале лета, кисти цветут более или менее одновременно, создавая эффектное цветочное зрелище. За крупными цветами следуют привлекательные, похожие на бобы стручки, которые созревают в конце лета и могут сохраняться до зимы. Не менее привлекательна густая листва ярко-зеленых, перистых листьев с обычно 11 листочками, которые появляются серо-зелеными и становятся золотисто-желтыми осенью.",
+		"properties": {
+			"add": ["Ароматный", "Яркий"],
+			"pests": "Может быть восприимчив к тле , тепличному красному паутинному клещу и щитовкам , включая глициниевую щитовку.",
+			"toxic": "Токсично для собак, кошек, лошадей",
+			"water": "Средняя",
+			"height": "4 м - 9,1 м",
+			"season": ["Весна", "Лето"],
+			"spread": "4 м - 7,6 м",
+			"ph_soil": ["Кислотный", "Щелочной", "Нейтральный"],
+			"diseases": "Может быть восприимчив к медовому грибку (редко), фитофторозной корневой гнили, коралловой пятнистости , грибковой пятнистости листьев, вирусным заболеваниям и мучнистой росе.",
+			"drainage": ["Влажный, хорошо дренированный"],
+			"position": ["Полное солнце", "Частичное солнце"],
+			"in_garden": ["Беседки", "Решетки", "Стены и заборы"],
+			"soil_type": ["Мел", "Глина", "Суглинок", "Песок"],
+			"tolerance": ["Засуха"],
+			"maintenance": "Высокий",
+			"propagation": "Размножается отводками, черенками хвойных и лиственных пород или прививкой."
+		}
+	},
+	{
+		"plant_id": 3,
+		"plant_name": "Китайская глициния",
+		"plant_class": "Садовое",
+		"plant_subclass": "Альпинисты",
+		"plant_type": "Глициния",
+		"image_url_plant": "http://localhost:9000/logo/Китайская глициния.png",
+		"general_info": "Сладковато-ароматная Китайская глициния — это обильноцветущая листопадная лиана, образующая массы свисающих соцветий длиной до 30 см, наполненных душистыми, похожими на горох, сине-фиолетовыми цветами. Появляясь до листьев в конце весны - начале лета, они цветут многократно в течение лета. За ними следуют привлекательные, бархатистые, похожие на бобы стручки длиной 15 см, которые созревают осенью и могут сохраняться до зимы. Не менее привлекательна листва светло-зеленых, перистых листьев, которые состоят из 7–13 листочков.",
+		"properties": {
+			"add": ["Ароматный", "Яркий"],
+			"pests": "Может быть восприимчив к тле , тепличному красному паутинному клещу и щитовкам , включая глициниевую щитовку.",
+			"toxic": "Токсично для собак, кошек, лошадей",
+			"water": "Средняя",
+			"height": "3 м - 9,1 м",
+			"season": ["Весна", "Лето"],
+			"spread": "3 м - 4,6 м",
+			"ph_soil": ["Кислотный", "Щелочной", "Нейтральный"],
+			"diseases": "Может быть восприимчив к медовому грибку (редко), фитофторозной корневой гнили, коралловой пятнистости , грибковой пятнистости листьев, вирусным заболеваниям и мучнистой росе.",
+			"drainage": ["Влажный, хорошо дренированный"],
+			"position": ["Полное солнце", "Частичное солнце"],
+			"in_garden": ["Беседки", "Решетки", "Стены и заборы"],
+			"soil_type": ["Мел", "Глина", "Суглинок", "Песок"],
+			"tolerance": ["Засуха"],
+			"maintenance": "Высокий",
+			"propagation": "Размножается отводками, черенками хвойных и лиственных пород или прививкой."
+		}
+	},
+	{
+		"plant_id": 4,
+		"plant_name": "Шелковая глициния",
+		"plant_class": "Садовое",
+		"plant_subclass": "Альпинисты",
+		"plant_type": "Глициния",
+		"image_url_plant": "http://localhost:9000/logo/Шелковая глициния.png",
+		"general_info": "Обладающая сильным ароматом, Шелковая глициния — великолепная вьющаяся лиана с цветками невероятной красоты. Он производит массы свисающих брызг длиной до 15 см, ароматных, похожих на горошину, белоснежных цветков с заметным желтым пятном. Цветут более или менее одновременно поздней весной или в начале лета, когда появляются листья, они производят драматическая цветочная экспозиция. За цветами следуют привлекательные, бархатистые бобовидные стручки длиной 20 см, которые созревают в конце лета и могут сохраняться до зимы. Густая листва экзотического вида, свежей зелени, особенно привлекательны перистые листья с 11 опушенными листочками.",
+		"properties": {
+			"add": ["Ароматный", "Яркий"],
+			"pests": "Может быть восприимчив к тле , тепличному красному паутинному клещу и щитовкам , включая глициниевую щитовку.",
+			"toxic": "Токсично для собак, кошек, лошадей",
+			"water": "Средняя",
+			"height": "3 м - 12,2 м",
+			"season": ["Весна", "Лето"],
+			"spread": "1,2 м - 9,1 м",
+			"ph_soil": ["Кислотный", "Щелочной", "Нейтральный"],
+			"diseases": "Может быть восприимчив к медовому грибку (редко), фитофторозной корневой гнили, коралловой пятнистости , грибковой пятнистости листьев, вирусным заболеваниям и мучнистой росе.",
+			"drainage": ["Влажный, хорошо дренированный"],
+			"position": ["Полное солнце", "Частичное солнце"],
+			"in_garden": ["Беседки", "Решетки", "Стены и заборы"],
+			"soil_type": ["Мел", "Глина", "Суглинок", "Песок"],
+			"tolerance": ["Засуха"],
+			"maintenance": "Высокий",
+			"propagation": "Размножается отводками, черенками хвойных и лиственных пород или прививкой."
+		}
+	},
+	{
+		"plant_id": 36,
+		"plant_name": "Хаконехлоа Наоми",
+		"plant_class": "Садовое",
+		"plant_subclass": "Декоративные травы",
+		"plant_type": "Японская лесная трава",
+		"image_url_plant": "http://localhost:9000/logo/Хаконехлоа Наоми.png",
+		"general_info": "Недавно представленный большой интерес сорт травы Хаконэ \"Наоми\" образует компактный каскадный холмик изящно изогнутых, тонких лезвий, красиво пестрых кремово-желтых и зеленых в течение весны и лета. Как только наступает более прохладная погода осенью, мягкая листва постепенно становится ярко-фиолетово-красной, создавая восхитительный взрыв красок. Чем прохладнее погода, тем красочнее становится листва. Нежные на вид, красновато-коричневые цветочные колоски появляются в конце лета, но обычно незаметны среди листьев. Чрезвычайно приспосабливающаяся Хаконэ \"Наоми\" творит чудеса в любом саду или контейнере.",
+		"properties": {
+			"add": ["Эффектный", "Вечнозеленый"],
+			"pests": "Не восприимчив к вредителем.",
+			"toxic": "Не токсично",
+			"water": "Средняя",
+			"height": "20 см - 60 см",
+			"season": ["Весна", "Лето", "Осень"],
+			"spread": "30 см - 60 см",
+			"ph_soil": ["Кислотный", "Щелочной", "Нейтральный"],
+			"diseases": "Не восприимчив к болезням",
+			"drainage": ["Влажный, хорошо дренированный"],
+			"position": ["Полное солнце", "Частичное солнце", "Тень"],
+			"in_garden": ["Грядки", "Бордюры", "Окантовка"],
+			"soil_type": ["Мел", "Глина", "Суглинок", "Песок"],
+			"tolerance": ["Полная тень"],
+			"maintenance": "Низкий",
+			"propagation": "Размножают делением в середине весны."
+		}
+	},
+	{
+		"plant_id": 33,
+		"plant_name": "Дикобразная трава",
+		"plant_class": "Садовое",
+		"plant_subclass": "Декоративные травы",
+		"plant_type": "Серебряные травы",
+		"image_url_plant": "http://localhost:9000/logo/Дикобразная трава.png",
+		"general_info": "Дикобразная трава — очень характерная декоративная трава с пестрой листвой, демонстрирующей необычные горизонтальные мягкие желтые кольца вдоль изящно изогнутых листьев, пока она не станет бледно-коричневой осенью. Ее дополняют привлекательные розоватые перья, которые появляются ранней осенью и становятся серебристыми по мере созревания. Этот сорт похож на Miscanthus 'Zebrinus' по отметинам на листьях, но более прямостоячий по габитусу и компактный.",
+		"properties": {
+			"add": ["Эффектный"],
+			"pests": "Не восприимчив к вредителем.",
+			"toxic": "Не токсично",
+			"water": "Средняя",
+			"height": "180 см - 240 см",
+			"season": ["Зима", "Лето", "Осень"],
+			"spread": "90 см - 150 см",
+			"ph_soil": ["Кислотный", "Щелочной", "Нейтральный"],
+			"diseases": "Не восприимчив к болезням",
+			"drainage": ["Влажный, хорошо дренированный", "Хорошо дренированный"],
+			"position": ["Полное солнце"],
+			"in_garden": ["Грядки", "Бордюры"],
+			"soil_type": ["Мел", "Глина", "Суглинок", "Песок"],
+			"tolerance": ["Полная тень"],
+			"maintenance": "Низкий",
+			"propagation": "Размножается семенами, высеваемыми в горшки в холодном парнике весной или делением весной. Может медленно укореняться."
+		}
+	},
+	{
+		"plant_id": 34,
+		"plant_name": "Трава Гана",
+		"plant_class": "Садовое",
+		"plant_subclass": "Декоративные травы",
+		"plant_type": "Серебряные травы",
+		"image_url_plant": "http://localhost:9000/logo/Трава Гана.png",
+		"general_info": "Один из лучших по цвету осенью, отмеченный наградами китайский серебристый злак Гана - очень привлекательная декоративная трава, выращиваемая ради своих красноватых цветочных перьев, которые видны с конца лета. Они деликатно меняют цвет на серебристо-белый по мере созревания и обеспечивают хороший зимний интерес. Они грациозно возвышаются, значительно выше элегантной листвы узких, изогнутых, ярко-зеленых листьев, которые осенью становятся красивыми от красно-бордовых до золотисто-желтых. Очень полезная декоративная трава!",
+		"properties": {
+			"add": ["Эффектный"],
+			"pests": "Не восприимчив к вредителем.",
+			"toxic": "Не токсично",
+			"water": "Средняя",
+			"height": "150 см - 180 см",
+			"season": ["Зима", "Лето", "Осень"],
+			"spread": "120 см - 150 см",
+			"ph_soil": ["Кислотный", "Щелочной", "Нейтральный"],
+			"diseases": "Не восприимчив к болезням",
+			"drainage": ["Влажный, хорошо дренированный", "Хорошо дренированный"],
+			"position": ["Полное солнце"],
+			"in_garden": ["Грядки", "Бордюры"],
+			"soil_type": ["Мел", "Глина", "Суглинок", "Песок"],
+			"tolerance": ["Полная тень"],
+			"maintenance": "Низкий",
+			"propagation": "Размножается семенами, высеваемыми в горшки в холодном парнике весной или делением весной. Может медленно укореняться."
+		}
+	},
+	{
+		"plant_id": 15,
+		"plant_name": "Мандариновая жимолость",
+		"plant_class": "Садовое",
+		"plant_subclass": "Альпинисты",
+		"plant_type": "Жимолость",
+		"image_url_plant": "http://localhost:9000/logo/Мандариновая жимолость.png",
+		"general_info": "Мандариновая жимолость — вьющаяся листопадная лиана с крупными мутовками блестящих цветов, ярко-мандаринового цвета снаружи и желто-оранжевого цвета внутри. Обильно цветущие в начале лета, они продолжают периодически цвести до осени. Листва овальных листьев, появляющаяся на свету, имеет поразительный медно-фиолетовый цвет, созревает до глянцевой темно-зеленой. Эта энергичная, но неагрессивная жимолость быстро растет и быстро добавит очарования вашим беседкам, заборам или перголам.",
+		"properties": {
+			"add": ["Эффектный", "Яркий"],
+			"pests": "Может быть восприимчив к жимолостной тле , трипсам и тепличной белокрылке.",
+			"toxic": "Не токсично",
+			"water": "Средняя",
+			"height": "4,6 м - 6,1 м",
+			"season": ["Осень", "Лето"],
+			"spread": "1,2 м - 1,8 м",
+			"ph_soil": ["Кислотный", "Щелочной", "Нейтральный"],
+			"diseases": "Может быть восприимчив к мучнистой росе , грибковой пятнистости листьев, серебристому листу и медовому грибку (редко).",
+			"drainage": ["Влажный, хорошо дренированный"],
+			"position": ["Полное солнце", "Частичное солнце"],
+			"in_garden": ["Беседки", "Решетки", "Стены и заборы"],
+			"soil_type": ["Суглинок"],
+			"tolerance": [],
+			"maintenance": "Низкий",
+			"propagation": "Размножают отводками или черенками лиственных пород осенью."
+		}
+	},
+	{
+		"plant_id": 17,
+		"plant_name": "Жимолость съедобная",
+		"plant_class": "Садовое",
+		"plant_subclass": "Альпинисты",
+		"plant_type": "Жимолость",
+		"image_url_plant": "http://localhost:9000/logo/Жимолость съедобная.png",
+		"general_info": "Представленная Университетом Саскачевана, Жимолость съедобная представляет собой компактный листопадный кустарник с привлекательными серо-зелеными листьями и небольшими воронкообразными, слегка ароматными белыми цветами ранней весной. Цветки сменяются темно-синими ягодами, которые созревают в конце весны или в начале лета. Плоды этой канадской жимолости крупные со сладким вкусом дикой черники. По вкусу и внешнему виду они похожи на чернику, их можно есть прямо с куста или собирать для использования в джемах, пирогах или соках. В идеале жимолость следует высаживать парами или группами, так как это увеличит скорость опыления и урожайность плодов. Рекомендуются сорта жимолости Polar Jewel или Polar Spring. Ручное опыление является хорошей альтернативой, поскольку ранней весной активность насекомых-опылителей низкая: слегка проведите по цветам небольшой мягкой кисточкой.",
+		"properties": {
+			"add": ["Ароматный", "Фруктово-ягодный", "Эффектный", "Яркий"],
+			"pests": "Может быть восприимчив к жимолостной тле , трипсам и тепличной белокрылке.",
+			"toxic": "Не токсично",
+			"water": "Средняя",
+			"height": "60 см - 90 см",
+			"season": ["Весна", "Лето", "Осень"],
+			"spread": "60 см - 90 см",
+			"ph_soil": ["Кислотный", "Щелочной", "Нейтральный"],
+			"diseases": "Может быть восприимчив к мучнистой росе , грибковой пятнистости листьев, серебристому листу и медовому грибку (редко).",
+			"drainage": ["Влажный, хорошо дренированный"],
+			"position": ["Полное солнце", "Частичное солнце"],
+			"in_garden": ["Живые изгороди и экраны"],
+			"soil_type": ["Мел", "Глина", "Суглинок", "Песок"],
+			"tolerance": [],
+			"maintenance": "Низкий",
+			"propagation": "Размножают отводками или черенками лиственных пород осенью."
+		}
+	},
+	{
+		"plant_id": 18,
+		"plant_name": "Гладколистная жимолость",
+		"plant_class": "Садовое",
+		"plant_subclass": "Альпинисты",
+		"plant_type": "Жимолость",
+		"image_url_plant": "http://localhost:9000/logo/Гладколистная жимолость.png",
+		"general_info": "Гладколистная жимолость, также известная как красная жимолость или гибкая жимолость, — это эффектная листопадная вьющаяся лиана, характеризующаяся красными или оранжевыми трубчатыми цветами. Это относительно малоизвестный вид жимолости, но он привносит уникальный эстетический штрих в любой ландшафт, который он украшает.",
+		"properties": {
+			"add": ["Ароматный", "Фруктово-ягодный", "Эффектный", "Яркий"],
+			"pests": "Может быть восприимчив к жимолостной тле , трипсам и тепличной белокрылке.",
+			"toxic": "Не токсично",
+			"water": "Средняя",
+			"height": "90 см - 3 м",
+			"season": ["Весна", "Лето"],
+			"spread": "90 см - 180 см",
+			"ph_soil": ["Нейтральный"],
+			"diseases": "Может быть восприимчив к мучнистой росе , грибковой пятнистости листьев, серебристому листу и медовому грибку (редко).",
+			"drainage": ["Влажный, хорошо дренированный", "Хорошо дренированный"],
+			"position": ["Полное солнце", "Частичное солнце"],
+			"in_garden": [
+				"Живые изгороди и экраны",
+				"Беседки",
+				"Решетки",
+				"Вдоль стен"
+			],
+			"soil_type": ["Суглинок", "Песок"],
+			"tolerance": [],
+			"maintenance": "Низкий",
+			"propagation": "Размножают отводками или черенками лиственных пород осенью."
+		}
+	},
+	{
+		"plant_id": 19,
+		"plant_name": "Черная жимолость",
+		"plant_class": "Садовое",
+		"plant_subclass": "Альпинисты",
+		"plant_type": "Жимолость",
+		"image_url_plant": "http://localhost:9000/logo/Черная жимолость.png",
+		"general_info": "Привлекательная и приятная для глаз, Черная жимолость — это долгоживущий листопадный кустарник с крепкими побегами, покрытыми супротивными, ярко-зелеными, эллиптическими листьями длиной 12 см. С ранней весны до конца лета, в зависимости от местоположения, появляются маленькие, изящные желтые цветы длиной 2,5 см, свисающие парами, окруженные двумя листовыми прицветниками. Прицветники меняют цвет с зеленого на блестящий темно-красный в конце лета по мере созревания плодов. Цветы уступают место парам маленьких, пухлых фиолетовых или черных ягод, которые неприятно горькие на вкус. Отлично подходят для диких животных, цветы являются источником нектара для колибри и бабочек. Ягоды едят медведи, мелкие млекопитающие, пернатая дичь, включая перепелов и тетеревов, и певчие птицы. Родом из северной и западной части Северной Америки, Черная жимолость растет на влажных лесных опушках, болотах, берегах рек и луговых опушках, на высоте от уровня моря вдоль Тихоокеанского побережья до субальпийских участков в горах. Черная жимолость — ценный кустарник для контроля эрозии ручьев и восстановления прибрежных зон, болот, топей, влажных лесов, кустарниковых болот и песчаных прибрежных зон в пределах своего родного ареала. Как и многие виды жимолости, Черная жимолость также является привлекательным декоративным растением для сада. Его цветы наиболее желанны летом, когда многие другие растения уже отцвели.",
+		"properties": {
+			"add": ["Ароматный", "Фруктово-ягодный", "Эффектный", "Яркий"],
+			"pests": "Может быть восприимчив к жимолостной тле , трипсам и тепличной белокрылке.",
+			"toxic": "Не токсично",
+			"water": "Средняя",
+			"height": "180 см - 4,6 м",
+			"season": ["Весна", "Лето", "Осень"],
+			"spread": "180 см - 3 м",
+			"ph_soil": ["Кислотный", "Щелочной", "Нейтральный"],
+			"diseases": "Может быть восприимчив к мучнистой росе , грибковой пятнистости листьев, серебристому листу и медовому грибку (редко).",
+			"drainage": ["Влажный, хорошо дренированный", "Хорошо дренированный"],
+			"position": ["Полное солнце", "Частичное солнце"],
+			"in_garden": [
+				"Живые изгороди и экраны",
+				"Беседки",
+				"Решетки",
+				"Вдоль стен"
+			],
+			"soil_type": ["Мел", "Глина", "Суглинок", "Песок"],
+			"tolerance": [],
+			"maintenance": "Низкий",
+			"propagation": "Размножают отводками или черенками лиственных пород осенью."
+		}
+	},
+	{
+		"plant_id": 20,
+		"plant_name": "Клематис \"Абилин\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Альпинисты",
+		"plant_type": "Клематис",
+		"image_url_plant": "http://localhost:9000/logo/Клематис \"Абилин\".png",
+		"general_info": "Захватывающий, клематис \"Абилин\" - компактный, листопадный плетистый сорт, покрытый обилием звездообразных, ярко-розовых цветов, до 12 см, с более глубокой розовой центральной полосой. Элегантно взъерошенные чашелистики окружают контрастный пучок вычурных масляно-желтых тычинок. Цветущий с конца весны до начала лета и с конца лета до осени, этот крупноцветковый клематис идеально подходит для небольших садов, контейнеров и выглядит потрясающе в сочетании с небольшими кустарниками.",
+		"properties": {
+			"add": ["Эффектный", "Яркий"],
+			"pests": "Может быть подвержен воздействию тли , улиток и гусениц; лепестки могут быть съедены уховертками.",
+			"toxic": "Потенциально вредно. Раздражает кожу.",
+			"water": "Средняя",
+			"height": "90 см - 1,2 м",
+			"season": ["Весна", "Лето", "Осень"],
+			"spread": "30 см - 60 см",
+			"ph_soil": ["Щелочной", "Нейтральный"],
+			"diseases": "Может быть восприимчив к медовому грибку (редко), увяданию клематиса и слизистому поносу клематиса.",
+			"drainage": ["Влажный, хорошо дренированный", "Хорошо дренированный"],
+			"position": ["Полное солнце", "Частичное солнце"],
+			"in_garden": [
+				"Живые изгороди и экраны",
+				"Беседки",
+				"Решетки",
+				"Вдоль стен"
+			],
+			"soil_type": ["Мел", "Глина", "Суглинок", "Песок"],
+			"tolerance": [],
+			"maintenance": "Низкий",
+			"propagation": "Размножают отводками или черенками лиственных пород осенью."
+		}
+	},
+	{
+		"plant_id": 23,
+		"plant_name": "Клематис \"Яблоневый Цвет\"",
+		"plant_class": "Садовое",
+		"plant_subclass": "Альпинисты",
+		"plant_type": "Клематис",
+		"image_url_plant": "http://localhost:9000/logo/Клематис Яблоневый Цвет.png",
+		"general_info": "Один из самых популярных вечнозеленых клематисов, отмеченный наградами  Клематис \"Яблоневый Цвет\" — очень крупный вьющийся сорт с массой восхитительных, пахнущих миндалем цветов, диаметром 5 см и великолепной листвой. Распускаясь из почти красных бутонов, отдельные цветы постепенно меняют цвет с бледно-розового на белый по мере созревания. Если погода остается прохладной, цветение продолжается в течение 2–4 недель. Не менее привлекательная листва кожистых, восковых, вечнозеленых листьев приобретает бронзовый оттенок, прежде чем стать средне-зеленой. Тяжелые листья, шелестя на ветру, красиво перекрывают друг друга и образуют прекрасный экран круглый год. Клематис 'Яблоневый цвет' обильно цветет с начала до середины весны. Этот энергичный и быстрорастущий, этот раноцветущий клематис идеально подходит для покрытия стены, решетки, забора или перголы. Посадите его там, где вы сможете наслаждаться его ароматом: возле дверного проема, вдоль дорожки, возле вашего патио или террасы. Потрясающее растение, дарящее месяцы удовольствия.",
+		"properties": {
+			"add": ["Эффектный", "Яркий"],
+			"pests": "Может быть подвержен воздействию тли , улиток и гусениц; лепестки могут быть съедены уховертками.",
+			"toxic": "Потенциально вредно. Раздражает кожу.",
+			"water": "Средняя",
+			"height": "6,1 м - 12,2 м",
+			"season": ["Весна"],
+			"spread": "3 м",
+			"ph_soil": ["Щелочной", "Нейтральный"],
+			"diseases": "Может быть восприимчив к медовому грибку (редко), увяданию клематиса и слизистому поносу клематиса.",
+			"drainage": ["Влажный, хорошо дренированный"],
+			"position": ["Полное солнце"],
+			"in_garden": [
+				"Живые изгороди и экраны",
+				"Беседки",
+				"Решетки",
+				"Вдоль стен"
+			],
+			"soil_type": ["Мел", "Глина", "Суглинок", "Песок"],
+			"tolerance": [],
+			"maintenance": "Низкий",
+			"propagation": "Размножают отводками или черенками лиственных пород осенью."
+		}
+	},
+	{
+		"plant_id": 25,
+		"plant_name": "Китайская виргинская лиана",
+		"plant_class": "Садовое",
+		"plant_subclass": "Альпинисты",
+		"plant_type": "Плющ",
+		"image_url_plant": "http://localhost:9000/logo/Китайская виргинская лиана.png",
+		"general_info": "Отмеченный наградами Китайская виргинская лиана — это энергичное, быстрорастущее листопадное вьющееся растение с темными бархатистыми сине-зелеными листьями с 3-5 листочками, украшенными красивыми серебристыми прожилками и глубокими бордовыми нижними сторонами. Осенью листва приобретает яркие оттенки красного до красновато-фиолетового. Обычно скрытые листвой зеленовато-белые цветы появляются в верхних пазухах листьев в конце весны — начале лета. Они уступают место круглым, мясистым, сине-черным ягодам, которые видны только после того, как листья опадут, и только если их не склевали птицы. Китайский виргинский плющ более эстетичен, чем девичий виноград пятилистный и девичий виноград трехострый, и не такой пышный, поэтому лучше подходит для выращивания в небольших садах.",
+		"properties": {
+			"add": ["Фруктово-ягодный", "Эффектный"],
+			"pests": "Может быть подвержен заражению красным паутинным клещом и виноградным долгоносиком.",
+			"toxic": "Вредно при употреблении в пищу, раздражает кожу.",
+			"water": "Средняя",
+			"height": "6,1м - 9,1 м",
+			"season": ["Весна", "Лето", "Осень"],
+			"spread": "3 м - 10 м",
+			"ph_soil": ["Кислотный", "Щелочной", "Нейтральный"],
+			"diseases": "Может быть восприимчив к медовому грибку.",
+			"drainage": ["Влажный, хорошо дренированный", "Хорошо дренированный"],
+			"position": ["Полное солнце", "Частичное солнце", "Тень"],
+			"in_garden": ["Беседки", "Решетки", "Вдоль стен", "Заборы", "Склоны"],
+			"soil_type": ["Мел", "Глина", "Суглинок", "Песок"],
+			"tolerance": ["Полная тень", "Глинистая почва"],
+			"maintenance": "Средний",
+			"propagation": "Размножают отводками или черенками лиственных пород."
+		}
+	},
+	{
+		"plant_id": 24,
+		"plant_name": "Бостонский плющ",
+		"plant_class": "Садовое",
+		"plant_subclass": "Альпинисты",
+		"plant_type": "Плющ",
+		"image_url_plant": "http://localhost:9000/logo/Бостонский плющ.png",
+		"general_info": "Известный своими более мелкими листьями, чем у вида, Бостонский плющ — очень энергичное, быстрорастущее листопадное вьющееся растение, которое может похвастаться в основном яйцевидными или трехлопастными, богатыми блестящими темно-зелеными листьями шириной 6 дюймов (15 см), которые осенью приобретают яркие оттенки малинового, алого и бордового. Обычно скрытые листвой, зеленовато-белые цветы появляются в верхних пазухах листьев в конце весны — начале лета. Они уступают место круглым, мясистым, сине-черным ягодам, которые видны только после того, как листья опадут, и если их не склевали птицы. Полувечнозеленое растение в районах с мягкой зимой. Бостонский плющ можно использовать как вьющуюся лиану или почвопокровное растение, его листья покрывают любую поверхность пышной зеленью, прежде чем осенью покрыться впечатляющими цветами. Однако высаживайте это растение осторожно. Его усики заканчиваются клейкими кончиками, что позволяет этой лиане прикрепляться к стенам и затрудняет ее удаление. Хотя усики не проникают в сами стены и не повреждают их, их практически невозможно оторвать от стен, не забрав с собой часть стен.",
+		"properties": {
+			"add": ["Фруктово-ягодный", "Эффектный", "Полувечнозеленое"],
+			"pests": "Может быть подвержен заражению красным паутинным клещом и виноградным долгоносиком.",
+			"toxic": "Вредно при употреблении в пищу, раздражает кожу.",
+			"water": "Средняя",
+			"height": "9,1 м - 15,3 м",
+			"season": ["Весна", "Лето", "Осень"],
+			"spread": "1,5 м - 3 м",
+			"ph_soil": ["Кислотный", "Щелочной", "Нейтральный"],
+			"diseases": "Может быть восприимчив к медовому грибку.",
+			"drainage": ["Влажный, хорошо дренированный", "Хорошо дренированный"],
+			"position": ["Полное солнце", "Частичное солнце", "Тень"],
+			"in_garden": ["Беседки", "Решетки", "Вдоль стен", "Заборы", "Склоны"],
+			"soil_type": ["Мел", "Глина", "Суглинок", "Песок"],
+			"tolerance": [
+				"Полная тень",
+				"Глинистая почва",
+				"Каменистая почва",
+				"Засуха"
+			],
+			"maintenance": "Средний",
+			"propagation": "Размножают отводками или черенками лиственных пород."
+		}
+	},
+	{
+		"plant_id": 26,
+		"plant_name": "Кактус-ёж кружевной",
+		"plant_class": "Садовое",
+		"plant_subclass": "Кактусы, суккуленты",
+		"plant_type": "Кактус",
+		"image_url_plant": "http://localhost:9000/logo/Кактус-ёж.png",
+		"general_info": "Кружевной кактус — небольшой цилиндрический кактус с характерными ребрами и плотным покрытием из шипов, прижатых к стеблю. Несмотря на относительно небольшой размер, он хорошо известен своими крупными, ярко окрашенными цветами, обычно розовыми, фиолетовыми или пурпурными, которые могут покрывать значительную часть растения, создавая впечатляющее цветочное зрелище. Этот кактус также известен своей привычкой расти группами, часто образуя небольшие группы из 12 отдельных стеблей, растущих близко друг к другу.\n",
+		"properties": {
+			"add": ["Ароматный", "Эффектный", "Вечнозеленый"],
+			"pests": "Может быть подвержен мучнистым червецам и тлям.",
+			"toxic": "Нетоксичен для людей и животных, однако его колючки могут вызывать физическое раздражение, лучше всего обращаться с растением в перчатках. ",
+			"water": "Низкая",
+			"height": "8 см - 30 см",
+			"season": ["Зима", "Весна", "Лето", "Осень"],
+			"spread": "5 см - 10 см",
+			"ph_soil": ["Кислотный", "Щелочной", "Нейтральный"],
+			"diseases": "Может быть подвержен корневой гнили.",
+			"drainage": ["Хорошо дренированный"],
+			"position": ["Полное солнце"],
+			"in_garden": ["Грядки", "Бордюры", "Контейнеры"],
+			"soil_type": ["Суглинок", "Песок"],
+			"tolerance": ["Засуха", "Сухая почва", "Каменистая почва"],
+			"cultivation": "Выращивайте в свободно дренируемом кактусовом компосте в теплом и солнечном месте на подоконнике или в теплице или оранжерее. Регулярно поливайте летом, реже в холодные месяцы и подкармливайте удобрением для кактусов летом. Пересаживайте примерно раз в два года. Не переносит заболачивания и повреждения корней, так как корни мелкие и слабые.",
+			"maintenance": "Низкий",
+			"propagation": "Размножается отводками или семенами. Не трогайте корни."
+		}
+	}
 ]
