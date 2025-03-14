@@ -43,8 +43,8 @@ export type TPlantInfoModel = {
 		toxic: string;
 		water: string;
 		height: string;
-		season: string[];
 		spread: string;
+		season: string[];
 		diseases: string;
 		drainage: string[];
 		position: string[];
@@ -68,8 +68,8 @@ export class PlantInfo {
 		toxic: string;
 		water: string;
 		height: string;
-		season: string[];
 		spread: string;
+		season: string[];
 		diseases: string;
 		drainage: string[];
 		position: string[];

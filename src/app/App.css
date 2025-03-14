@@ -13,3 +13,7 @@ body {
 	align-items: center;
 	height: 100%;
 }
+
+.ant-descriptions-item-label::after {
+	font-size: 1.25rem
+}

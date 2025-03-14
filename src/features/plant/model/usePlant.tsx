@@ -1,5 +1,5 @@
 import { CollapseProps } from 'antd';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { PlantsService } from '@/entities/plant/api';
 import { PlantInfo } from '@/entities/plant/model';
@@ -9,27 +9,131 @@ export const usePlant = (id: string) => {
 	const [plantInfo, setPlantInfo] = useState<PlantInfo | null>(null);
 	const [isLoaded, setIsLoaded] = useState(false);
 
-	const properties: CollapseProps['items'] = plantInfo
-		? [
-				{
-					key: '1',
-					label: 'Дополнительная информация',
-					children: plantInfo.properties.add.map((item, index) => (
-						<p key={index}>{item}</p>
-					)),
-				},
-				{
-					key: '2',
-					label: 'Восприимчивость к вредителям',
-					children: <p>{plantInfo.properties.pests}</p>,
-				},
-				{
-					key: '3',
-					label: 'Токсичность',
-					children: <p>{plantInfo.properties.toxic}</p>,
-				},
-			]
-		: [];
+	const mainFields = useMemo(
+		() => [
+			{
+				key: '1',
+				label: 'Класс',
+				value: plantInfo?.class,
+			},
+			{
+				key: '2',
+				label: 'Подкласс',
+				value: plantInfo?.subclass,
+			},
+			{
+				key: '3',
+				label: 'Тип',
+				value: plantInfo?.type,
+			},
+			{
+				key: '4',
+				label: 'Общая информация',
+				value: plantInfo?.info,
+			},
+		],
+		[plantInfo],
+	);
+
+	const properties: CollapseProps['items'] = useMemo(
+		() =>
+			plantInfo
+				? [
+						{
+							key: '1',
+							label: 'Дополнительная информация',
+							children: plantInfo.properties.add.map((item, index) => (
+								<p key={index}>{item}</p>
+							)),
+						},
+						{
+							key: '2',
+							label: 'Восприимчивость к вредителям',
+							children: <p>{plantInfo.properties.pests}</p>,
+						},
+						{
+							key: '3',
+							label: 'Токсичность',
+							children: <p>{plantInfo.properties.toxic}</p>,
+						},
+						{
+							key: '4',
+							label: 'Потребность в поливе',
+							children: <p>{plantInfo.properties.water}</p>,
+						},
+						{
+							key: '5',
+							label: 'Высота',
+							children: <p>{plantInfo.properties.height}</p>,
+						},
+						{
+							key: '6',
+							label: 'Ширина',
+							children: <p>{plantInfo.properties.spread}</p>,
+						},
+						{
+							key: '7',
+							label: 'Сезон',
+							children: (
+								<p>
+									{plantInfo.properties.season.map((item, index) => (
+										<p key={index}>{item}</p>
+									))}
+								</p>
+							),
+						},
+						{
+							key: '8',
+							label: 'Восприимчивость к болезням',
+							children: <p>{plantInfo.properties.diseases}</p>,
+						},
+						{
+							key: '9',
+							label: 'Дренаж почвы',
+							children: (
+								<p>
+									{plantInfo.properties.drainage.map((item, index) => (
+										<p key={index}>{item}</p>
+									))}
+								</p>
+							),
+						},
+						{
+							key: '10',
+							label: 'Позиция относительно солнца',
+							children: (
+								<p>
+									{plantInfo.properties.position.map((item, index) => (
+										<p key={index}>{item}</p>
+									))}
+								</p>
+							),
+						},
+						{
+							key: '11',
+							label: 'К каким условиям среды толерантен',
+							children: (
+								<p>
+									{plantInfo.properties.tolerance.map((item, index) => (
+										<p key={index}>{item}</p>
+									))}
+								</p>
+							),
+						},
+						{
+							key: '12',
+							label: 'Требуемый уровень ухода',
+							children: <p>{plantInfo.properties.maintenance}</p>,
+						},
+						{
+							key: '13',
+							label: 'Размножение',
+							children: <p>{plantInfo.properties.propagation}</p>,
+						},
+					]
+				: [],
+		[plantInfo],
+	);
 
 	const loadPlantInfo = useCallback(async (id: string) => {
 		try {
@@ -54,5 +158,5 @@ export const usePlant = (id: string) => {
 		loadPlantInfo(id);
 	}, [id, loadPlantInfo]);
 
-	return { isLoaded, plantInfo, properties };
+	return { isLoaded, plantInfo, mainFields, properties };
 };
