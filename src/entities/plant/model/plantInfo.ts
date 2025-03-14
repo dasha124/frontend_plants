@@ -14,9 +14,12 @@ export type TPlantInfoApi = {
 		height: string;
 		season: string[];
 		spread: string;
+		ph_soil: string[];
 		diseases: string;
 		drainage: string[];
 		position: string[];
+		in_garden: string[];
+		soil_type: string[];
 		tolerance: string[];
 		maintenance: string;
 		propagation: string;
@@ -44,10 +47,13 @@ export type TPlantInfoModel = {
 		water: string;
 		height: string;
 		spread: string;
+		phSoil: string[];
 		season: string[];
 		diseases: string;
 		drainage: string[];
 		position: string[];
+		inGarden: string[];
+		soilType: string[];
 		tolerance: string[];
 		maintenance: string;
 		propagation: string;
@@ -69,10 +75,13 @@ export class PlantInfo {
 		water: string;
 		height: string;
 		spread: string;
+		phSoil: string[];
 		season: string[];
 		diseases: string;
 		drainage: string[];
 		position: string[];
+		inGarden: string[];
+		soilType: string[];
 		tolerance: string[];
 		maintenance: string;
 		propagation: string;
@@ -107,7 +116,12 @@ export class PlantInfo {
 			type: plantInfo.plant_type,
 			image: plantInfo.image_url_plant,
 			info: plantInfo.general_info,
-			properties: plantInfo.properties,
+			properties: {
+				...plantInfo.properties,
+				phSoil: plantInfo.properties.ph_soil,
+				inGarden: plantInfo.properties.in_garden,
+				soilType: plantInfo.properties.soil_type,
+			},
 		});
 	}
 
@@ -120,7 +134,12 @@ export class PlantInfo {
 			plant_type: this.type,
 			image_url_plant: this.image,
 			general_info: this.info,
-			properties: this.properties,
+			properties: {
+				...this.properties,
+				ph_soil: this.properties.phSoil,
+				in_garden: this.properties.inGarden,
+				soil_type: this.properties.soilType,
+			},
 		};
 	}
 

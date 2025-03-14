@@ -73,6 +73,17 @@ export const usePlant = (id: string) => {
 						},
 						{
 							key: '7',
+							label: 'pH Почвы',
+							children: (
+								<p>
+									{plantInfo.properties.phSoil.map((item, index) => (
+										<p key={index}>{item}</p>
+									))}
+								</p>
+							),
+						},
+						{
+							key: '8',
 							label: 'Сезон',
 							children: (
 								<p>
@@ -83,12 +94,12 @@ export const usePlant = (id: string) => {
 							),
 						},
 						{
-							key: '8',
+							key: '9',
 							label: 'Восприимчивость к болезням',
 							children: <p>{plantInfo.properties.diseases}</p>,
 						},
 						{
-							key: '9',
+							key: '10',
 							label: 'Дренаж почвы',
 							children: (
 								<p>
@@ -99,7 +110,7 @@ export const usePlant = (id: string) => {
 							),
 						},
 						{
-							key: '10',
+							key: '11',
 							label: 'Позиция относительно солнца',
 							children: (
 								<p>
@@ -110,7 +121,29 @@ export const usePlant = (id: string) => {
 							),
 						},
 						{
-							key: '11',
+							key: '12',
+							label: 'Что может украсить в саду',
+							children: (
+								<p>
+									{plantInfo.properties.inGarden.map((item, index) => (
+										<p key={index}>{item}</p>
+									))}
+								</p>
+							),
+						},
+						{
+							key: '13',
+							label: 'Тип почвы',
+							children: (
+								<p>
+									{plantInfo.properties.soilType.map((item, index) => (
+										<p key={index}>{item}</p>
+									))}
+								</p>
+							),
+						},
+						{
+							key: '14',
 							label: 'К каким условиям среды толерантен',
 							children: (
 								<p>
@@ -121,12 +154,12 @@ export const usePlant = (id: string) => {
 							),
 						},
 						{
-							key: '12',
+							key: '15',
 							label: 'Требуемый уровень ухода',
 							children: <p>{plantInfo.properties.maintenance}</p>,
 						},
 						{
-							key: '13',
+							key: '16',
 							label: 'Размножение',
 							children: <p>{plantInfo.properties.propagation}</p>,
 						},
