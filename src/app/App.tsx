@@ -3,6 +3,8 @@ import ruRu from 'antd/locale/ru_RU';
 import { Helmet } from 'react-helmet-async';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+import { CollectionPage } from '@/pages/collection/ui';
+import { CollectionsPage } from '@/pages/collections/ui';
 import { PlantPage } from '@/pages/plant/ui';
 import { PlantsPage } from '@/pages/plants/ui';
 import { TypePlantsPage } from '@/pages/typePlants/ui';
@@ -33,7 +35,7 @@ export const App = () => {
 								marginTop: 'calc(46px + 1rem)',
 								marginBottom: '1rem',
 							}}
-							className={cn('flex flex-col mb-4')}
+							className={cn('flex flex-col mb-4 text-white')}
 						>
 							<Routes>
 								<Route
@@ -47,6 +49,14 @@ export const App = () => {
 								<Route
 									path='/type_plants'
 									element={<TypePlantsPage />}
+								/>
+								<Route
+									path='/collections'
+									element={<CollectionsPage />}
+								/>
+								<Route
+									path='/collections/:id'
+									element={<CollectionPage />}
 								/>
 							</Routes>
 						</div>

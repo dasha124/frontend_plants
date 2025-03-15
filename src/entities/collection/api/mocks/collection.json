@@ -1,5 +1,11 @@
 {
 	"collection_id": 8,
+	"user_id": "user_1",
+	"collection_name": "моя коллекция",
+	"date_create": "2025-02-01",
+	"time_create": "14:48:18.590574",
+	"status": 1,
+	"user": 2,
 	"plant": [
 		{
 			"plant_id": 16,
@@ -82,11 +88,5 @@
 				"propagation": "Размножают отводками или черенками лиственных пород осенью."
 			}
 		}
-	],
-	"user_id": "user_1",
-	"collection_name": "моя коллекция",
-	"date_create": "2025-02-01",
-	"time_create": "14:48:18.590574",
-	"status": 1,
-	"user": 2
+	]
 }

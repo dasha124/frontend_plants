@@ -25,7 +25,7 @@ export class CollectionsService extends ServiceBase {
 				method: ERequestMethods.GET,
 			},
 			{
-				name: 'getCollection',
+				name: 'getCollectionInfo',
 				url: this.baseUrl,
 				method: ERequestMethods.GET,
 			},
