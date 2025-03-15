@@ -83,10 +83,9 @@
 			}
 		}
 	],
-	"user_id": "user_1",
+	"user_id": "2",
+	"time_create": "14:48:18",
+	"status": "Сформирована",
 	"collection_name": "моя коллекция",
-	"date_create": "2025-02-01",
-	"time_create": "14:48:18.590574",
-	"status": 1,
-	"user": 2
+	"date_create": "2025-02-01"
 }

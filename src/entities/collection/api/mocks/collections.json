@@ -84,42 +84,38 @@
 				}
 			}
 		],
-		"user_id": "user_1",
+		"user_id": "2",
+		"time_create": "14:48:18",
+		"status": "Сформирована",
 		"collection_name": "моя коллекция",
-		"date_create": "2025-02-01",
-		"time_create": "14:48:18.590574",
-		"status": 1,
-		"user": 2
+		"date_create": "2025-02-01"
 	},
 	{
 		"collection_id": 7,
 		"plant": [],
-		"user_id": "user_1",
+		"user_id": "2",
+		"time_create": "14:45:41",
+		"status": "Сформирована",
 		"collection_name": "моя коллекция",
-		"date_create": "2025-02-01",
-		"time_create": "14:45:41.975767",
-		"status": 1,
-		"user": 2
+		"date_create": "2025-02-01"
 	},
 	{
 		"collection_id": 6,
 		"plant": [],
-		"user_id": "user_1",
+		"user_id": "2",
+		"time_create": "14:45:11",
+		"status": "Сформирована",
 		"collection_name": "",
-		"date_create": "2025-02-01",
-		"time_create": "14:45:11.523329",
-		"status": 1,
-		"user": 2
+		"date_create": "2025-02-01"
 	},
 	{
 		"collection_id": 5,
 		"plant": [],
-		"user_id": "user_1",
+		"user_id": "2",
+		"time_create": "14:44:07",
+		"status": "Сформирована",
 		"collection_name": "",
-		"date_create": "2025-02-01",
-		"time_create": "14:44:07.993226",
-		"status": 1,
-		"user": 2
+		"date_create": "2025-02-01"
 	},
 	{
 		"collection_id": 3,
@@ -138,21 +134,19 @@
 				}
 			}
 		],
-		"user_id": "user_1",
+		"user_id": "2",
+		"time_create": "08:36:44",
+		"status": "Сформирована",
 		"collection_name": "моя коллекция_vsvvsv",
-		"date_create": "2025-01-06",
-		"time_create": "08:36:44.837778",
-		"status": 1,
-		"user": 2
+		"date_create": "2025-01-06"
 	},
 	{
 		"collection_id": 9,
 		"plant": [],
-		"user_id": "user_1",
+		"user_id": "2",
+		"time_create": "06:59:59",
+		"status": "Сформирована",
 		"collection_name": "моя коллекция_vsvvsv",
-		"date_create": "2025-02-02",
-		"time_create": "06:59:59.563234",
-		"status": 1,
-		"user": 2
+		"date_create": "2025-02-02"
 	}
 ]
