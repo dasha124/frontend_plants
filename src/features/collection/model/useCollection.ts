@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { CollectionsService } from '@/entities/collection/api';
 import { CollectionInfo } from '@/entities/collection/model';
@@ -9,6 +9,25 @@ export const useCollection = (id: string) => {
 		null,
 	);
 	const [isLoaded, setIsLoaded] = useState(false);
+
+	const fields = useMemo(
+		() =>
+			collectionInfo
+				? [
+						{
+							key: '1',
+							label: 'Дата создания',
+							value: collectionInfo.dateCreate + collectionInfo.timeCreate,
+						},
+						{
+							key: '2',
+							label: 'Статус',
+							value: collectionInfo.status,
+						},
+					]
+				: [],
+		[collectionInfo],
+	);
 
 	const loadCollectionInfo = useCallback(async (id: string) => {
 		try {
@@ -33,5 +52,5 @@ export const useCollection = (id: string) => {
 		loadCollectionInfo(id);
 	}, [id, loadCollectionInfo]);
 
-	return { isLoaded, collectionInfo };
+	return { isLoaded, collectionInfo, fields };
 };

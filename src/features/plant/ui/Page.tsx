@@ -18,9 +18,7 @@ export const Page: React.FC<Props> = ({ id }) => {
 			condition={isLoaded}
 			className={cn('flex flex-col p-4 gap-8')}
 		>
-			<h1 className={'text-white text-center text-4xl font-bold'}>
-				{plantInfo?.name}
-			</h1>
+			<h1 className={'text-center text-4xl font-bold'}>{plantInfo?.name}</h1>
 
 			<div className={'flex flex-col md:flex-row gap-4'}>
 				<img
@@ -33,22 +31,15 @@ export const Page: React.FC<Props> = ({ id }) => {
 					{mainFields?.map((item, index) => (
 						<Descriptions.Item
 							key={index}
-							label={
-								<span className={'text-white text-xl font-bold'}>
-									{item.label}
-								</span>
-							}
+							label={<span className={'text-xl font-bold'}>{item.label}</span>}
 						>
-							<span className={'text-white text-xl'}>{item.value}</span>
+							<span className={'text-xl'}>{item.value}</span>
 						</Descriptions.Item>
 					))}
 				</Descriptions>
 			</div>
 
-			<Collapse
-				items={properties}
-				className={'text-white'}
-			/>
+			<Collapse items={properties} />
 		</RenderIf>
 	);
 };

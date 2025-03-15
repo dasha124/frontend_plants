@@ -1,31 +1,40 @@
-import { Card } from 'antd';
+import { Card, Descriptions } from 'antd';
 import Meta from 'antd/es/card/Meta';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { TCollectionShortInfo } from '@/entities/collection/model';
-import { cn } from '@/shared/lib';
-
+import { useCollectionItem } from '@/features/collections/model';
 type Props = {
 	collection: TCollectionShortInfo;
 };
 
 export const CollectionItem: React.FC<Props> = ({ collection }) => {
+	const { fields } = useCollectionItem(collection);
+
 	return (
 		<Link to={`/collections/${collection.id}`}>
 			<Card
 				hoverable
-				style={{ width: 240 }}
+				style={{ width: 360 }}
 			>
 				<Meta
-					title={collection.name}
+					title={<span className={'text-xl'}>{collection.name}</span>}
 					description={
-						<div className={cn('flex flex-col')}>
-							<span>
-								Дата создания: {collection.dateCreate} {collection.timeCreate}
-							</span>
-							<span>Колличество растений: {collection.plantsCount}</span>
-						</div>
+						<Descriptions column={1}>
+							{fields?.map((item, index) => (
+								<Descriptions.Item
+									key={index}
+									label={
+										<span className={'text-[1rem] font-bold'}>
+											{item.label}
+										</span>
+									}
+								>
+									<span className={'text-[1rem]'}>{item.value}</span>
+								</Descriptions.Item>
+							))}
+						</Descriptions>
 					}
 				/>
 			</Card>
