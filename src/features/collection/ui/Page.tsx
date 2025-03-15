@@ -18,7 +18,7 @@ export const Page: React.FC<Props> = ({ id }) => {
 			condition={isLoaded}
 			className={cn('flex flex-col p-4 gap-8')}
 		>
-			<h1 className={'text-center text-4xl font-bold'}>
+			<h1 className={'text-white text-center text-4xl font-bold'}>
 				{collectionInfo?.name}
 			</h1>
 

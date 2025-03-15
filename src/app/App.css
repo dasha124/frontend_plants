@@ -18,5 +18,5 @@ body {
 	font-size: 1.25rem
 }
 .ant-descriptions-item-content {
-	align-items: center;
+	align-items: center !important;
 }
