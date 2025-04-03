@@ -20,3 +20,8 @@ body {
 .ant-descriptions-item-content {
 	align-items: center !important;
 }
+
+.ant-form-item-label {
+	/*flex: auto !important;*/
+	/*max-width: none !important;*/
+}

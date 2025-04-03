@@ -53,6 +53,12 @@ export const useNavbar = () => {
 			case 'collections':
 				navigate('/collections');
 				break;
+			case 'login':
+				navigate('/login');
+				break;
+			case 'logout':
+				navigate('/signup');
+				break;
 		}
 	};
 

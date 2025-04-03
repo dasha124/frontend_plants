@@ -5,8 +5,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { CollectionPage } from '@/pages/collection/ui';
 import { CollectionsPage } from '@/pages/collections/ui';
+import { LoginPage } from '@/pages/login/ui';
 import { PlantPage } from '@/pages/plant/ui';
 import { PlantsPage } from '@/pages/plants/ui';
+import { SignupPage } from '@/pages/signup/ui';
 import { TypePlantsPage } from '@/pages/typePlants/ui';
 import { cn } from '@/shared/lib';
 import { ToastProvider } from '@/shared/utils';
@@ -57,6 +59,14 @@ export const App = () => {
 								<Route
 									path='/collections/:id'
 									element={<CollectionPage />}
+								/>
+								<Route
+									path='/login'
+									element={<LoginPage />}
+								/>
+								<Route
+									path='/signup'
+									element={<SignupPage />}
 								/>
 							</Routes>
 						</div>

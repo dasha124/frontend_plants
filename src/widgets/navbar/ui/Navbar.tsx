@@ -10,7 +10,7 @@ export const Navbar = () => {
 			<Menu
 				onClick={onClick}
 				selectedKeys={getActiveKey()}
-				mode='horizontal'
+				mode={'horizontal'}
 				items={items}
 			/>
 		</div>
