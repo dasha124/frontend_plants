@@ -30,7 +30,7 @@
 		"user_id": "1",
 		"collection_name": "моя коллекция",
 		"date_create": "2025-02-01",
-		"time_create": "14:45:41.975767",
+		"time_create": "14:45:41",
 		"status": "Сформирована"
 	},
 	{
@@ -39,7 +39,7 @@
 		"user_id": "3",
 		"collection_name": "коллекция",
 		"date_create": "2025-02-01",
-		"time_create": "14:45:11.523329",
+		"time_create": "14:45:11",
 		"status": "Сформирована"
 	},
 	{
@@ -48,7 +48,7 @@
 		"user_id": "1",
 		"collection_name": "коллекция 2",
 		"date_create": "2025-02-01",
-		"time_create": "14:44:07.993226",
+		"time_create": "14:44:07",
 		"status": "Сформирована"
 	},
 	{
@@ -63,7 +63,7 @@
 		"user_id": "4",
 		"collection_name": "моя коллекция_vsvvsv",
 		"date_create": "2025-01-06",
-		"time_create": "08:36:44.837778",
+		"time_create": "08:36:44",
 		"status": "Сформирована"
 	},
 	{
@@ -72,7 +72,7 @@
 		"user_id": "user_1",
 		"collection_name": "моя коллекция_vsvvsv",
 		"date_create": "2025-02-02",
-		"time_create": "06:59:59.563234",
+		"time_create": "06:59:59",
 		"status": "Сформирована"
 	}
 ]
