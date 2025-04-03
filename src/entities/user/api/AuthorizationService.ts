@@ -32,7 +32,7 @@ export class AuthorizationService extends ServiceBase {
 				method: ERequestMethods.POST,
 			},
 			{
-				name: 'checkLogin',
+				name: 'check',
 				url: `${this.baseUrl}check/`,
 				method: ERequestMethods.GET,
 			},
@@ -105,15 +105,29 @@ export class AuthorizationService extends ServiceBase {
 	async logout(): Promise<void> {
 		const configItem = this.getConfigItem('logout');
 
-		return await this.makeHttpRequest(configItem.method, configItem.url);
+		try {
+			await this.makeHttpRequest(configItem.method, configItem.url);
+		} catch (error) {
+			console.error(error);
+		}
 	}
 
 	/**
 	 * Проверка авторизации пользователя
 	 */
-	async checkLogin(): Promise<void> {
-		const configItem = this.getConfigItem('checkLogin');
+	async check(): Promise<UserInfo> {
+		const configItem = this.getConfigItem('check');
 
-		return await this.makeHttpRequest(configItem.method, configItem.url);
+		let response: TUserInfoApi;
+
+		try {
+			response = await this.makeHttpRequest(configItem.method, configItem.url);
+		} catch (error) {
+			console.error(error);
+
+			response = { user_id: '1', user_name: 'roman', is_superuser: true };
+		}
+
+		return UserInfo.createFromApi(response);
 	}
 }

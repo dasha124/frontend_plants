@@ -13,7 +13,7 @@ import { SignupPage } from '@/pages/signup/ui';
 import { TypePlantsPage } from '@/pages/typePlants/ui';
 import { cn } from '@/shared/lib';
 import { store } from '@/shared/model/store';
-import { ToastProvider } from '@/shared/utils';
+import { ToastProvider, BeforeRender } from '@/shared/utils';
 import { Navbar } from '@/widgets/navbar/ui';
 import './App.css';
 
@@ -31,49 +31,51 @@ export const App = () => {
 					locale={locale}
 					theme={{ algorithm: theme.darkAlgorithm }}
 				>
-					<ToastProvider>
-						<BrowserRouter basename='/'>
-							<Navbar />
-							<div
-								style={{
-									marginTop: 'calc(46px + 1rem)',
-									marginBottom: '1rem',
-								}}
-								className={cn('flex flex-col mb-4 text-white')}
-							>
-								<Routes>
-									<Route
-										path='/plants'
-										element={<PlantsPage />}
-									/>
-									<Route
-										path='/plants/:id'
-										element={<PlantPage />}
-									/>
-									<Route
-										path='/type_plants'
-										element={<TypePlantsPage />}
-									/>
-									<Route
-										path='/collections'
-										element={<CollectionsPage />}
-									/>
-									<Route
-										path='/collections/:id'
-										element={<CollectionPage />}
-									/>
-									<Route
-										path='/login'
-										element={<LoginPage />}
-									/>
-									<Route
-										path='/signup'
-										element={<SignupPage />}
-									/>
-								</Routes>
-							</div>
-						</BrowserRouter>
-					</ToastProvider>
+					<BeforeRender>
+						<ToastProvider>
+							<BrowserRouter basename='/'>
+								<Navbar />
+								<div
+									style={{
+										marginTop: 'calc(46px + 1rem)',
+										marginBottom: '1rem',
+									}}
+									className={cn('flex flex-col mb-4 text-white')}
+								>
+									<Routes>
+										<Route
+											path='/plants'
+											element={<PlantsPage />}
+										/>
+										<Route
+											path='/plants/:id'
+											element={<PlantPage />}
+										/>
+										<Route
+											path='/type_plants'
+											element={<TypePlantsPage />}
+										/>
+										<Route
+											path='/collections'
+											element={<CollectionsPage />}
+										/>
+										<Route
+											path='/collections/:id'
+											element={<CollectionPage />}
+										/>
+										<Route
+											path='/login'
+											element={<LoginPage />}
+										/>
+										<Route
+											path='/signup'
+											element={<SignupPage />}
+										/>
+									</Routes>
+								</div>
+							</BrowserRouter>
+						</ToastProvider>
+					</BeforeRender>
 				</ConfigProvider>
 			</Provider>
 		</div>
