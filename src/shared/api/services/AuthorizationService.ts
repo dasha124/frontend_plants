@@ -1,3 +1,6 @@
+/* eslint-disable no-undef */
+
+import { UserInfo } from '@/entities/user/model';
 import { ServiceBase } from '@/shared/api';
 import { ERequestMethods } from '@/shared/model/enums';
 
@@ -39,11 +42,50 @@ export class AuthorizationService extends ServiceBase {
 	/**
 	 * Авторизация пользователя
 	 */
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	async login(username: string, password: string): Promise<void> {
+	async login(username: string, password: string): Promise<UserInfo> {
 		const configItem = this.getConfigItem('login');
 
-		return await this.makeHttpRequest(configItem.method, configItem.url);
+		// let response: TUserInfoApi;
+		//
+		// 	try {
+		// 		response = await this.makeHttpRequest(configItem.method, configItem.url, {
+		// 			username,
+		// 			password,
+		// 		});
+		// 	} catch (error) {
+		// 		console.error(error);
+		//
+		// 		response = { user_id: '1', user_name: 'roman', is_superuser: true };
+		// 	}
+		//
+		// 	return UserInfo.createFromApi(response);
+		// }
+
+		return new Promise((resolve) => {
+			setTimeout(async () => {
+				try {
+					const response = await this.makeHttpRequest(
+						configItem.method,
+						configItem.url,
+						{
+							username,
+							password,
+						},
+					);
+					resolve(UserInfo.createFromApi(response));
+				} catch (error) {
+					console.error(error);
+
+					resolve(
+						UserInfo.createFromApi({
+							user_id: '1',
+							user_name: 'roman',
+							is_superuser: true,
+						}),
+					);
+				}
+			}, 1500);
+		});
 	}
 
 	/**

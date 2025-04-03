@@ -5,7 +5,7 @@ import { TField, useLogin } from '@/features/login/model';
 import { cn } from '@/shared/lib';
 
 export const Page: React.FC = () => {
-	const { onFinish } = useLogin();
+	const { isFetching, onFinish } = useLogin();
 
 	return (
 		<div
@@ -42,8 +42,9 @@ export const Page: React.FC = () => {
 					<Button
 						type='primary'
 						htmlType='submit'
+						loading={isFetching}
 					>
-						Submit
+						Войти
 					</Button>
 				</Form.Item>
 			</Form>
