@@ -2,7 +2,7 @@ import type { FormProps } from 'antd';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { AuthorizationService } from '@/entities/user/api';
+import { AuthorizationService } from '@/shared/api';
 import { showToast } from '@/shared/utils';
 
 export type TField = {
@@ -38,7 +38,7 @@ export const useSignup = () => {
 		}
 	};
 
-	const onFinish: FormProps<TField>['onFinish'] = (values) => {
+	const onFinish: FormProps<TField>['onFinish'] = async (values) => {
 		if (!values.username || !values.password || !values.passwordRepeat) {
 			showToast('error', 'Укажите имя пользователя и пароль');
 			return;
@@ -49,7 +49,7 @@ export const useSignup = () => {
 			return;
 		}
 
-		signup(values.username, values.password);
+		await signup(values.username, values.password);
 	};
 
 	return { isFetching, onFinish };

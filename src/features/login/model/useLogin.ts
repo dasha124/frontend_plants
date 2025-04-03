@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import { AuthorizationService } from '@/entities/user/api';
 import { deleteUserAction, setUserAction } from '@/entities/user/model';
+import { AuthorizationService } from '@/shared/api';
 import { showToast } from '@/shared/utils';
 
 export type TField = {
@@ -42,13 +42,13 @@ export const useLogin = () => {
 		}
 	};
 
-	const onFinish: FormProps<TField>['onFinish'] = (values) => {
+	const onFinish: FormProps<TField>['onFinish'] = async (values) => {
 		if (!values.username || !values.password) {
 			showToast('error', 'Укажите имя пользователя и пароль');
 			return;
 		}
 
-		login(values.username, values.password);
+		await login(values.username, values.password);
 	};
 
 	return { isFetching, onFinish };

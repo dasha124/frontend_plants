@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 
 import { TUserInfoApi, UserInfo } from '@/entities/user/model';
-import { ServiceBase } from '@/shared/api';
+import { ServiceBase } from '@/shared/api/index.ts';
 import { ERequestMethods } from '@/shared/model/enums';
 
 export class AuthorizationService extends ServiceBase {
@@ -59,32 +59,6 @@ export class AuthorizationService extends ServiceBase {
 		}
 
 		return UserInfo.createFromApi(response);
-
-		// return new Promise((resolve) => {
-		// 	setTimeout(async () => {
-		// 		try {
-		// 			const response = await this.makeHttpRequest(
-		// 				configItem.method,
-		// 				configItem.url,
-		// 				{
-		// 					username,
-		// 					password,
-		// 				},
-		// 			);
-		// 			resolve(UserInfo.createFromApi(response));
-		// 		} catch (error) {
-		// 			console.error(error);
-		//
-		// 			resolve(
-		// 				UserInfo.createFromApi({
-		// 					user_id: '1',
-		// 					user_name: 'roman',
-		// 					is_superuser: true,
-		// 				}),
-		// 			);
-		// 		}
-		// 	}, 1500);
-		// });
 	}
 
 	/**

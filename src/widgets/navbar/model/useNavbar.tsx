@@ -10,8 +10,8 @@ import type { MenuProps } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import { AuthorizationService } from '@/entities/user/api';
 import { deleteUserAction, selectIsAuthorized } from '@/entities/user/model';
+import { AuthorizationService } from '@/shared/api';
 import { showToast } from '@/shared/utils';
 
 type MenuItem = Required<MenuProps>['items'][number];

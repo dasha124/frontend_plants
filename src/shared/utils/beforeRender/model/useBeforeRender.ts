@@ -1,10 +1,9 @@
-'use client';
-
+/* eslint-disable no-undef */
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { AuthorizationService } from '@/entities/user/api';
 import { setUserAction } from '@/entities/user/model';
+import { AuthorizationService } from '@/shared/api';
 
 export const useBeforeRender = () => {
 	const dispatch = useDispatch();
@@ -17,15 +16,14 @@ export const useBeforeRender = () => {
 		try {
 			const user = await authorizationService.check();
 			dispatch(setUserAction(user));
-		} catch {
-			// TODO
+		} catch (error) {
+			console.error(error);
 		}
 	};
 
 	const beforeRender = async () => {
 		await checkAuthorization();
 		// Даем всем настройкам установиться, затем пропускаем дальше
-		// eslint-disable-next-line no-undef
 		setTimeout(() => setCanRender(true), 500);
 	};
 
