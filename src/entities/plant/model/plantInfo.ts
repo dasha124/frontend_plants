@@ -125,6 +125,14 @@ export class PlantInfo {
 		});
 	}
 
+	static createShortInfoFromApi(plantInfo: TPlantInfoApi): TPlantShortInfo {
+		return {
+			id: plantInfo.plant_id,
+			name: plantInfo.plant_name,
+			image: plantInfo.image_url_plant,
+		};
+	}
+
 	toApi(): TPlantInfoApi {
 		return {
 			plant_id: this.id,
