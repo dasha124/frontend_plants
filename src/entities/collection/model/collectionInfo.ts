@@ -1,7 +1,7 @@
 import {
 	PlantInfo,
 	TPlantInfoApi,
-	TPlantInfoModel,
+	TPlantShortInfo,
 } from '@/entities/plant/model';
 
 export type TCollectionInfoApi = {
@@ -30,7 +30,7 @@ export type TCollectionInfoModel = {
 	dateCreate: string;
 	timeCreate: string;
 	status: string;
-	plants: TPlantInfoModel[];
+	plants: TPlantShortInfo[];
 };
 
 export class CollectionInfo {
@@ -40,7 +40,7 @@ export class CollectionInfo {
 	dateCreate: string;
 	timeCreate: string;
 	status: string;
-	plants: PlantInfo[];
+	plants: TPlantShortInfo[];
 
 	constructor({
 		id,
@@ -57,7 +57,7 @@ export class CollectionInfo {
 		this.dateCreate = dateCreate;
 		this.timeCreate = timeCreate;
 		this.status = status;
-		this.plants = plants.map((plant) => new PlantInfo(plant));
+		this.plants = plants;
 	}
 
 	static createFromApi(collectionInfo: TCollectionInfoApi): CollectionInfo {
@@ -69,7 +69,7 @@ export class CollectionInfo {
 			timeCreate: collectionInfo.time_create,
 			status: collectionInfo.status,
 			plants: collectionInfo.plant.map((plant) =>
-				PlantInfo.createFromApi(plant),
+				PlantInfo.createShortInfoFromApi(plant),
 			),
 		});
 	}
@@ -82,18 +82,6 @@ export class CollectionInfo {
 			timeCreate: this.timeCreate,
 			status: this.status,
 			plantsCount: this.plants.length,
-		};
-	}
-
-	toApi(): TCollectionInfoApi {
-		return {
-			collection_id: this.id,
-			collection_name: this.name,
-			user_id: this.userId,
-			date_create: this.dateCreate,
-			time_create: this.timeCreate,
-			status: this.status,
-			plant: this.plants.map((plant) => plant.toApi()),
 		};
 	}
 }
