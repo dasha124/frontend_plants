@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 
-import { UserInfo } from '@/entities/user/model';
+import { TUserInfoApi, UserInfo } from '@/entities/user/model';
 import { ServiceBase } from '@/shared/api';
 import { ERequestMethods } from '@/shared/model/enums';
 
@@ -45,56 +45,58 @@ export class AuthorizationService extends ServiceBase {
 	async login(username: string, password: string): Promise<UserInfo> {
 		const configItem = this.getConfigItem('login');
 
-		// let response: TUserInfoApi;
-		//
-		// 	try {
-		// 		response = await this.makeHttpRequest(configItem.method, configItem.url, {
-		// 			username,
-		// 			password,
-		// 		});
-		// 	} catch (error) {
-		// 		console.error(error);
-		//
-		// 		response = { user_id: '1', user_name: 'roman', is_superuser: true };
-		// 	}
-		//
-		// 	return UserInfo.createFromApi(response);
-		// }
+		let response: TUserInfoApi;
 
-		return new Promise((resolve) => {
-			setTimeout(async () => {
-				try {
-					const response = await this.makeHttpRequest(
-						configItem.method,
-						configItem.url,
-						{
-							username,
-							password,
-						},
-					);
-					resolve(UserInfo.createFromApi(response));
-				} catch (error) {
-					console.error(error);
+		try {
+			response = await this.makeHttpRequest(configItem.method, configItem.url, {
+				username,
+				password,
+			});
+		} catch (error) {
+			console.error(error);
 
-					resolve(
-						UserInfo.createFromApi({
-							user_id: '1',
-							user_name: 'roman',
-							is_superuser: true,
-						}),
-					);
-				}
-			}, 1500);
-		});
+			response = { user_id: '1', user_name: 'roman', is_superuser: true };
+		}
+
+		return UserInfo.createFromApi(response);
+
+		// return new Promise((resolve) => {
+		// 	setTimeout(async () => {
+		// 		try {
+		// 			const response = await this.makeHttpRequest(
+		// 				configItem.method,
+		// 				configItem.url,
+		// 				{
+		// 					username,
+		// 					password,
+		// 				},
+		// 			);
+		// 			resolve(UserInfo.createFromApi(response));
+		// 		} catch (error) {
+		// 			console.error(error);
+		//
+		// 			resolve(
+		// 				UserInfo.createFromApi({
+		// 					user_id: '1',
+		// 					user_name: 'roman',
+		// 					is_superuser: true,
+		// 				}),
+		// 			);
+		// 		}
+		// 	}, 1500);
+		// });
 	}
 
 	/**
 	 * Создание нового пользователя
 	 */
-	async signup(): Promise<void> {
+	async signup(username: string, password: string): Promise<void> {
 		const configItem = this.getConfigItem('signup');
 
-		return await this.makeHttpRequest(configItem.method, configItem.url);
+		await this.makeHttpRequest(configItem.method, configItem.url, {
+			username,
+			password,
+		});
 	}
 
 	/**

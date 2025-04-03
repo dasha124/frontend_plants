@@ -1,5 +1,6 @@
 import { Button, Form, Input } from 'antd';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { TField, useLogin } from '@/features/login/model';
 import { cn } from '@/shared/lib';
@@ -10,9 +11,12 @@ export const Page: React.FC = () => {
 	return (
 		<div
 			className={cn(
-				'flex justify-center items-center h-[calc(100vh-46px)] w-screen]',
+				'flex flex-col justify-center items-center gap-16',
+				'h-[calc(100vh-46px-2rem)] w-screen]',
 			)}
 		>
+			<h1 className={'text-center text-4xl font-bold'}>Вход в аккаунт</h1>
+
 			<Form
 				name='basic'
 				labelCol={{ span: 8 }}
@@ -48,6 +52,18 @@ export const Page: React.FC = () => {
 					</Button>
 				</Form.Item>
 			</Form>
+
+			<div className={'flex gap-2'}>
+				<span>Нет аккаунта?</span>
+				<Link
+					to={'/signup'}
+					className={cn(
+						'underline hover:text-blue-700 transition-colors duration-200',
+					)}
+				>
+					Зарегистрироваться
+				</Link>
+			</div>
 		</div>
 	);
 };

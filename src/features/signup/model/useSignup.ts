@@ -1,37 +1,33 @@
 import type { FormProps } from 'antd';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import { AuthorizationService } from '@/entities/user/api';
-import { deleteUserAction, setUserAction } from '@/entities/user/model';
 import { showToast } from '@/shared/utils';
 
 export type TField = {
 	username?: string;
 	password?: string;
+	passwordRepeat?: string;
 };
 
-export const useLogin = () => {
+export const useSignup = () => {
 	const navigate = useNavigate();
-	const dispatch = useDispatch();
 
 	const [isFetching, setIsFetching] = useState(false);
 
-	const login = async (username: string, password: string) => {
+	const signup = async (username: string, password: string) => {
 		try {
 			setIsFetching(true);
 
 			const authorizationService = new AuthorizationService();
 
-			const userInfo = await authorizationService.login(username, password);
+			await authorizationService.signup(username, password);
 
-			dispatch(setUserAction(userInfo));
+			showToast('success', 'Пользователь успешно зарегистрирован');
 
-			navigate('/plants');
+			navigate('/login');
 		} catch (error: unknown) {
-			dispatch(deleteUserAction());
-
 			if (error instanceof Error) {
 				showToast('error', error.message);
 			} else {
@@ -43,12 +39,17 @@ export const useLogin = () => {
 	};
 
 	const onFinish: FormProps<TField>['onFinish'] = (values) => {
-		if (!values.username || !values.password) {
+		if (!values.username || !values.password || !values.passwordRepeat) {
 			showToast('error', 'Укажите имя пользователя и пароль');
 			return;
 		}
 
-		login(values.username, values.password);
+		if (values.password !== values.passwordRepeat) {
+			showToast('error', 'Пароли не совпадают');
+			return;
+		}
+
+		signup(values.username, values.password);
 	};
 
 	return { isFetching, onFinish };
