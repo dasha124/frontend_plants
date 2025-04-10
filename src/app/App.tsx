@@ -14,6 +14,7 @@ import { TypePlantsPage } from '@/pages/typePlants/ui';
 import { cn } from '@/shared/lib';
 import { store } from '@/shared/model/store';
 import { ToastProvider, BeforeRender } from '@/shared/utils';
+import { ModalContainer } from '@/widgets/modal/container';
 import { Navbar } from '@/widgets/navbar/ui';
 import './App.css';
 
@@ -35,6 +36,7 @@ export const App = () => {
 						<ToastProvider>
 							<BrowserRouter basename='/'>
 								<Navbar />
+
 								<div
 									style={{
 										marginTop: 'calc(46px + 1rem)',
@@ -73,6 +75,8 @@ export const App = () => {
 										/>
 									</Routes>
 								</div>
+
+								<ModalContainer />
 							</BrowserRouter>
 						</ToastProvider>
 					</BeforeRender>

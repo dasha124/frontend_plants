@@ -29,6 +29,11 @@ export class CollectionsService extends ServiceBase {
 				url: this.baseUrl,
 				method: ERequestMethods.GET,
 			},
+			{
+				name: 'createCollection',
+				url: `${this.baseUrl}create/`,
+				method: ERequestMethods.POST,
+			},
 		];
 	}
 
@@ -65,6 +70,28 @@ export class CollectionsService extends ServiceBase {
 				configItem.method,
 				`${configItem.url}${id}/`,
 			);
+		} catch (error) {
+			console.error(error);
+
+			response = collectionMocked;
+		}
+
+		return CollectionInfo.createFromApi(response);
+	}
+
+	/**
+	 * Создание коллекции
+	 * @param name - Название коллекции
+	 */
+	async createCollection(name: string): Promise<CollectionInfo> {
+		const configItem = this.getConfigItem('createCollection');
+
+		let response;
+
+		try {
+			response = await this.makeHttpRequest(configItem.method, configItem.url, {
+				collection_name: name,
+			});
 		} catch (error) {
 			console.error(error);
 

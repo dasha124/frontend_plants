@@ -1,4 +1,6 @@
 import {
+	IconCirclePlus,
+	IconLayout2,
 	IconLayoutGridAdd,
 	IconListDetails,
 	IconLogin2,
@@ -12,7 +14,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 import { deleteUserAction, selectIsAuthorized } from '@/entities/user/model';
 import { AuthorizationService } from '@/shared/api';
-import { showToast } from '@/shared/utils';
+import { EmitterEvents, eventEmitter, showToast } from '@/shared/utils';
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -27,11 +29,27 @@ const getMenuItems = (isAuthorized: boolean): MenuItem[] => [
 		key: 'plants',
 		icon: <IconPlant />,
 	},
-	{
-		label: 'Коллекции',
-		key: 'collections',
-		icon: <IconLayoutGridAdd />,
-	},
+	...(isAuthorized
+		? [
+				{
+					label: 'Коллекции',
+					key: 'collections',
+					icon: <IconLayoutGridAdd />,
+					children: [
+						{
+							label: 'Мои коллекции',
+							key: 'collections_my',
+							icon: <IconLayout2 />,
+						},
+						{
+							label: 'Создать',
+							key: 'collections_create',
+							icon: <IconCirclePlus />,
+						},
+					],
+				},
+			]
+		: []),
 	{
 		label: 'Аккаунт',
 		key: 'account',
@@ -87,8 +105,11 @@ export const useNavbar = () => {
 			case 'plants':
 				navigate('/plants');
 				break;
-			case 'collections':
+			case 'collections_my':
 				navigate('/collections');
+				break;
+			case 'collections_create':
+				eventEmitter.emit(EmitterEvents.MODAL_OPEN_CREATE_COLLECTION);
 				break;
 			case 'login':
 				navigate('/login');
