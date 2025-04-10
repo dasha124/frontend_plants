@@ -34,6 +34,11 @@ export class CollectionsService extends ServiceBase {
 				url: `${this.baseUrl}create/`,
 				method: ERequestMethods.POST,
 			},
+			{
+				name: 'updateCollectionName',
+				url: this.baseUrl,
+				method: ERequestMethods.PUT,
+			},
 		];
 	}
 
@@ -92,6 +97,36 @@ export class CollectionsService extends ServiceBase {
 			response = await this.makeHttpRequest(configItem.method, configItem.url, {
 				collection_name: name,
 			});
+		} catch (error) {
+			console.error(error);
+
+			response = collectionMocked;
+		}
+
+		return CollectionInfo.createFromApi(response);
+	}
+
+	/**
+	 * Обновление названия коллекции
+	 * @param collectionId - Идентификатор коллекции
+	 * @param name - Название коллекции
+	 */
+	async updateCollectionName(
+		collectionId: string,
+		name: string,
+	): Promise<CollectionInfo> {
+		const configItem = this.getConfigItem('updateCollectionName');
+
+		let response;
+
+		try {
+			response = await this.makeHttpRequest(
+				configItem.method,
+				`${configItem.url}${collectionId}/update/`,
+				{
+					collection_name: name,
+				},
+			);
 		} catch (error) {
 			console.error(error);
 

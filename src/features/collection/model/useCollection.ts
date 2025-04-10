@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { CollectionsService } from '@/entities/collection/api';
 import { CollectionInfo } from '@/entities/collection/model';
@@ -9,6 +9,8 @@ export const useCollection = (id: string) => {
 		null,
 	);
 	const [isLoaded, setIsLoaded] = useState(false);
+	const [isEditMode, setIsEditMode] = useState(false);
+	const [collectionName, setCollectionName] = useState('');
 
 	const fields = useMemo(
 		() =>
@@ -29,12 +31,49 @@ export const useCollection = (id: string) => {
 		[collectionInfo],
 	);
 
+	const handleEditBtnClick = () => setIsEditMode(true);
+
+	const handleChangeCollectionName = (
+		event: React.ChangeEvent<HTMLInputElement>,
+	) => {
+		setCollectionName(event.target.value);
+	};
+
+	const handleSaveCollectionName = async () => {
+		if (collectionName.trim().length === 0) {
+			showToast('error', 'Введите название коллекции');
+			return;
+		}
+
+		try {
+			const collectionsService = new CollectionsService();
+
+			const collection = await collectionsService.updateCollectionName(
+				id,
+				collectionName.trim(),
+			);
+
+			setCollectionInfo(collection);
+			setCollectionName(collection.name);
+
+			setIsEditMode(false);
+		} catch (error: unknown) {
+			showToast(
+				'error',
+				error instanceof Error && error.message
+					? error.message
+					: 'Ошибка при выполнеии действия',
+			);
+		}
+	};
+
 	const loadCollectionInfo = useCallback(async (id: string) => {
 		try {
 			const collectionsService = new CollectionsService();
 
 			const collection = await collectionsService.getCollectionInfo(id);
 			setCollectionInfo(collection);
+			setCollectionName(collection.name);
 		} catch (error: unknown) {
 			setCollectionInfo(null);
 
@@ -52,5 +91,14 @@ export const useCollection = (id: string) => {
 		loadCollectionInfo(id);
 	}, [id, loadCollectionInfo]);
 
-	return { isLoaded, collectionInfo, fields };
+	return {
+		isLoaded,
+		isEditMode,
+		collectionInfo,
+		fields,
+		collectionName,
+		handleEditBtnClick,
+		handleChangeCollectionName,
+		handleSaveCollectionName,
+	};
 };
