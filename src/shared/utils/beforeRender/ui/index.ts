@@ -1,0 +1,1 @@
+export { BeforeRender } from './BeforeRender';

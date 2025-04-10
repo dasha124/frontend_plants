@@ -1,8 +1,9 @@
 import { Menu } from 'antd';
+import React from 'react';
 
 import { useNavbar } from '@/widgets/navbar/model';
 
-export const Navbar = () => {
+export const Navbar = React.memo(() => {
 	const { onClick, getActiveKey, items } = useNavbar();
 
 	return (
@@ -10,9 +11,11 @@ export const Navbar = () => {
 			<Menu
 				onClick={onClick}
 				selectedKeys={getActiveKey()}
-				mode='horizontal'
+				mode={'horizontal'}
 				items={items}
 			/>
 		</div>
 	);
-};
+});
+
+Navbar.displayName = 'Navbar';
