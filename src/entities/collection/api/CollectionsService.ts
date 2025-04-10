@@ -39,6 +39,11 @@ export class CollectionsService extends ServiceBase {
 				url: this.baseUrl,
 				method: ERequestMethods.PUT,
 			},
+			{
+				name: 'deleteCollection',
+				url: this.baseUrl,
+				method: ERequestMethods.DELETE,
+			},
 		];
 	}
 
@@ -134,5 +139,22 @@ export class CollectionsService extends ServiceBase {
 		}
 
 		return CollectionInfo.createFromApi(response);
+	}
+
+	/**
+	 * Удаление коллекции
+	 * @param collectionId - Идентификатор коллекции
+	 */
+	async deleteCollection(collectionId: string): Promise<void> {
+		const configItem = this.getConfigItem('deleteCollection');
+
+		try {
+			await this.makeHttpRequest(
+				configItem.method,
+				`${configItem.url}${collectionId}/delete/`,
+			);
+		} catch (error) {
+			console.error(error);
+		}
 	}
 }

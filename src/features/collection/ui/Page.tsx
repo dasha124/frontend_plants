@@ -1,5 +1,5 @@
 import { IconCheck, IconEdit } from '@tabler/icons-react';
-import { Descriptions, Divider, Input } from 'antd';
+import { Button, Descriptions, Divider, Input } from 'antd';
 import React from 'react';
 
 import { useCollection } from '@/features/collection/model';
@@ -21,6 +21,7 @@ export const Page: React.FC<Props> = ({ id }) => {
 		handleEditBtnClick,
 		handleChangeCollectionName,
 		handleSaveCollectionName,
+		handleDeleteCollection,
 	} = useCollection(id);
 
 	return (
@@ -66,6 +67,10 @@ export const Page: React.FC<Props> = ({ id }) => {
 					</Descriptions.Item>
 				))}
 			</Descriptions>
+
+			<div>
+				<Button onClick={handleDeleteCollection}>Удалить коллекцию</Button>
+			</div>
 
 			<Divider orientation={'left'}>Растения</Divider>
 

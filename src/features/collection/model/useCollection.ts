@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { CollectionsService } from '@/entities/collection/api';
 import { CollectionInfo } from '@/entities/collection/model';
-import { showToast } from '@/shared/utils';
+import { EmitterEvents, eventEmitter, showToast } from '@/shared/utils';
 
 export const useCollection = (id: string) => {
 	const [collectionInfo, setCollectionInfo] = useState<CollectionInfo | null>(
@@ -30,6 +30,26 @@ export const useCollection = (id: string) => {
 				: [],
 		[collectionInfo],
 	);
+
+	const loadCollectionInfo = useCallback(async (id: string) => {
+		try {
+			const collectionsService = new CollectionsService();
+
+			const collection = await collectionsService.getCollectionInfo(id);
+			setCollectionInfo(collection);
+			setCollectionName(collection.name);
+		} catch (error: unknown) {
+			setCollectionInfo(null);
+
+			if (error instanceof Error) {
+				showToast('error', error.message);
+			} else {
+				showToast('error', 'Ошибка при выполнеии действия');
+			}
+		} finally {
+			setIsLoaded(true);
+		}
+	}, []);
 
 	const handleEditBtnClick = () => setIsEditMode(true);
 
@@ -67,25 +87,9 @@ export const useCollection = (id: string) => {
 		}
 	};
 
-	const loadCollectionInfo = useCallback(async (id: string) => {
-		try {
-			const collectionsService = new CollectionsService();
-
-			const collection = await collectionsService.getCollectionInfo(id);
-			setCollectionInfo(collection);
-			setCollectionName(collection.name);
-		} catch (error: unknown) {
-			setCollectionInfo(null);
-
-			if (error instanceof Error) {
-				showToast('error', error.message);
-			} else {
-				showToast('error', 'Ошибка при выполнеии действия');
-			}
-		} finally {
-			setIsLoaded(true);
-		}
-	}, []);
+	const handleDeleteCollection = () => {
+		eventEmitter.emit(EmitterEvents.MODAL_OPEN_DELETE_COLLECTION);
+	};
 
 	useEffect(() => {
 		loadCollectionInfo(id);
@@ -100,5 +104,6 @@ export const useCollection = (id: string) => {
 		handleEditBtnClick,
 		handleChangeCollectionName,
 		handleSaveCollectionName,
+		handleDeleteCollection,
 	};
 };
