@@ -44,6 +44,16 @@ export class CollectionsService extends ServiceBase {
 				url: this.baseUrl,
 				method: ERequestMethods.DELETE,
 			},
+			{
+				name: 'addPlantToCollection',
+				url: this.baseUrl,
+				method: ERequestMethods.POST,
+			},
+			{
+				name: 'deletePlantFromCollection',
+				url: this.baseUrl,
+				method: ERequestMethods.DELETE,
+			},
 		];
 	}
 
@@ -156,5 +166,59 @@ export class CollectionsService extends ServiceBase {
 		} catch (error) {
 			console.error(error);
 		}
+	}
+
+	/**
+	 * Добавление растения в коллекцию
+	 * @param plantId - Идентификатор растения
+	 * @param collectionId - Идентификатор коллекции
+	 */
+	async addPlantToCollection(
+		plantId: string,
+		collectionId: string,
+	): Promise<CollectionInfo> {
+		const configItem = this.getConfigItem('addPlantToCollection');
+
+		let response;
+
+		try {
+			response = await this.makeHttpRequest(
+				configItem.method,
+				`${configItem.url}${collectionId}/${plantId}/add_plant_to_collection/`,
+			);
+		} catch (error) {
+			console.error(error);
+
+			response = collectionMocked;
+		}
+
+		return CollectionInfo.createFromApi(response);
+	}
+
+	/**
+	 * Удаление растения из коллекции
+	 * @param plantId - Идентификатор растения
+	 * @param collectionId - Идентификатор коллекции
+	 */
+	async deletePlantFromCollection(
+		plantId: string,
+		collectionId: string,
+	): Promise<CollectionInfo> {
+		const configItem = this.getConfigItem('deletePlantFromCollection');
+
+		let response;
+
+		try {
+			response = await this.makeHttpRequest(
+				configItem.method,
+				`${configItem.url}${collectionId}/${plantId}/delete_plant_from_collection/`,
+			);
+		} catch (error) {
+			console.error(error);
+
+			response = collectionMocked;
+		}
+
+		return CollectionInfo.createFromApi(response);
 	}
 }

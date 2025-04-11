@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { CollectionsService } from '@/entities/collection/api';
 import { CollectionInfo } from '@/entities/collection/model';
-import { EmitterEvents, eventEmitter, showToast } from '@/shared/utils';
+import { emitEvent, EmitterEvents, showToast } from '@/shared/utils';
 
 export const useCollection = (id: string) => {
 	const [collectionInfo, setCollectionInfo] = useState<CollectionInfo | null>(
@@ -88,7 +88,7 @@ export const useCollection = (id: string) => {
 	};
 
 	const handleDeleteCollection = () => {
-		eventEmitter.emit(EmitterEvents.MODAL_OPEN_DELETE_COLLECTION);
+		emitEvent(EmitterEvents.MODAL_OPEN_DELETE_COLLECTION);
 	};
 
 	useEffect(() => {

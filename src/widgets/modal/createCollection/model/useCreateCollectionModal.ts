@@ -2,7 +2,12 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { CollectionsService } from '@/entities/collection/api';
-import { EmitterEvents, eventEmitter, showToast } from '@/shared/utils';
+import {
+	EmitterEvents,
+	eventEmitter,
+	onEvent,
+	showToast,
+} from '@/shared/utils';
 
 export const useCreateCollectionModal = () => {
 	const navigate = useNavigate();
@@ -56,7 +61,7 @@ export const useCreateCollectionModal = () => {
 	};
 
 	useEffect(() => {
-		eventEmitter.on(EmitterEvents.MODAL_OPEN_CREATE_COLLECTION, openModal);
+		onEvent(EmitterEvents.MODAL_OPEN_CREATE_COLLECTION, openModal);
 
 		return () => {
 			eventEmitter.off(EmitterEvents.MODAL_OPEN_CREATE_COLLECTION, openModal);

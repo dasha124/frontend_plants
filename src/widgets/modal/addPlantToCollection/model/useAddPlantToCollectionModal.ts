@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useState } from 'react';
-import { useMatch, useNavigate } from 'react-router-dom';
 
 import { CollectionsService } from '@/entities/collection/api';
 import {
@@ -9,13 +8,11 @@ import {
 	showToast,
 } from '@/shared/utils';
 
-export const useDeleteCollectionModal = () => {
-	const navigate = useNavigate();
-	const match = useMatch('/collections/:collectionId');
-	const collectionId = match?.params.collectionId;
-
+export const useAddPlantToCollectionModal = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [isFetching, setIsFetching] = useState(false);
+	const [plantId, setPlantId] = useState<string | null>(null);
+	const [collectionId] = useState<string | null>(null);
 
 	const openModal = useCallback(() => {
 		setIsOpen(true);
@@ -23,21 +20,23 @@ export const useDeleteCollectionModal = () => {
 
 	const closeModal = () => {
 		setIsOpen(false);
+		setPlantId(null);
 	};
 
-	const handleDeleteCollection = async () => {
-		if (!collectionId) return;
+	const handleAddToCollection = async () => {
+		if (!plantId || !collectionId) {
+			showToast('error', 'Не указано растение или коллекция');
+			return;
+		}
 
 		try {
 			setIsFetching(true);
 
 			const collectionService = new CollectionsService();
 
-			await collectionService.deleteCollection(collectionId);
+			await collectionService.addPlantToCollection(plantId, collectionId);
 
-			navigate('/collections');
-
-			showToast('success', 'Коллекция удалена');
+			showToast('success', 'Растение добавлено в коллекцию');
 
 			closeModal();
 		} catch (error: unknown) {
@@ -53,17 +52,24 @@ export const useDeleteCollectionModal = () => {
 	};
 
 	useEffect(() => {
-		onEvent(EmitterEvents.MODAL_OPEN_DELETE_COLLECTION, openModal);
+		onEvent(EmitterEvents.MODAL_OPEN_PLANT_ADD_TO_COLLECTION, (payload) => {
+			setPlantId(payload.plantId);
+			openModal();
+		});
 
 		return () => {
-			eventEmitter.off(EmitterEvents.MODAL_OPEN_DELETE_COLLECTION, openModal);
+			eventEmitter.off(
+				EmitterEvents.MODAL_OPEN_PLANT_ADD_TO_COLLECTION,
+				setPlantId,
+			);
 		};
 	}, [openModal]);
 
 	return {
+		plantId,
 		isOpen,
 		isFetching,
 		closeModal,
-		handleDeleteCollection,
+		handleAddToCollection,
 	};
 };

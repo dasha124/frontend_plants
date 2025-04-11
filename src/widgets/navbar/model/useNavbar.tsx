@@ -18,7 +18,7 @@ import {
 	selectIsSuperuser,
 } from '@/entities/user/model';
 import { AuthorizationService } from '@/shared/api';
-import { EmitterEvents, eventEmitter, showToast } from '@/shared/utils';
+import { emitEvent, EmitterEvents, showToast } from '@/shared/utils';
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -117,7 +117,7 @@ export const useNavbar = () => {
 				navigate('/collections');
 				break;
 			case 'collections_create':
-				eventEmitter.emit(EmitterEvents.MODAL_OPEN_CREATE_COLLECTION);
+				emitEvent(EmitterEvents.MODAL_OPEN_CREATE_COLLECTION);
 				break;
 			case 'login':
 				navigate('/login');
