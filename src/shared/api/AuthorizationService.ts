@@ -99,7 +99,7 @@ export class AuthorizationService extends ServiceBase {
 		} catch (error) {
 			console.error(error);
 
-			response = { user_id: '1', user_name: 'roman', is_superuser: true };
+			response = { user_id: '1', user_name: 'roman', is_superuser: false };
 		}
 
 		return UserInfo.createFromApi(response);

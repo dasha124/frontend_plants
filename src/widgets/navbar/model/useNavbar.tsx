@@ -12,13 +12,20 @@ import type { MenuProps } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import { deleteUserAction, selectIsAuthorized } from '@/entities/user/model';
+import {
+	deleteUserAction,
+	selectIsAuthorized,
+	selectIsSuperuser,
+} from '@/entities/user/model';
 import { AuthorizationService } from '@/shared/api';
 import { EmitterEvents, eventEmitter, showToast } from '@/shared/utils';
 
 type MenuItem = Required<MenuProps>['items'][number];
 
-const getMenuItems = (isAuthorized: boolean): MenuItem[] => [
+const getMenuItems = (
+	isAuthorized: boolean,
+	isSuperuser: boolean,
+): MenuItem[] => [
 	{
 		label: 'Виды растений',
 		key: 'typePlants',
@@ -29,7 +36,7 @@ const getMenuItems = (isAuthorized: boolean): MenuItem[] => [
 		key: 'plants',
 		icon: <IconPlant />,
 	},
-	...(isAuthorized
+	...(isAuthorized && !isSuperuser
 		? [
 				{
 					label: 'Коллекции',
@@ -78,8 +85,9 @@ export const useNavbar = () => {
 	const dispatch = useDispatch();
 
 	const isAuthorized = useSelector(selectIsAuthorized);
+	const isSuperuser = useSelector(selectIsSuperuser);
 
-	const items = getMenuItems(isAuthorized);
+	const items = getMenuItems(isAuthorized, isSuperuser);
 
 	const logout = async () => {
 		const authorizationService = new AuthorizationService();

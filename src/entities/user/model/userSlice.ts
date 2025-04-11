@@ -5,11 +5,13 @@ import { RootState } from '@/shared/model/store';
 
 type UserSlice = {
 	isAuthorized: boolean;
+	isSuperuser: boolean;
 	user: UserInfo | null;
 };
 
 const initialState: UserSlice = {
 	isAuthorized: false,
+	isSuperuser: false,
 	user: null,
 };
 
@@ -20,6 +22,7 @@ export const userSlice = createSlice({
 		setUser: (state, action: PayloadAction<UserInfo>) => {
 			state.user = action.payload;
 			state.isAuthorized = true;
+			state.isSuperuser = action.payload.isSuperuser;
 		},
 		deleteUser: (state) => {
 			state.user = null;
@@ -34,6 +37,9 @@ export const selectCurrentUser = (state: RootState): UserSlice['user'] =>
 export const selectIsAuthorized = (
 	state: RootState,
 ): UserSlice['isAuthorized'] => state.user.isAuthorized;
+
+export const selectIsSuperuser = (state: RootState): UserSlice['isSuperuser'] =>
+	state.user.isSuperuser;
 
 export const { setUser: setUserAction, deleteUser: deleteUserAction } =
 	userSlice.actions;
