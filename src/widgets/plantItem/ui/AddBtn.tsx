@@ -1,12 +1,22 @@
 import { PlusCircleOutlined } from '@ant-design/icons';
+import { Popover } from 'antd';
+import React from 'react';
 
-export const AddBtn = () => {
+import { useAddBtn } from '@/widgets/plantItem/model';
+
+type Props = {
+	plantId: string;
+};
+
+export const AddBtn: React.FC<Props> = ({ plantId }) => {
+	const { handleClick } = useAddBtn(plantId);
+
 	return (
-		<PlusCircleOutlined
-			key='add'
-			onClick={(e) => {
-				e.stopPropagation();
-			}}
-		/>
+		<Popover
+			content={'Добавить растение в коллекцию'}
+			placement={'bottom'}
+		>
+			<PlusCircleOutlined onClick={handleClick} />
+		</Popover>
 	);
 };
