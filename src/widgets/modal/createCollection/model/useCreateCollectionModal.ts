@@ -32,7 +32,11 @@ export const useCreateCollectionModal = () => {
 	};
 
 	const handleCreateCollection = async () => {
-		if (collectionName.trim().length === 0) return;
+		if (collectionName.trim().length === 0) {
+			showToast('error', 'Не указано название коллекции');
+
+			return;
+		}
 
 		try {
 			setIsFetching(true);

@@ -1,6 +1,12 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { CollectionsService } from '@/entities/collection/api';
+import {
+	deleteCollectionsAction,
+	selectCollections,
+	setCollectionsAction,
+} from '@/entities/collection/model';
 import {
 	EmitterEvents,
 	eventEmitter,
@@ -8,11 +14,47 @@ import {
 	showToast,
 } from '@/shared/utils';
 
+type TSelectOption = {
+	label: string;
+	value: string;
+};
+
 export const useAddPlantToCollectionModal = () => {
+	const dispatch = useDispatch();
+
+	const collections = useSelector(selectCollections);
+
 	const [isOpen, setIsOpen] = useState(false);
 	const [isFetching, setIsFetching] = useState(false);
 	const [plantId, setPlantId] = useState<string | null>(null);
-	const [collectionId] = useState<string | null>(null);
+	const [collectionId, setCollectionId] = useState<string | null>(null);
+
+	const selectOptions: TSelectOption[] = useMemo(
+		() =>
+			collections.map((collection) => ({
+				value: collection.id,
+				label: collection.name,
+			})),
+		[collections],
+	);
+
+	const loadCollections = useCallback(async () => {
+		try {
+			const collectionsService = new CollectionsService();
+
+			const items = await collectionsService.getCollections();
+
+			dispatch(setCollectionsAction(items.map((item) => item.toShortInfo())));
+		} catch (error: unknown) {
+			dispatch(deleteCollectionsAction());
+
+			if (error instanceof Error) {
+				showToast('error', error.message);
+			} else {
+				showToast('error', 'Ошибка при выполнеии действия');
+			}
+		}
+	}, [dispatch]);
 
 	const openModal = useCallback(() => {
 		setIsOpen(true);
@@ -21,7 +63,15 @@ export const useAddPlantToCollectionModal = () => {
 	const closeModal = () => {
 		setIsOpen(false);
 		setPlantId(null);
+		setCollectionId(null);
 	};
+
+	const handleSelectCollection = (collectionId?: string) => {
+		setCollectionId(collectionId || null);
+	};
+
+	const handleFilter = (input: string, option?: TSelectOption) =>
+		(option?.label ?? '').toLowerCase().includes(input.toLowerCase());
 
 	const handleAddToCollection = async () => {
 		if (!plantId || !collectionId) {
@@ -65,11 +115,19 @@ export const useAddPlantToCollectionModal = () => {
 		};
 	}, [openModal]);
 
+	useEffect(() => {
+		loadCollections();
+	}, [loadCollections]);
+
 	return {
 		plantId,
+		collectionId,
 		isOpen,
 		isFetching,
+		selectOptions,
 		closeModal,
+		handleFilter,
 		handleAddToCollection,
+		handleSelectCollection,
 	};
 };

@@ -1,11 +1,19 @@
 import { useCallback, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { CollectionsService } from '@/entities/collection/api';
-import { TCollectionShortInfo } from '@/entities/collection/model';
+import {
+	deleteCollectionsAction,
+	selectCollections,
+	setCollectionsAction,
+} from '@/entities/collection/model';
 import { showToast } from '@/shared/utils';
 
 export const useCollections = () => {
-	const [collections, setCollections] = useState<TCollectionShortInfo[]>([]);
+	const dispatch = useDispatch();
+
+	const collections = useSelector(selectCollections);
+
 	const [isLoaded, setIsLoaded] = useState(false);
 
 	const loadCollections = useCallback(async () => {
@@ -13,9 +21,10 @@ export const useCollections = () => {
 			const collectionsService = new CollectionsService();
 
 			const items = await collectionsService.getCollections();
-			setCollections(items.map((item) => item.toShortInfo()));
+
+			dispatch(setCollectionsAction(items.map((item) => item.toShortInfo())));
 		} catch (error: unknown) {
-			setCollections([]);
+			dispatch(deleteCollectionsAction());
 
 			if (error instanceof Error) {
 				showToast('error', error.message);
@@ -25,7 +34,7 @@ export const useCollections = () => {
 		} finally {
 			setIsLoaded(true);
 		}
-	}, []);
+	}, [dispatch]);
 
 	useEffect(() => {
 		loadCollections();

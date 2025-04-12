@@ -1,9 +1,13 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
 import { CollectionsService } from '@/entities/collection/api';
+import { setCollectionAction } from '@/entities/collection/model';
 import { showToast } from '@/shared/utils';
 
 export const useDeleteBtn = (plantId: string, collectionId: string | null) => {
+	const dispatch = useDispatch();
+
 	const handleClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
 		event.stopPropagation();
 
@@ -12,10 +16,14 @@ export const useDeleteBtn = (plantId: string, collectionId: string | null) => {
 		try {
 			const collectionService = new CollectionsService();
 
-			await collectionService.deletePlantFromCollection(plantId, collectionId);
+			const collectionInfo = await collectionService.deletePlantFromCollection(
+				plantId,
+				collectionId,
+			);
 
 			showToast('success', 'Растение удалено из коллекции');
-			// TODO: перезапросить данные о коллекции
+
+			dispatch(setCollectionAction(collectionInfo));
 		} catch (error: unknown) {
 			showToast(
 				'error',

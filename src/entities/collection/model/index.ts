@@ -4,3 +4,12 @@ export type {
 	TCollectionInfoModel,
 	TCollectionShortInfo,
 } from './collectionInfo';
+export {
+	selectCollection,
+	selectCollections,
+	collectionReducer,
+	setCollectionAction,
+	setCollectionsAction,
+	deleteCollectionAction,
+	deleteCollectionsAction,
+} from './collectionSlice';
