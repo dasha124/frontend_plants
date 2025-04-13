@@ -36,6 +36,11 @@ export class PlantsService extends ServiceBase {
 				url: `${this.baseUrl}types/`,
 				method: ERequestMethods.GET,
 			},
+			{
+				name: 'deletePlant',
+				url: `${this.baseUrl}`,
+				method: ERequestMethods.DELETE,
+			},
 		];
 	}
 
@@ -98,5 +103,22 @@ export class PlantsService extends ServiceBase {
 		}
 
 		return response.map(TypePlantsInfo.createFromApi);
+	}
+
+	/**
+	 * Удаление растения
+	 * @param id - Идентификатор растения
+	 */
+	async deletePlant(id: string): Promise<void> {
+		const configItem = this.getConfigItem('deletePlant');
+
+		try {
+			await this.makeHttpRequest(
+				configItem.method,
+				`${configItem.url}${id}/delete_plant/`,
+			);
+		} catch (error) {
+			console.error(error);
+		}
 	}
 }

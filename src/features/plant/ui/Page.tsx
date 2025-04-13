@@ -1,4 +1,4 @@
-import { Collapse, Descriptions } from 'antd';
+import { Button, Collapse, Descriptions } from 'antd';
 import React from 'react';
 
 import defaultImage from '@/assets/images/default-image.png';
@@ -11,7 +11,8 @@ type Props = {
 };
 
 export const Page: React.FC<Props> = ({ id }) => {
-	const { isLoaded, plantInfo, mainFields, properties } = usePlant(id);
+	const { isLoaded, plantInfo, mainFields, properties, handleDelete } =
+		usePlant(id);
 
 	return (
 		<RenderIf
@@ -37,6 +38,10 @@ export const Page: React.FC<Props> = ({ id }) => {
 						</Descriptions.Item>
 					))}
 				</Descriptions>
+			</div>
+
+			<div>
+				<Button onClick={handleDelete}>Удалить</Button>
 			</div>
 
 			<Collapse items={properties} />
