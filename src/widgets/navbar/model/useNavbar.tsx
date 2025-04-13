@@ -136,6 +136,9 @@ export const useNavbar = () => {
 			case 'plants':
 				navigate('/plants');
 				break;
+			case 'plants_create':
+				navigate('/plants?create=true');
+				break;
 			case 'collections_my':
 				navigate('/collections');
 				break;

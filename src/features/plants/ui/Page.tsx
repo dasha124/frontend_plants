@@ -1,22 +1,8 @@
 import { usePlants } from '@/features/plants/model';
-import { cn } from '@/shared/lib';
-import { RenderIf } from '@/shared/utils';
-import { PlantItem } from '@/widgets/plantItem/ui';
+import { PlantsCreate, PlantsInfo } from '@/features/plants/ui';
 
 export const Page = () => {
-	const { plants, isLoaded } = usePlants();
+	const { isCreateMode } = usePlants();
 
-	return (
-		<RenderIf
-			condition={isLoaded}
-			className={cn('flex flex-wrap w-full justify-center gap-4')}
-		>
-			{plants.map((plant) => (
-				<PlantItem
-					key={plant.id}
-					plant={plant}
-				/>
-			))}
-		</RenderIf>
-	);
+	return isCreateMode ? <PlantsCreate /> : <PlantsInfo />;
 };

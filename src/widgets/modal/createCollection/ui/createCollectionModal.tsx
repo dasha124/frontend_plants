@@ -20,6 +20,7 @@ export const CreateCollectionModal: React.FC = () => {
 			onOk={handleCreateCollection}
 			confirmLoading={isFetching}
 			onCancel={closeModal}
+			okText={'Создать'}
 		>
 			<Input
 				placeholder={'Название коллекции'}

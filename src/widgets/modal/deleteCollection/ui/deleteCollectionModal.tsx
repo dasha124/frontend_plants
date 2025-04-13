@@ -14,6 +14,8 @@ export const DeleteCollectionModal: React.FC = () => {
 			onOk={handleDeleteCollection}
 			confirmLoading={isFetching}
 			onCancel={closeModal}
+			okText={'Да'}
+			okType={'danger'}
 		>
 			<span>
 				Вы уверены, что хотите удалить коллекцию? Это действие нельзя будет

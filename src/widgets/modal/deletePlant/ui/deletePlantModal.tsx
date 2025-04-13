@@ -13,6 +13,8 @@ export const DeletePlantModal = () => {
 			onOk={handleDelete}
 			confirmLoading={isFetching}
 			onCancel={closeModal}
+			okText={'Да'}
+			okType={'danger'}
 		>
 			<span>Вы уверены, что хотите удалить растение?</span>
 		</Modal>

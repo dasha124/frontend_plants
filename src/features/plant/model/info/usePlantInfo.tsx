@@ -1,15 +1,11 @@
 import { CollapseProps } from 'antd';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
 
 import { PlantsService } from '@/entities/plant/api';
 import { PlantInfo } from '@/entities/plant/model';
 import { emitEvent, EmitterEvents, showToast } from '@/shared/utils';
 
-export const usePlant = (id: string) => {
-	const [searchParams] = useSearchParams();
-	const isEditMode = searchParams.get('edit') === 'true';
-
+export const usePlantInfo = (id: string) => {
 	const [plantInfo, setPlantInfo] = useState<PlantInfo | null>(null);
 	const [isLoaded, setIsLoaded] = useState(false);
 
@@ -206,7 +202,6 @@ export const usePlant = (id: string) => {
 		plantInfo,
 		mainFields,
 		properties,
-		isEditMode,
 		handleDelete,
 	};
 };
