@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 
-import { PlantInfo } from '@/entities/plant/model';
+import { PlantInfo, TPlantInfoApi } from '@/entities/plant/model';
 import { TypePlantsInfo } from '@/entities/typePlants/model';
 import { ServiceBase } from '@/shared/api';
 import { ERequestMethods } from '@/shared/model/enums';
@@ -30,6 +30,11 @@ export class PlantsService extends ServiceBase {
 				name: 'getPlantInfo',
 				url: `${this.baseUrl}`,
 				method: ERequestMethods.GET,
+			},
+			{
+				name: 'addPlant',
+				url: `${this.baseUrl}`,
+				method: ERequestMethods.POST,
 			},
 			{
 				name: 'getPlantTypes',
@@ -76,6 +81,30 @@ export class PlantsService extends ServiceBase {
 			response = await this.makeHttpRequest(
 				configItem.method,
 				`${configItem.url}${id}/`,
+			);
+		} catch (error) {
+			console.error(error);
+
+			response = plantMocked;
+		}
+
+		return PlantInfo.createFromApi(response);
+	}
+
+	/**
+	 * Создание нового растения
+	 * @param plantInfo - Данные о новом растения
+	 */
+	async addPlant(plantInfo: TPlantInfoApi): Promise<PlantInfo> {
+		const configItem = this.getConfigItem('addPlant');
+
+		let response;
+
+		try {
+			response = await this.makeHttpRequest(
+				configItem.method,
+				`${configItem.url}add_plant/`,
+				{ ...plantInfo },
 			);
 		} catch (error) {
 			console.error(error);
