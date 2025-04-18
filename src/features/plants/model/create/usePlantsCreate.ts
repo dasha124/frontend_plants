@@ -35,6 +35,10 @@ export const usePlantsCreate = () => {
 		[],
 	);
 
+	const onFinishFailed: FormProps<TField>['onFinishFailed'] = () => {
+		showToast('error', 'Введите все обязательные поля');
+	};
+
 	const onFinish: FormProps<TField>['onFinish'] = async (values) => {
 		if (
 			!values.name ||
@@ -103,5 +107,6 @@ export const usePlantsCreate = () => {
 		subClassOptionValues,
 		typeOptionValues,
 		onFinish,
+		onFinishFailed,
 	};
 };

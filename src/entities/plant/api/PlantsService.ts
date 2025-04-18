@@ -37,6 +37,11 @@ export class PlantsService extends ServiceBase {
 				method: ERequestMethods.POST,
 			},
 			{
+				name: 'updatePlant',
+				url: `${this.baseUrl}`,
+				method: ERequestMethods.PUT,
+			},
+			{
 				name: 'getPlantTypes',
 				url: `${this.baseUrl}types/`,
 				method: ERequestMethods.GET,
@@ -104,6 +109,30 @@ export class PlantsService extends ServiceBase {
 			response = await this.makeHttpRequest(
 				configItem.method,
 				`${configItem.url}add_plant/`,
+				{ ...plantInfo },
+			);
+		} catch (error) {
+			console.error(error);
+
+			response = plantMocked;
+		}
+
+		return PlantInfo.createFromApi(response);
+	}
+
+	/**
+	 * Обновление данных о растении
+	 * @param plantInfo - Данные о растении
+	 */
+	async updatePlant(plantInfo: TPlantInfoApi): Promise<PlantInfo> {
+		const configItem = this.getConfigItem('updatePlant');
+
+		let response;
+
+		try {
+			response = await this.makeHttpRequest(
+				configItem.method,
+				`${configItem.url}${plantInfo.plant_id}/update_plant/`,
 				{ ...plantInfo },
 			);
 		} catch (error) {

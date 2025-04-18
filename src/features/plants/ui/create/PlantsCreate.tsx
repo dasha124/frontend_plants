@@ -9,6 +9,7 @@ export const PlantsCreate = () => {
 		subClassOptionValues,
 		typeOptionValues,
 		onFinish,
+		onFinishFailed,
 	} = usePlantsCreate();
 
 	return (
@@ -18,12 +19,13 @@ export const PlantsCreate = () => {
 			</h1>
 
 			<Form
-				name='basic'
+				name='create-plant-form'
 				labelCol={{ span: 8 }}
 				wrapperCol={{ span: 16 }}
 				style={{ minWidth: 750 }}
 				initialValues={{ remember: true }}
 				onFinish={onFinish}
+				onFinishFailed={onFinishFailed}
 				autoComplete='off'
 			>
 				<Form.Item<TField>
