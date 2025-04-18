@@ -1,11 +1,15 @@
 import { CollapseProps } from 'antd';
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import { PlantsService } from '@/entities/plant/api';
 import { PlantInfo } from '@/entities/plant/model';
+import { selectIsSuperuser } from '@/entities/user/model';
 import { emitEvent, EmitterEvents, showToast } from '@/shared/utils';
 
 export const usePlantInfo = (id: string) => {
+	const isSuperuser = useSelector(selectIsSuperuser);
+
 	const [plantInfo, setPlantInfo] = useState<PlantInfo | null>(null);
 	const [isLoaded, setIsLoaded] = useState(false);
 
@@ -200,6 +204,13 @@ export const usePlantInfo = (id: string) => {
 		[plantInfo],
 	);
 
+	const chunkSize = Math.ceil(properties.length / 3);
+	const [part1, part2, part3] = [
+		properties.slice(0, chunkSize),
+		properties.slice(chunkSize, chunkSize * 2),
+		properties.slice(chunkSize * 2),
+	];
+
 	const loadPlantInfo = useCallback(async (id: string) => {
 		try {
 			const plantsService = new PlantsService();
@@ -233,7 +244,10 @@ export const usePlantInfo = (id: string) => {
 		isLoaded,
 		plantInfo,
 		mainFields,
-		properties,
+		part1,
+		part2,
+		part3,
+		isSuperuser,
 		handleDelete,
 	};
 };

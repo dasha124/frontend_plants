@@ -1,4 +1,4 @@
-import { Button, Collapse, Descriptions } from 'antd';
+import { Button, Collapse, Descriptions, Divider } from 'antd';
 import React from 'react';
 
 import defaultImage from '@/assets/images/default-image.png';
@@ -11,8 +11,16 @@ type Props = {
 };
 
 export const PlantInfo: React.FC<Props> = ({ id }) => {
-	const { isLoaded, plantInfo, mainFields, properties, handleDelete } =
-		usePlantInfo(id);
+	const {
+		isLoaded,
+		plantInfo,
+		mainFields,
+		part1,
+		part2,
+		part3,
+		isSuperuser,
+		handleDelete,
+	} = usePlantInfo(id);
 
 	return (
 		<RenderIf
@@ -40,11 +48,28 @@ export const PlantInfo: React.FC<Props> = ({ id }) => {
 				</Descriptions>
 			</div>
 
-			<div>
-				<Button onClick={handleDelete}>Удалить</Button>
-			</div>
+			<RenderIf condition={isSuperuser}>
+				<Button
+					className={'block'}
+					onClick={handleDelete}
+				>
+					Удалить
+				</Button>
+			</RenderIf>
 
-			<Collapse items={properties} />
+			<Divider orientation={'left'}>Информация</Divider>
+
+			<div>
+				<div className='inline-block w-full md:w-1/2 xl:w-1/3 align-top p-2'>
+					<Collapse items={part1} />
+				</div>
+				<div className='inline-block w-full md:w-1/2 xl:w-1/3 align-top p-2'>
+					<Collapse items={part2} />
+				</div>
+				<div className='inline-block w-full md:w-1/2 xl:w-1/3 align-top p-2'>
+					<Collapse items={part3} />
+				</div>
+			</div>
 		</RenderIf>
 	);
 };
