@@ -1,7 +1,7 @@
 export type TTypePlantsInfoApi = {
 	plant_type_id: string;
 	type_name: string;
-	image: string;
+	image_url_type: string;
 };
 
 export type TTypePlantsInfoModel = {
@@ -25,7 +25,7 @@ export class TypePlantsInfo {
 		return new TypePlantsInfo({
 			id: plantInfo.plant_type_id,
 			name: plantInfo.type_name,
-			image: plantInfo.image,
+			image: plantInfo.image_url_type,
 		});
 	}
 
@@ -33,7 +33,7 @@ export class TypePlantsInfo {
 		return {
 			plant_type_id: this.id,
 			type_name: this.name,
-			image: this.image,
+			image_url_type: this.image,
 		};
 	}
 }
