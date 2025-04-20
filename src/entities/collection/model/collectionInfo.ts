@@ -11,7 +11,7 @@ export type TCollectionInfoApi = {
 	date_create: string;
 	time_create: string;
 	status: string;
-	plant: TPlantInfoApi[];
+	plants: TPlantInfoApi[];
 };
 
 export type TCollectionShortInfo = {
@@ -68,7 +68,7 @@ export class CollectionInfo {
 			dateCreate: collectionInfo.date_create,
 			timeCreate: collectionInfo.time_create,
 			status: collectionInfo.status,
-			plants: collectionInfo.plant.map((plant) =>
+			plants: collectionInfo.plants.map((plant) =>
 				PlantInfo.createShortInfoFromApi(plant),
 			),
 		});
