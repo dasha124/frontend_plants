@@ -5,13 +5,14 @@ import { Button, UploadFile, UploadProps, GetProp, Image, Upload } from 'antd';
 import { UploadChangeParam } from 'antd/lib/upload';
 import React, { useCallback, useState } from 'react';
 
-// import { UtilsService } from '@/shared/api';
+import { UtilsService } from '@/shared/api';
 import { showToast } from '@/shared/utils';
 
 type FileType = Parameters<GetProp<UploadProps, 'beforeUpload'>>[0];
 
 type Props = {
 	initialFile: string | null;
+	fileName: string;
 	setLink: (link: string) => void;
 	removeLink: () => void;
 	className?: string;
@@ -19,6 +20,7 @@ type Props = {
 
 export const UploadImage: React.FC<Props> = ({
 	initialFile,
+	fileName,
 	setLink,
 	removeLink,
 	className,
@@ -58,50 +60,55 @@ export const UploadImage: React.FC<Props> = ({
 		[getBase64],
 	);
 
-	const handleChange: UploadProps['onChange'] = useCallback(
-		async (info: UploadChangeParam<UploadFile>) => {
-			const { fileList: newFileList } = info;
-			if (newFileList.length > 1) {
-				showToast('error', 'Можно загрузить только одну фотографию');
+	const handleChange: UploadProps['onChange'] = async (
+		info: UploadChangeParam<UploadFile>,
+	) => {
+		if (!fileName) {
+			showToast('error', 'Укажите название растения');
+			return;
+		}
+
+		const { fileList: newFileList } = info;
+		if (newFileList.length > 1) {
+			showToast('error', 'Можно загрузить только одну фотографию');
+			return;
+		}
+
+		if (newFileList.length === 1 && newFileList[0].originFileObj) {
+			const file = newFileList[0].originFileObj;
+
+			const isImage = file.type.startsWith('image/');
+			if (!isImage) {
+				showToast('error', 'Можно загружать только изображения');
 				return;
 			}
 
-			if (newFileList.length === 1 && newFileList[0].originFileObj) {
-				const file = newFileList[0].originFileObj;
+			const utilsService = new UtilsService();
 
-				const isImage = file.type.startsWith('image/');
-				if (!isImage) {
-					showToast('error', 'Можно загружать только изображения');
-					return;
-				}
+			try {
+				const base64Data = await getBase64(
+					newFileList[0].originFileObj as FileType,
+				);
+				const strippedBase64 = base64Data.replace(
+					/^data:image\/\w+;base64,/,
+					'',
+				);
 
-				// const utilsService = new UtilsService();
+				const response = await utilsService.uploadImage(
+					fileName,
+					strippedBase64,
+				);
+				setLink(response);
 
-				try {
-					const base64Data = await getBase64(
-						newFileList[0].originFileObj as FileType,
-					);
-					const strippedBase64 = base64Data.replace(
-						/^data:image\/\w+;base64,/,
-						'',
-					);
-
-					setLink(strippedBase64);
-
-					// const response = await utilsService.uploadImage(strippedBase64);
-					// setLink(response);
-
-					newFileList[0].status = 'done';
-				} catch {
-					newFileList[0].status = 'error';
-					showToast('error', `${newFileList[0].name} не удалось загрузить`);
-				}
+				newFileList[0].status = 'done';
+			} catch {
+				newFileList[0].status = 'error';
+				showToast('error', `${newFileList[0].name} не удалось загрузить`);
 			}
+		}
 
-			setFileList(newFileList);
-		},
-		[setLink, getBase64],
-	);
+		setFileList(newFileList);
+	};
 
 	const handleRemoveFiles = useCallback(() => {
 		if (fileList.length > 0) {
@@ -121,9 +128,10 @@ export const UploadImage: React.FC<Props> = ({
 				accept={'image/png,image/jpeg,image/jpg,image/webp,image/svg'}
 				onChange={handleChange}
 				onRemove={handleRemoveFiles}
+				disabled={!fileName}
 			>
 				{fileList.length === 0 ? (
-					<Button>
+					<Button disabled={!fileName}>
 						<PlusOutlined />
 					</Button>
 				) : null}

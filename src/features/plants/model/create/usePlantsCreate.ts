@@ -21,6 +21,7 @@ export const usePlantsCreate = () => {
 
 	const [isFetching, setIsFetching] = useState(false);
 	const [imageUrl, setImageUrl] = useState<string | null>(null);
+	const [imageName, setImageName] = useState<string>('');
 
 	const classOptionValues = useMemo(
 		() => Object.values(EPlantClass).map((key) => ({ value: key, label: key })),
@@ -117,6 +118,8 @@ export const usePlantsCreate = () => {
 		typeOptionValues,
 		imageUrl,
 		form,
+		imageName,
+		setImageName,
 		setLink,
 		removeLink,
 		onFinish,

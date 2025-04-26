@@ -23,6 +23,7 @@ export const usePlantEdit = (id: string) => {
 	const [isLoaded, setIsLoaded] = useState(false);
 	const [isFetching, setIsFetching] = useState(false);
 	const [imageUrl, setImageUrl] = useState<string | null>(null);
+	const [imageName, setImageName] = useState<string>('');
 
 	const classOptionValues = useMemo(
 		() => Object.values(EPlantClass).map((key) => ({ value: key, label: key })),
@@ -153,9 +154,11 @@ export const usePlantEdit = (id: string) => {
 			const plant = await plantsService.getPlantInfo(id);
 			setPlantInfo(plant);
 			setImageUrl(plant.image);
+			setImageName(plant.name);
 		} catch (error: unknown) {
 			setPlantInfo(null);
 			setImageUrl(null);
+			setImageName('');
 
 			showError(error);
 		} finally {
@@ -185,7 +188,9 @@ export const usePlantEdit = (id: string) => {
 		subClassOptionValues,
 		typeOptionValues,
 		imageUrl,
+		imageName,
 		form,
+		setImageName,
 		setLink,
 		removeLink,
 		onFinish,

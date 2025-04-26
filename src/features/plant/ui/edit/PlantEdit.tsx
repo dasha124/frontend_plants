@@ -19,7 +19,9 @@ export const PlantEdit: React.FC<Props> = ({ id }) => {
 		subClassOptionValues,
 		typeOptionValues,
 		imageUrl,
+		imageName,
 		form,
+		setImageName,
 		setLink,
 		removeLink,
 		onFinish,
@@ -45,6 +47,14 @@ export const PlantEdit: React.FC<Props> = ({ id }) => {
 				autoComplete='off'
 			>
 				<Form.Item<TField>
+					label='Название'
+					name={'name'}
+					rules={[{ required: true, message: 'Введите название растения' }]}
+				>
+					<Input onBlur={(event) => setImageName(event.target.value)} />
+				</Form.Item>
+
+				<Form.Item<TField>
 					label='Изображение'
 					name={'image'}
 					rules={[
@@ -53,17 +63,10 @@ export const PlantEdit: React.FC<Props> = ({ id }) => {
 				>
 					<UploadImage
 						initialFile={imageUrl}
+						fileName={imageName}
 						setLink={setLink}
 						removeLink={removeLink}
 					/>
-				</Form.Item>
-
-				<Form.Item<TField>
-					label='Название'
-					name={'name'}
-					rules={[{ required: true, message: 'Введите название растения' }]}
-				>
-					<Input />
 				</Form.Item>
 
 				<Form.Item<TField>
