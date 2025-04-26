@@ -3,8 +3,9 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { PlantsService } from '@/entities/plant/api';
-import { PlantInfo } from '@/entities/plant/model';
+import { PlantInfo, TPlantRecommendation } from '@/entities/plant/model';
 import { selectIsSuperuser } from '@/entities/user/model';
+import { RecommendationService } from '@/shared/api';
 import { emitEvent, EmitterEvents, showError } from '@/shared/utils';
 
 export const usePlantInfo = (id: string) => {
@@ -12,7 +13,10 @@ export const usePlantInfo = (id: string) => {
 
 	const [plantInfo, setPlantInfo] = useState<PlantInfo | null>(null);
 	const [isLoaded, setIsLoaded] = useState(false);
-
+	const [isFetching, setIsFetching] = useState(false);
+	const [plantRecommendations, setPlantRecommendations] = useState<
+		TPlantRecommendation[]
+	>([]);
 	const mainFields = useMemo(
 		() => [
 			{
@@ -226,6 +230,27 @@ export const usePlantInfo = (id: string) => {
 		}
 	}, []);
 
+	const loadRecommendations = async () => {
+		if (plantRecommendations.length > 0) return;
+
+		try {
+			setIsFetching(true);
+
+			const recommendationsService = new RecommendationService();
+
+			const recommendations =
+				await recommendationsService.getRecommendationsByPlant(id);
+
+			setPlantRecommendations(recommendations);
+		} catch (error: unknown) {
+			setPlantRecommendations([]);
+
+			showError(error);
+		} finally {
+			setIsFetching(false);
+		}
+	};
+
 	const handleDelete = async () => {
 		emitEvent(EmitterEvents.MODAL_OPEN_DELETE_PLANT, {
 			plantId: id,
@@ -238,12 +263,15 @@ export const usePlantInfo = (id: string) => {
 
 	return {
 		isLoaded,
+		isFetching,
 		plantInfo,
 		mainFields,
 		part1,
 		part2,
 		part3,
 		isSuperuser,
+		plantRecommendations,
 		handleDelete,
+		loadRecommendations,
 	};
 };

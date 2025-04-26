@@ -8,6 +8,7 @@ import {
 	setCollectionAction,
 } from '@/entities/collection/model';
 import { TPlantRecommendation } from '@/entities/plant/model';
+import { RecommendationService } from '@/shared/api';
 import { emitEvent, EmitterEvents, showError, showToast } from '@/shared/utils';
 
 export const useCollection = (id: string) => {
@@ -68,9 +69,10 @@ export const useCollection = (id: string) => {
 		try {
 			setIsFetching(true);
 
-			const collectionsService = new CollectionsService();
+			const recommendationsService = new RecommendationService();
 
-			const recommendations = await collectionsService.getRecommendations(id);
+			const recommendations =
+				await recommendationsService.getRecommendationsByCollection(id);
 
 			setPlantRecommendations(recommendations);
 		} catch (error: unknown) {

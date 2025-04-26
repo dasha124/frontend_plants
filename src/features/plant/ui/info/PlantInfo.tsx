@@ -5,6 +5,7 @@ import defaultImage from '@/assets/images/default-image.png';
 import { usePlantInfo } from '@/features/plant/model';
 import { cn } from '@/shared/lib';
 import { RenderIf } from '@/shared/utils';
+import { PlantRecommendationItem } from '@/widgets/plantRecommendationItem/ui';
 
 type Props = {
 	id: string;
@@ -13,13 +14,16 @@ type Props = {
 export const PlantInfo: React.FC<Props> = ({ id }) => {
 	const {
 		isLoaded,
+		isFetching,
 		plantInfo,
 		mainFields,
 		part1,
 		part2,
 		part3,
 		isSuperuser,
+		plantRecommendations,
 		handleDelete,
+		loadRecommendations,
 	} = usePlantInfo(id);
 
 	return (
@@ -70,6 +74,29 @@ export const PlantInfo: React.FC<Props> = ({ id }) => {
 					<Collapse items={part3} />
 				</div>
 			</div>
+
+			<Divider />
+
+			<div>
+				<Button
+					onClick={loadRecommendations}
+					type={'primary'}
+					loading={isFetching}
+				>
+					Получить рекомендации
+				</Button>
+			</div>
+
+			<RenderIf condition={plantRecommendations.length > 0}>
+				<div className={'flex flex-wrap justify-center gap-8'}>
+					{plantRecommendations.map((plant) => (
+						<PlantRecommendationItem
+							key={plant.id}
+							plant={plant}
+						/>
+					))}
+				</div>
+			</RenderIf>
 		</RenderIf>
 	);
 };

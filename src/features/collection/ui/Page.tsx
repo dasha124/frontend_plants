@@ -3,10 +3,10 @@ import { Button, Descriptions, Divider, Input } from 'antd';
 import React from 'react';
 
 import { useCollection } from '@/features/collection/model';
-import { PlantRecommendationItem } from '@/features/collection/ui';
 import { cn } from '@/shared/lib';
 import { RenderIf } from '@/shared/utils';
 import { PlantItem } from '@/widgets/plantItem/ui';
+import { PlantRecommendationItem } from '@/widgets/plantRecommendationItem/ui';
 
 type Props = {
 	id: string;

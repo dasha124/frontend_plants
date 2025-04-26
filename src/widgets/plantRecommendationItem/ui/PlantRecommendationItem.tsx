@@ -14,9 +14,9 @@ export const PlantRecommendationItem: React.FC<Props> = ({ plant }) => {
 		<Link to={`/plants/${plant.id}`}>
 			<Card
 				hoverable
-				style={{ width: 480 }}
+				style={{ width: 360 }}
 			>
-				<Meta title={<span className={'text-xl'}>{plant.name}</span>} />
+				<Meta title={<span className={'text-lg'}>{plant.name}</span>} />
 			</Card>
 		</Link>
 	);
