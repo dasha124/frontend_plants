@@ -1,15 +1,19 @@
 import { CollapseProps } from 'antd';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 import { PlantsService } from '@/entities/plant/api';
 import { PlantInfo, TPlantRecommendation } from '@/entities/plant/model';
-import { selectIsSuperuser } from '@/entities/user/model';
+import { selectIsAuthorized, selectIsSuperuser } from '@/entities/user/model';
 import { RecommendationService } from '@/shared/api';
-import { emitEvent, EmitterEvents, showError } from '@/shared/utils';
+import { emitEvent, EmitterEvents, showError, showToast } from '@/shared/utils';
 
 export const usePlantInfo = (id: string) => {
+	const navigate = useNavigate();
+
 	const isSuperuser = useSelector(selectIsSuperuser);
+	const isAuthorized = useSelector(selectIsAuthorized);
 
 	const [plantInfo, setPlantInfo] = useState<PlantInfo | null>(null);
 	const [isLoaded, setIsLoaded] = useState(false);
@@ -257,6 +261,19 @@ export const usePlantInfo = (id: string) => {
 		});
 	};
 
+	const handleAddToCollection = async () => {
+		if (!isAuthorized) {
+			showToast('info', 'Авторизуйтесь, чтобы добавить растение в коллекцию');
+			navigate('/login');
+
+			return;
+		}
+
+		emitEvent(EmitterEvents.MODAL_OPEN_PLANT_ADD_TO_COLLECTION, {
+			plantId: id,
+		});
+	};
+
 	useEffect(() => {
 		loadPlantInfo(id);
 	}, [id, loadPlantInfo]);
@@ -272,6 +289,7 @@ export const usePlantInfo = (id: string) => {
 		isSuperuser,
 		plantRecommendations,
 		handleDelete,
+		handleAddToCollection,
 		loadRecommendations,
 	};
 };

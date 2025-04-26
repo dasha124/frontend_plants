@@ -23,6 +23,7 @@ export const PlantInfo: React.FC<Props> = ({ id }) => {
 		isSuperuser,
 		plantRecommendations,
 		handleDelete,
+		handleAddToCollection,
 		loadRecommendations,
 	} = usePlantInfo(id);
 
@@ -52,14 +53,18 @@ export const PlantInfo: React.FC<Props> = ({ id }) => {
 				</Descriptions>
 			</div>
 
-			<RenderIf condition={isSuperuser}>
-				<Button
-					className={'block'}
-					onClick={handleDelete}
-				>
-					Удалить
-				</Button>
-			</RenderIf>
+			<div>
+				{isSuperuser ? (
+					<Button onClick={handleDelete}>Удалить</Button>
+				) : (
+					<Button
+						type={'primary'}
+						onClick={handleAddToCollection}
+					>
+						Добавить в коллекцию
+					</Button>
+				)}
+			</div>
 
 			<Divider orientation={'left'}>Информация</Divider>
 
