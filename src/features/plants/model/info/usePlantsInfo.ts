@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { PlantsService } from '@/entities/plant/api';
 import { TPlantShortInfo } from '@/entities/plant/model';
-import { showToast } from '@/shared/utils';
+import { showError } from '@/shared/utils';
 
 export const usePlantsInfo = () => {
 	const [plants, setPlants] = useState<TPlantShortInfo[]>([]);
@@ -17,11 +17,7 @@ export const usePlantsInfo = () => {
 		} catch (error: unknown) {
 			setPlants([]);
 
-			if (error instanceof Error) {
-				showToast('error', error.message);
-			} else {
-				showToast('error', 'Ошибка при выполнеии действия');
-			}
+			showError(error);
 		} finally {
 			setIsLoaded(true);
 		}

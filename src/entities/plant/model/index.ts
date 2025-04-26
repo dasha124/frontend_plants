@@ -4,5 +4,6 @@ export type {
 	TPlantShortInfo,
 	TPlantInfoModel,
 	TPlantCreate,
+	TPlantRecommendation,
 } from './plantInfo';
 export { EPlantClass, EPlantSubclass, EPlantType } from './plantEnums';

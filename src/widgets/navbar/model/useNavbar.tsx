@@ -18,7 +18,7 @@ import {
 	selectIsSuperuser,
 } from '@/entities/user/model';
 import { AuthorizationService } from '@/shared/api';
-import { emitEvent, EmitterEvents, showToast } from '@/shared/utils';
+import { emitEvent, EmitterEvents, showError } from '@/shared/utils';
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -120,11 +120,7 @@ export const useNavbar = () => {
 			dispatch(deleteUserAction());
 			navigate('/login');
 		} catch (error: unknown) {
-			if (error instanceof Error) {
-				showToast('error', error.message);
-			} else {
-				showToast('error', 'Ошибка при выполнеии действия');
-			}
+			showError(error);
 		}
 	};
 

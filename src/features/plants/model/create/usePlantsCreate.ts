@@ -10,7 +10,7 @@ import {
 	PlantInfo,
 	TPlantCreate,
 } from '@/entities/plant/model';
-import { showToast } from '@/shared/utils';
+import { showError, showToast } from '@/shared/utils';
 
 export type TField = Partial<TPlantCreate>;
 
@@ -90,12 +90,7 @@ export const usePlantsCreate = () => {
 
 			navigate(`/plants/${response.id}`);
 		} catch (error: unknown) {
-			showToast(
-				'error',
-				error instanceof Error
-					? error.message
-					: 'Ошибка при выполнении действия',
-			);
+			showError(error);
 		} finally {
 			setIsFetching(false);
 		}

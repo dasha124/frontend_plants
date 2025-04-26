@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { AuthorizationService } from '@/shared/api';
-import { showToast } from '@/shared/utils';
+import { showError, showToast } from '@/shared/utils';
 
 export type TField = {
 	username?: string;
@@ -28,11 +28,7 @@ export const useSignup = () => {
 
 			navigate('/login');
 		} catch (error: unknown) {
-			if (error instanceof Error) {
-				showToast('error', error.message);
-			} else {
-				showToast('error', 'Ошибка при выполнеии действия');
-			}
+			showError(error);
 		} finally {
 			setIsFetching(false);
 		}

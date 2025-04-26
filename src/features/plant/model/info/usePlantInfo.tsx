@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { PlantsService } from '@/entities/plant/api';
 import { PlantInfo } from '@/entities/plant/model';
 import { selectIsSuperuser } from '@/entities/user/model';
-import { emitEvent, EmitterEvents, showToast } from '@/shared/utils';
+import { emitEvent, EmitterEvents, showError } from '@/shared/utils';
 
 export const usePlantInfo = (id: string) => {
 	const isSuperuser = useSelector(selectIsSuperuser);
@@ -220,11 +220,7 @@ export const usePlantInfo = (id: string) => {
 		} catch (error: unknown) {
 			setPlantInfo(null);
 
-			if (error instanceof Error) {
-				showToast('error', error.message);
-			} else {
-				showToast('error', 'Ошибка при выполнеии действия');
-			}
+			showError(error);
 		} finally {
 			setIsLoaded(true);
 		}

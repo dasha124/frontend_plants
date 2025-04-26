@@ -10,7 +10,7 @@ import {
 	PlantInfo,
 	TPlantInfoModel,
 } from '@/entities/plant/model';
-import { showToast } from '@/shared/utils';
+import { showError, showToast } from '@/shared/utils';
 
 export type TField = TPlantInfoModel;
 
@@ -137,12 +137,7 @@ export const usePlantEdit = (id: string) => {
 
 			navigate(`/plants/${response.id}`);
 		} catch (error: unknown) {
-			showToast(
-				'error',
-				error instanceof Error
-					? error.message
-					: 'Ошибка при выполнении действия',
-			);
+			showError(error);
 		} finally {
 			setIsFetching(false);
 		}
@@ -157,11 +152,7 @@ export const usePlantEdit = (id: string) => {
 		} catch (error: unknown) {
 			setPlantInfo(null);
 
-			if (error instanceof Error) {
-				showToast('error', error.message);
-			} else {
-				showToast('error', 'Ошибка при выполнеии действия');
-			}
+			showError(error);
 		} finally {
 			setIsLoaded(true);
 		}

@@ -6,6 +6,7 @@ import {
 	EmitterEvents,
 	eventEmitter,
 	onEvent,
+	showError,
 	showToast,
 } from '@/shared/utils';
 
@@ -53,12 +54,7 @@ export const useCreateCollectionModal = () => {
 
 			closeModal();
 		} catch (error: unknown) {
-			showToast(
-				'error',
-				error instanceof Error && error.message
-					? error.message
-					: 'Ошибка при выполнеии действия',
-			);
+			showError(error);
 		} finally {
 			setIsFetching(false);
 		}

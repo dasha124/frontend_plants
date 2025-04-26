@@ -1,11 +1,14 @@
 /* eslint-disable no-undef */
 
 import { CollectionInfo } from '@/entities/collection/model';
+import { PlantInfo } from '@/entities/plant/model';
+import { TPlantRecommendation } from '@/entities/plant/model';
 import { ServiceBase } from '@/shared/api';
 import { ERequestMethods } from '@/shared/model/enums';
 
 import collectionMocked from './mocks/collection.json';
 import collectionsMocked from './mocks/collections.json';
+import recommendationsMocked from './mocks/recommendations.json';
 
 export class CollectionsService extends ServiceBase {
 	private static instance: CollectionsService;
@@ -53,6 +56,11 @@ export class CollectionsService extends ServiceBase {
 				name: 'deletePlantFromCollection',
 				url: this.baseUrl,
 				method: ERequestMethods.DELETE,
+			},
+			{
+				name: 'getRecommendations',
+				url: `/api/recommendations/coll/`,
+				method: ERequestMethods.GET,
 			},
 		];
 	}
@@ -184,7 +192,7 @@ export class CollectionsService extends ServiceBase {
 		try {
 			response = await this.makeHttpRequest(
 				configItem.method,
-				`${configItem.url}${collectionId}/${plantId}/add_plant_to_collection/`,
+				`${configItem.url}${plantId}/${collectionId}/add_plant_to_collection/`,
 			);
 		} catch (error) {
 			console.error(error);
@@ -220,5 +228,29 @@ export class CollectionsService extends ServiceBase {
 		}
 
 		return CollectionInfo.createFromApi(response);
+	}
+
+	/**
+	 * Получение рекомендаций по коллекции
+	 */
+	async getRecommendations(
+		collectionId: string,
+	): Promise<TPlantRecommendation[]> {
+		const configItem = this.getConfigItem('getRecommendations');
+
+		let response;
+
+		try {
+			response = await this.makeHttpRequest(
+				configItem.method,
+				`${configItem.url}${collectionId}/`,
+			);
+		} catch (error) {
+			console.error(error);
+
+			response = recommendationsMocked;
+		}
+
+		return response.map(PlantInfo.createRecommendationFromApi);
 	}
 }
