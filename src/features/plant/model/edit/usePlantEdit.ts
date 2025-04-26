@@ -1,4 +1,4 @@
-import type { FormProps } from 'antd';
+import { Form, FormProps } from 'antd';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -17,9 +17,12 @@ export type TField = TPlantInfoModel;
 export const usePlantEdit = (id: string) => {
 	const navigate = useNavigate();
 
+	const [form] = Form.useForm();
+
 	const [plantInfo, setPlantInfo] = useState<PlantInfo | null>(null);
 	const [isLoaded, setIsLoaded] = useState(false);
 	const [isFetching, setIsFetching] = useState(false);
+	const [imageUrl, setImageUrl] = useState<string | null>(null);
 
 	const classOptionValues = useMemo(
 		() => Object.values(EPlantClass).map((key) => ({ value: key, label: key })),
@@ -149,14 +152,26 @@ export const usePlantEdit = (id: string) => {
 
 			const plant = await plantsService.getPlantInfo(id);
 			setPlantInfo(plant);
+			setImageUrl(plant.image);
 		} catch (error: unknown) {
 			setPlantInfo(null);
+			setImageUrl(null);
 
 			showError(error);
 		} finally {
 			setIsLoaded(true);
 		}
 	}, []);
+
+	const setLink = (url: string) => {
+		setImageUrl(url);
+		form.setFieldsValue({ image: url });
+	};
+
+	const removeLink = () => {
+		setImageUrl(null);
+		form.setFieldsValue({ image: null });
+	};
 
 	useEffect(() => {
 		loadPlantInfo(id);
@@ -169,6 +184,10 @@ export const usePlantEdit = (id: string) => {
 		classOptionValues,
 		subClassOptionValues,
 		typeOptionValues,
+		imageUrl,
+		form,
+		setLink,
+		removeLink,
 		onFinish,
 		onFinishFailed,
 	};

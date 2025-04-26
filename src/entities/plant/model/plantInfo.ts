@@ -32,7 +32,7 @@ export type TPlantInfoModel = {
 	class: string;
 	subclass: string;
 	type: string;
-	image: string; // -
+	image: string;
 	info: string;
 	properties: {
 		add: string[];

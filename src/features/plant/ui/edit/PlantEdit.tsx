@@ -3,6 +3,7 @@ import React from 'react';
 
 import { usePlantEdit, TField } from '@/features/plant/model';
 import { cn } from '@/shared/lib';
+import { UploadImage } from '@/shared/ui';
 import { RenderIf } from '@/shared/utils';
 
 type Props = {
@@ -17,6 +18,10 @@ export const PlantEdit: React.FC<Props> = ({ id }) => {
 		classOptionValues,
 		subClassOptionValues,
 		typeOptionValues,
+		imageUrl,
+		form,
+		setLink,
+		removeLink,
 		onFinish,
 		onFinishFailed,
 	} = usePlantEdit(id);
@@ -29,6 +34,7 @@ export const PlantEdit: React.FC<Props> = ({ id }) => {
 			<h1 className={'text-center text-4xl font-bold'}>{plantInfo?.name}</h1>
 
 			<Form
+				form={form}
 				name='edit-plant-form'
 				labelCol={{ span: 8 }}
 				wrapperCol={{ span: 16 }}
@@ -38,6 +44,20 @@ export const PlantEdit: React.FC<Props> = ({ id }) => {
 				onFinishFailed={onFinishFailed}
 				autoComplete='off'
 			>
+				<Form.Item<TField>
+					label='Изображение'
+					name={'image'}
+					rules={[
+						{ required: true, message: 'Загрузите изображение растения' },
+					]}
+				>
+					<UploadImage
+						initialFile={imageUrl}
+						setLink={setLink}
+						removeLink={removeLink}
+					/>
+				</Form.Item>
+
 				<Form.Item<TField>
 					label='Название'
 					name={'name'}

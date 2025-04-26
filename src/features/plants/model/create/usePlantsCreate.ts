@@ -1,4 +1,4 @@
-import type { FormProps } from 'antd';
+import { Form, FormProps } from 'antd';
 import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -17,7 +17,10 @@ export type TField = Partial<TPlantCreate>;
 export const usePlantsCreate = () => {
 	const navigate = useNavigate();
 
+	const [form] = Form.useForm();
+
 	const [isFetching, setIsFetching] = useState(false);
+	const [imageUrl, setImageUrl] = useState<string | null>(null);
 
 	const classOptionValues = useMemo(
 		() => Object.values(EPlantClass).map((key) => ({ value: key, label: key })),
@@ -45,6 +48,7 @@ export const usePlantsCreate = () => {
 			!values.class ||
 			!values.subclass ||
 			!values.type ||
+			!values.image ||
 			!values.info
 		) {
 			showToast('error', 'Введите все обязательные поля');
@@ -57,7 +61,7 @@ export const usePlantsCreate = () => {
 			class: values.class,
 			subclass: values.subclass,
 			type: values.type,
-			image: '',
+			image: values.image,
 			info: values.info,
 			properties: {
 				add: values.properties?.add ?? [],
@@ -96,11 +100,25 @@ export const usePlantsCreate = () => {
 		}
 	};
 
+	const setLink = (url: string) => {
+		setImageUrl(url);
+		form.setFieldsValue({ image: url });
+	};
+
+	const removeLink = () => {
+		setImageUrl(null);
+		form.setFieldsValue({ image: null });
+	};
+
 	return {
 		isFetching,
 		classOptionValues,
 		subClassOptionValues,
 		typeOptionValues,
+		imageUrl,
+		form,
+		setLink,
+		removeLink,
 		onFinish,
 		onFinishFailed,
 	};
