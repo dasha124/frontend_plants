@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { CollectionPage } from '@/pages/collection/ui';
 import { CollectionsPage } from '@/pages/collections/ui';
 import { LoginPage } from '@/pages/login/ui';
+import { MainPage } from '@/pages/main/ui';
 import { PlantPage } from '@/pages/plant/ui';
 import { PlantsPage } from '@/pages/plants/ui';
 import { SignupPage } from '@/pages/signup/ui';
@@ -45,6 +46,10 @@ export const App = () => {
 									className={cn('flex flex-col mb-4 text-white')}
 								>
 									<Routes>
+										<Route
+											path='/'
+											element={<MainPage />}
+										/>
 										<Route
 											path='/plants'
 											element={<PlantsPage />}
