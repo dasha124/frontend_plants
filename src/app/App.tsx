@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { CollectionPage } from '@/pages/collection/ui';
 import { CollectionsPage } from '@/pages/collections/ui';
+import { DetectPage } from '@/pages/detect/ui';
 import { LoginPage } from '@/pages/login/ui';
 import { MainPage } from '@/pages/main/ui';
 import { PlantPage } from '@/pages/plant/ui';
@@ -61,6 +62,10 @@ export const App = () => {
 										<Route
 											path='/type_plants'
 											element={<TypePlantsPage />}
+										/>
+										<Route
+											path='/detect'
+											element={<DetectPage />}
 										/>
 										<Route
 											path='/collections'

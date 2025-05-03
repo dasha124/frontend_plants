@@ -1,0 +1,1 @@
+export { DetectPage } from './Page';

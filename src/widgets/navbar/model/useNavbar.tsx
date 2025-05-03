@@ -7,6 +7,8 @@ import {
 	IconLogout2,
 	IconPlant,
 	IconUser,
+	IconInfoCircle,
+	IconEyeSearch,
 } from '@tabler/icons-react';
 import type { MenuProps } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,24 +16,21 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 import {
 	deleteUserAction,
-	selectIsAuthorized,
-	selectIsSuperuser,
+	selectCurrentUser,
+	UserInfo,
 } from '@/entities/user/model';
 import { AuthorizationService } from '@/shared/api';
 import { emitEvent, EmitterEvents, showError } from '@/shared/utils';
 
 type MenuItem = Required<MenuProps>['items'][number];
 
-const getMenuItems = (
-	isAuthorized: boolean,
-	isSuperuser: boolean,
-): MenuItem[] => [
+const getMenuItems = (user: UserInfo | null): MenuItem[] => [
 	{
 		label: 'Виды растений',
 		key: 'typePlants',
 		icon: <IconListDetails width={20} />,
 	},
-	...(isSuperuser
+	...(user?.isSuperuser
 		? [
 				{
 					label: 'Растения',
@@ -57,9 +56,14 @@ const getMenuItems = (
 					key: 'plants',
 					icon: <IconPlant />,
 				},
+				{
+					label: 'Определить',
+					key: 'detect_plant',
+					icon: <IconEyeSearch />,
+				},
 			]),
 
-	...(isAuthorized && !isSuperuser
+	...(user && !user.isSuperuser
 		? [
 				{
 					label: 'Коллекции',
@@ -84,8 +88,14 @@ const getMenuItems = (
 		label: 'Аккаунт',
 		key: 'account',
 		icon: <IconUser />,
-		children: isAuthorized
+		children: user
 			? [
+					{
+						disabled: true,
+						label: user.name,
+						key: 'username',
+						icon: <IconInfoCircle />,
+					},
 					{
 						label: 'Выйти',
 						key: 'logout',
@@ -107,10 +117,9 @@ export const useNavbar = () => {
 	const location = useLocation();
 	const dispatch = useDispatch();
 
-	const isAuthorized = useSelector(selectIsAuthorized);
-	const isSuperuser = useSelector(selectIsSuperuser);
+	const user = useSelector(selectCurrentUser);
 
-	const items = getMenuItems(isAuthorized, isSuperuser);
+	const items = getMenuItems(user);
 
 	const logout = async () => {
 		const authorizationService = new AuthorizationService();
@@ -135,6 +144,9 @@ export const useNavbar = () => {
 			case 'plants_create':
 				navigate('/plants?create=true');
 				break;
+			case 'detect_plant':
+				navigate('/detect');
+				break;
 			case 'collections_my':
 				navigate('/collections');
 				break;
@@ -157,6 +169,8 @@ export const useNavbar = () => {
 				return ['typePlants'];
 			case '/plants':
 				return ['plants'];
+			case '/detect':
+				return ['detect_plant'];
 			case '/collections':
 				return ['collections'];
 			default:
