@@ -36,7 +36,7 @@ export class UtilsService extends ServiceBase {
 		try {
 			response = await this.makeHttpRequest(configItem.method, configItem.url, {
 				plant_name: name,
-				base64_str: imageBase64,
+				base64str: imageBase64,
 			});
 		} catch (error) {
 			console.error(error);
