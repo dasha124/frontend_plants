@@ -15,6 +15,18 @@ export const PlantRecommendationItem: React.FC<Props> = ({ plant }) => {
 			<Card
 				hoverable
 				style={{ width: 360 }}
+				cover={
+					<img
+						// src={defaultImage || plant.image}
+						src={plant.image}
+						alt={plant.name}
+						style={{
+							width: '100%',
+							aspectRatio: '16 / 9',
+							objectFit: 'cover',
+						}}
+					/>
+				}
 			>
 				<Meta title={<span className={'text-lg'}>{plant.name}</span>} />
 			</Card>

@@ -56,7 +56,10 @@ export type TPlantInfoModel = {
 
 export type TPlantShortInfo = Pick<TPlantInfoModel, 'id' | 'name' | 'image'>;
 
-export type TPlantRecommendation = Pick<TPlantInfoModel, 'id' | 'name'>;
+export type TPlantRecommendation = Pick<
+	TPlantInfoModel,
+	'id' | 'name' | 'image'
+>;
 
 export type TPlantCreate = Omit<TPlantInfoModel, 'id'>;
 
@@ -139,6 +142,7 @@ export class PlantInfo {
 		return {
 			id: plantInfo.plant_id,
 			name: plantInfo.plant_name,
+			image: plantInfo.image_url_plant,
 		};
 	}
 
