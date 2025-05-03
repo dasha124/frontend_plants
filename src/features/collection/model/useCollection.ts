@@ -7,6 +7,7 @@ import {
 	selectCollection,
 	setCollectionAction,
 } from '@/entities/collection/model';
+import { formatDate } from '@/entities/collection/utils';
 import { TPlantRecommendation } from '@/entities/plant/model';
 import { RecommendationService } from '@/shared/api';
 import { emitEvent, EmitterEvents, showError, showToast } from '@/shared/utils';
@@ -31,7 +32,10 @@ export const useCollection = (id: string) => {
 						{
 							key: '1',
 							label: 'Дата создания',
-							value: collectionInfo.dateCreate + collectionInfo.timeCreate,
+							value: formatDate(
+								collectionInfo.dateCreate,
+								collectionInfo.timeCreate,
+							),
 						},
 						{
 							key: '2',

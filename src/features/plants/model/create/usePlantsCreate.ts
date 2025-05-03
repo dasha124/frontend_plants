@@ -12,29 +12,30 @@ import {
 } from '@/entities/plant/model';
 import { showError, showToast } from '@/shared/utils';
 
-// export type TField = Partial<TPlantCreate>;
-export type TField = Omit<TPlantCreate, 'properties'> & {
-	properties: Omit<
-		TPlantCreate['properties'],
-		| 'add'
-		| 'phSoil'
-		| 'season'
-		| 'drainage'
-		| 'position'
-		| 'inGarden'
-		| 'soilType'
-		| 'tolerance'
-	> & {
-		add: string;
-		phSoil: string;
-		season: string;
-		drainage: string;
-		position: string;
-		inGarden: string;
-		soilType: string;
-		tolerance: string;
-	};
-};
+export type TField = Partial<
+	Omit<TPlantCreate, 'properties'> & {
+		properties: Omit<
+			TPlantCreate['properties'],
+			| 'add'
+			| 'phSoil'
+			| 'season'
+			| 'drainage'
+			| 'position'
+			| 'inGarden'
+			| 'soilType'
+			| 'tolerance'
+		> & {
+			add: string;
+			phSoil: string;
+			season: string;
+			drainage: string;
+			position: string;
+			inGarden: string;
+			soilType: string;
+			tolerance: string;
+		};
+	}
+>;
 
 export const usePlantsCreate = () => {
 	const navigate = useNavigate();

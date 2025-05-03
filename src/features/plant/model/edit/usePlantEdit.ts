@@ -10,11 +10,33 @@ import {
 	EPlantSubclass,
 	EPlantType,
 	PlantInfo,
+	TPlantCreate,
 	TPlantInfoModel,
 } from '@/entities/plant/model';
 import { showError, showToast } from '@/shared/utils';
 
-export type TField = TPlantInfoModel;
+export type TField = Omit<TPlantInfoModel, 'properties'> & {
+	properties: Omit<
+		TPlantCreate['properties'],
+		| 'add'
+		| 'phSoil'
+		| 'season'
+		| 'drainage'
+		| 'position'
+		| 'inGarden'
+		| 'soilType'
+		| 'tolerance'
+	> & {
+		add: string;
+		phSoil: string;
+		season: string;
+		drainage: string;
+		position: string;
+		inGarden: string;
+		soilType: string;
+		tolerance: string;
+	};
+};
 
 export const usePlantEdit = (id: string) => {
 	const navigate = useNavigate();
@@ -68,7 +90,7 @@ export const usePlantEdit = (id: string) => {
 			image: values.image,
 			info: values.info,
 			properties: {
-				add: values.properties.add?.length === 0 ? [] : values.properties.add,
+				add: values.properties?.add ? values.properties.add.split(',') : [],
 				pests:
 					values.properties.pests?.length === 0
 						? null
@@ -89,38 +111,31 @@ export const usePlantEdit = (id: string) => {
 					values.properties.spread?.length === 0
 						? null
 						: values.properties.spread,
-				phSoil:
-					values.properties.phSoil?.length === 0
-						? []
-						: values.properties.phSoil,
-				season:
-					values.properties.season?.length === 0
-						? []
-						: values.properties.season,
+				phSoil: values.properties?.phSoil
+					? values.properties.phSoil.split(',')
+					: [],
+				season: values.properties?.season
+					? values.properties.season.split(',')
+					: [],
 				diseases:
 					values.properties.diseases?.length === 0
 						? null
 						: values.properties.diseases,
-				drainage:
-					values.properties.drainage?.length === 0
-						? []
-						: values.properties.drainage,
-				position:
-					values.properties.position?.length === 0
-						? []
-						: values.properties.position,
-				inGarden:
-					values.properties.inGarden?.length === 0
-						? []
-						: values.properties.inGarden,
-				soilType:
-					values.properties.soilType?.length === 0
-						? []
-						: values.properties.soilType,
-				tolerance:
-					values.properties.tolerance?.length === 0
-						? []
-						: values.properties.tolerance,
+				drainage: values.properties?.drainage
+					? values.properties.drainage.split(',')
+					: [],
+				position: values.properties?.position
+					? values.properties.position.split(',')
+					: [],
+				inGarden: values.properties?.inGarden
+					? values.properties.inGarden.split(',')
+					: [],
+				soilType: values.properties?.soilType
+					? values.properties.soilType.split(',')
+					: [],
+				tolerance: values.properties?.tolerance
+					? values.properties.tolerance.split(',')
+					: [],
 				maintenance:
 					values.properties.maintenance?.length === 0
 						? null
