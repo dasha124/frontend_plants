@@ -105,17 +105,17 @@ export class PlantsService extends ServiceBase {
 
 		let response;
 
-		try {
-			response = await this.makeHttpRequest(
-				configItem.method,
-				`${configItem.url}add_plant/`,
-				{ ...plantInfo },
-			);
-		} catch (error) {
-			console.error(error);
+		// try {
+		response = await this.makeHttpRequest(
+			configItem.method,
+			`${configItem.url}add_plant/`,
+			{ ...plantInfo },
+		);
+		// } catch (error) {
+		// 	console.error(error);
 
-			response = plantMocked;
-		}
+		// 	response = plantMocked;
+		// }
 
 		return PlantInfo.createFromApi(response);
 	}

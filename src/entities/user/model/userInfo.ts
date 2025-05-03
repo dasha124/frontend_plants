@@ -26,11 +26,11 @@ export class UserInfo {
 		this.isSuperuser = isSuperuser;
 	}
 
-	static createFromApi(collectionInfo: TUserInfoApi): UserInfo {
+	static createFromApi(userInfo: TUserInfoApi): UserInfo {
 		return new UserInfo({
-			id: collectionInfo.user_id,
-			name: collectionInfo.user_name,
-			isSuperuser: collectionInfo.is_superuser,
+			id: userInfo.user_id,
+			name: userInfo.user_name,
+			isSuperuser: userInfo.is_superuser,
 		});
 	}
 }

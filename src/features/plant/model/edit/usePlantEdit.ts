@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+
 import { Form, FormProps } from 'antd';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -162,7 +164,9 @@ export const usePlantEdit = (id: string) => {
 
 			showError(error);
 		} finally {
-			setIsLoaded(true);
+			setTimeout(() => {
+				setIsLoaded(true);
+			}, 1000);
 		}
 	}, []);
 

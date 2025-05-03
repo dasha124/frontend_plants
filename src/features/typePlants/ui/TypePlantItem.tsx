@@ -3,7 +3,6 @@ import Meta from 'antd/es/card/Meta';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import defaultImage from '@/assets/images/default-image.png';
 import { TypePlantsInfo } from '@/entities/typePlants/model';
 
 type Props = {
@@ -18,7 +17,8 @@ export const TypePlantItem: React.FC<Props> = ({ typePlant }) => {
 				style={{ width: 240 }}
 				cover={
 					<img
-						src={defaultImage || typePlant.image}
+						// src={defaultImage || typePlant.image}
+						src={typePlant.image}
 						alt={typePlant.name}
 					/>
 				}

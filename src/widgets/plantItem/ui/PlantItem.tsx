@@ -2,7 +2,6 @@ import { Card } from 'antd';
 import Meta from 'antd/es/card/Meta';
 import React from 'react';
 
-import defaultImage from '@/assets/images/default-image.png';
 import { TPlantShortInfo } from '@/entities/plant/model';
 import { usePlantItem } from '@/widgets/plantItem/model';
 
@@ -19,8 +18,14 @@ export const PlantItem: React.FC<Props> = ({ plant }) => {
 			style={{ width: 240 }}
 			cover={
 				<img
-					src={defaultImage || plant.image}
+					// src={defaultImage || plant.image}
+					src={plant.image}
 					alt={plant.name}
+					style={{
+						width: '100%',
+						aspectRatio: '16 / 9',
+						objectFit: 'cover',
+					}}
 				/>
 			}
 			actions={actions}
