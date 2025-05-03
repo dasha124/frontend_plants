@@ -12,7 +12,29 @@ import {
 } from '@/entities/plant/model';
 import { showError, showToast } from '@/shared/utils';
 
-export type TField = Partial<TPlantCreate>;
+// export type TField = Partial<TPlantCreate>;
+export type TField = Omit<TPlantCreate, 'properties'> & {
+	properties: Omit<
+		TPlantCreate['properties'],
+		| 'add'
+		| 'phSoil'
+		| 'season'
+		| 'drainage'
+		| 'position'
+		| 'inGarden'
+		| 'soilType'
+		| 'tolerance'
+	> & {
+		add: string;
+		phSoil: string;
+		season: string;
+		drainage: string;
+		position: string;
+		inGarden: string;
+		soilType: string;
+		tolerance: string;
+	};
+};
 
 export const usePlantsCreate = () => {
 	const navigate = useNavigate();
@@ -65,20 +87,34 @@ export const usePlantsCreate = () => {
 			image: values.image,
 			info: values.info,
 			properties: {
-				add: values.properties?.add ?? [],
+				add: values.properties?.add ? values.properties.add.split(',') : [],
 				pests: values.properties?.pests ?? null,
 				toxic: values.properties?.toxic ?? null,
 				water: values.properties?.water ?? null,
 				height: values.properties?.height ?? null,
 				spread: values.properties?.spread ?? null,
-				phSoil: values.properties?.phSoil ?? [],
-				season: values.properties?.season ?? [],
+				phSoil: values.properties?.phSoil
+					? values.properties.phSoil.split(',')
+					: [],
+				season: values.properties?.season
+					? values.properties.season.split(',')
+					: [],
 				diseases: values.properties?.diseases ?? null,
-				drainage: values.properties?.drainage ?? [],
-				position: values.properties?.position ?? [],
-				inGarden: values.properties?.inGarden ?? [],
-				soilType: values.properties?.soilType ?? [],
-				tolerance: values.properties?.tolerance ?? [],
+				drainage: values.properties?.drainage
+					? values.properties.drainage.split(',')
+					: [],
+				position: values.properties?.position
+					? values.properties.position.split(',')
+					: [],
+				inGarden: values.properties?.inGarden
+					? values.properties.inGarden.split(',')
+					: [],
+				soilType: values.properties?.soilType
+					? values.properties.soilType.split(',')
+					: [],
+				tolerance: values.properties?.tolerance
+					? values.properties.tolerance.split(',')
+					: [],
 				maintenance: values.properties?.maintenance ?? null,
 				propagation: values.properties?.propagation ?? null,
 			},
