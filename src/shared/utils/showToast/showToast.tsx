@@ -65,6 +65,6 @@ export const showError = (error: unknown) => {
 		'error',
 		error instanceof Error && error.message
 			? error.message
-			: 'Ошибка при выполнеии действия',
+			: 'Ошибка при выполнении действия',
 	);
 };
