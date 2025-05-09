@@ -1,0 +1,75 @@
+import { Button, Collapse, Descriptions, Divider } from 'antd';
+import React from 'react';
+
+import defaultImage from '@/assets/images/default-image.png';
+import { usePlantInfo } from '@/features/plant/model';
+import { cn } from '@/shared/lib';
+import { RenderIf } from '@/shared/utils';
+
+type Props = {
+	id: string;
+};
+
+export const PlantInfo: React.FC<Props> = ({ id }) => {
+	const {
+		isLoaded,
+		plantInfo,
+		mainFields,
+		part1,
+		part2,
+		part3,
+		isSuperuser,
+		handleDelete,
+	} = usePlantInfo(id);
+
+	return (
+		<RenderIf
+			condition={isLoaded}
+			className={cn('flex flex-col p-4 gap-8')}
+		>
+			<h1 className={'text-center text-4xl font-bold'}>{plantInfo?.name}</h1>
+
+			<div className={'flex flex-col md:flex-row gap-4'}>
+				<img
+					src={defaultImage || plantInfo?.image}
+					alt={plantInfo?.name}
+					className={'h-full'}
+				/>
+
+				<Descriptions column={1}>
+					{mainFields?.map((item, index) => (
+						<Descriptions.Item
+							key={index}
+							label={<span className={'text-xl font-bold'}>{item.label}</span>}
+						>
+							<span className={'text-xl'}>{item.value}</span>
+						</Descriptions.Item>
+					))}
+				</Descriptions>
+			</div>
+
+			<RenderIf condition={isSuperuser}>
+				<Button
+					className={'block'}
+					onClick={handleDelete}
+				>
+					Удалить
+				</Button>
+			</RenderIf>
+
+			<Divider orientation={'left'}>Информация</Divider>
+
+			<div>
+				<div className='inline-block w-full md:w-1/2 xl:w-1/3 align-top p-2'>
+					<Collapse items={part1} />
+				</div>
+				<div className='inline-block w-full md:w-1/2 xl:w-1/3 align-top p-2'>
+					<Collapse items={part2} />
+				</div>
+				<div className='inline-block w-full md:w-1/2 xl:w-1/3 align-top p-2'>
+					<Collapse items={part3} />
+				</div>
+			</div>
+		</RenderIf>
+	);
+};

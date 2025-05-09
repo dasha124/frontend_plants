@@ -31,16 +31,39 @@ const getMenuItems = (
 		key: 'typePlants',
 		icon: <IconListDetails width={20} />,
 	},
-	{
-		label: 'Растения',
-		key: 'plants',
-		icon: <IconPlant />,
-	},
+	...(isSuperuser
+		? [
+				{
+					label: 'Растения',
+					key: 'plants_menu',
+					icon: <IconPlant />,
+					children: [
+						{
+							label: 'Список растений',
+							key: 'plants',
+							icon: <IconPlant />,
+						},
+						{
+							label: 'Создать',
+							key: 'plants_create',
+							icon: <IconCirclePlus />,
+						},
+					],
+				},
+			]
+		: [
+				{
+					label: 'Растения',
+					key: 'plants',
+					icon: <IconPlant />,
+				},
+			]),
+
 	...(isAuthorized && !isSuperuser
 		? [
 				{
 					label: 'Коллекции',
-					key: 'collections',
+					key: 'collections_menu',
 					icon: <IconLayoutGridAdd />,
 					children: [
 						{
@@ -112,6 +135,9 @@ export const useNavbar = () => {
 				break;
 			case 'plants':
 				navigate('/plants');
+				break;
+			case 'plants_create':
+				navigate('/plants?create=true');
 				break;
 			case 'collections_my':
 				navigate('/collections');

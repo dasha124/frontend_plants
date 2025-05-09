@@ -86,7 +86,9 @@ export abstract class ServiceBase {
 				method,
 				headers: {
 					'Content-Type':
-						method === ERequestMethods.POST ? 'application/json' : '',
+						method === ERequestMethods.POST || method === ERequestMethods.PUT
+							? 'application/json'
+							: '',
 					...headers,
 				},
 				credentials: 'include',

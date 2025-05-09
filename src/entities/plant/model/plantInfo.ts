@@ -8,28 +8,22 @@ export type TPlantInfoApi = {
 	general_info: string;
 	properties: {
 		add: string[];
-		pests: string;
-		toxic: string;
-		water: string;
-		height: string;
+		pests: string | null;
+		toxic: string | null;
+		water: string | null;
+		height: string | null;
 		season: string[];
-		spread: string;
+		spread: string | null;
 		ph_soil: string[];
-		diseases: string;
+		diseases: string | null;
 		drainage: string[];
 		position: string[];
 		in_garden: string[];
 		soil_type: string[];
 		tolerance: string[];
-		maintenance: string;
-		propagation: string;
+		maintenance: string | null;
+		propagation: string | null;
 	};
-};
-
-export type TPlantShortInfo = {
-	id: string;
-	name: string;
-	image: string;
 };
 
 export type TPlantInfoModel = {
@@ -38,27 +32,31 @@ export type TPlantInfoModel = {
 	class: string;
 	subclass: string;
 	type: string;
-	image: string;
+	image: string; // -
 	info: string;
 	properties: {
 		add: string[];
-		pests: string;
-		toxic: string;
-		water: string;
-		height: string;
-		spread: string;
+		pests: string | null;
+		toxic: string | null;
+		water: string | null;
+		height: string | null;
+		spread: string | null;
 		phSoil: string[];
 		season: string[];
-		diseases: string;
+		diseases: string | null;
 		drainage: string[];
 		position: string[];
 		inGarden: string[];
 		soilType: string[];
 		tolerance: string[];
-		maintenance: string;
-		propagation: string;
+		maintenance: string | null;
+		propagation: string | null;
 	};
 };
+
+export type TPlantShortInfo = Pick<TPlantInfoModel, 'id' | 'name' | 'image'>;
+
+export type TPlantCreate = Omit<TPlantInfoModel, 'id'>;
 
 export class PlantInfo {
 	id: string;
@@ -70,21 +68,21 @@ export class PlantInfo {
 	info: string;
 	properties: {
 		add: string[];
-		pests: string;
-		toxic: string;
-		water: string;
-		height: string;
-		spread: string;
+		pests: string | null;
+		toxic: string | null;
+		water: string | null;
+		height: string | null;
+		spread: string | null;
 		phSoil: string[];
 		season: string[];
-		diseases: string;
+		diseases: string | null;
 		drainage: string[];
 		position: string[];
 		inGarden: string[];
 		soilType: string[];
 		tolerance: string[];
-		maintenance: string;
-		propagation: string;
+		maintenance: string | null;
+		propagation: string | null;
 	};
 
 	constructor({
