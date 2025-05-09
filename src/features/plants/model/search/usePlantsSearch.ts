@@ -17,7 +17,7 @@ export const usePlantsSearch = () => {
 
 		// eslint-disable-next-line no-undef
 		queueMicrotask(() => {
-			emitEvent(EmitterEvents.PLANTS_SEARCH);
+			emitEvent(EmitterEvents.BUTTON_CLICK_PLANTS_SEARCH);
 		});
 	};
 

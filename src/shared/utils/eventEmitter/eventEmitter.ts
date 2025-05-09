@@ -5,7 +5,7 @@ export enum EmitterEvents {
 	MODAL_OPEN_DELETE_COLLECTION = 'modal/open/delete/collection',
 	MODAL_OPEN_PLANT_ADD_TO_COLLECTION = 'modal/open/plant_add_to_collection',
 	MODAL_OPEN_DELETE_PLANT = 'modal/open/delete/plant',
-	PLANTS_SEARCH = 'button/click/plants_search',
+	BUTTON_CLICK_PLANTS_SEARCH = 'button/click/plants_search',
 }
 
 type TEmitterPayloads = {
@@ -13,7 +13,7 @@ type TEmitterPayloads = {
 	[EmitterEvents.MODAL_OPEN_DELETE_COLLECTION]: void;
 	[EmitterEvents.MODAL_OPEN_PLANT_ADD_TO_COLLECTION]: { plantId: string };
 	[EmitterEvents.MODAL_OPEN_DELETE_PLANT]: { plantId: string };
-	[EmitterEvents.PLANTS_SEARCH]: void;
+	[EmitterEvents.BUTTON_CLICK_PLANTS_SEARCH]: void;
 };
 
 export const eventEmitter = new EventEmitter();

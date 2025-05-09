@@ -47,10 +47,10 @@ export const usePlantsInfo = () => {
 	}, []);
 
 	useEffect(() => {
-		onEvent(EmitterEvents.PLANTS_SEARCH, loadPlants);
+		onEvent(EmitterEvents.BUTTON_CLICK_PLANTS_SEARCH, loadPlants);
 
 		return () => {
-			eventEmitter.off(EmitterEvents.PLANTS_SEARCH, loadPlants);
+			eventEmitter.off(EmitterEvents.BUTTON_CLICK_PLANTS_SEARCH, loadPlants);
 		};
 	}, [loadPlants]);
 
