@@ -2,6 +2,7 @@
 
 import { PlantInfo, TPlantInfoApi } from '@/entities/plant/model';
 import { TypePlantsInfo } from '@/entities/typePlants/model';
+import { TPlantSearchParams } from '@/features/plants/model';
 import { ServiceBase } from '@/shared/api';
 import { ERequestMethods } from '@/shared/model/enums';
 
@@ -56,14 +57,28 @@ export class PlantsService extends ServiceBase {
 
 	/**
 	 * Получение списка всех растений
+	 * @param params - Параметры поиска растений
 	 */
-	async getPlants(): Promise<PlantInfo[]> {
+	async getPlants(params?: TPlantSearchParams): Promise<PlantInfo[]> {
 		const configItem = this.getConfigItem('getPlants');
 
 		let response;
 
 		try {
-			response = await this.makeHttpRequest(configItem.method, configItem.url);
+			const searchParams = new URLSearchParams();
+			if (params) {
+				Object.entries(params).forEach(([key, value]) => {
+					if (value !== undefined && value !== null) {
+						searchParams.append(key, value);
+					}
+				});
+			}
+
+			const queryString = searchParams.toString();
+			response = await this.makeHttpRequest(
+				configItem.method,
+				`${configItem.url}${queryString ? `?${queryString}` : ''}`,
+			);
 		} catch (error) {
 			console.error(error);
 
