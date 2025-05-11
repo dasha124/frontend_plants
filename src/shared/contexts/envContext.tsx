@@ -11,16 +11,16 @@ interface IEnvProviderProps {
 }
 
 export const EnvProvider: React.FC<IEnvProviderProps> = ({ children }) => {
-	const isDebugMode = import.meta.env.VITE_IS_DEBUG_MODE === 'true';
+	const isDebugModeRaw = import.meta.env.VITE_IS_DEBUG_MODE;
 
-	if (!isDebugMode) {
+	if (!isDebugModeRaw) {
 		throw new Error(
 			'VITE_IS_DEBUG_MODE is not defined in the environment variables',
 		);
 	}
 
 	const envConfig: IEnvConfig = {
-		isDebugMode,
+		isDebugMode: isDebugModeRaw === 'true',
 	};
 
 	return (
