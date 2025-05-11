@@ -94,7 +94,7 @@ export class UtilsService extends ServiceBase {
 		return {
 			type: response.type,
 			plants: response.plants.map((plant: TPlantInfoApi) =>
-				PlantInfo.createFromApi(plant).toShortInfo(),
+				PlantInfo.createShortInfoFromApi(plant),
 			),
 		};
 	}
