@@ -108,8 +108,10 @@ export const useAddPlantToCollectionModal = () => {
 	}, [openModal]);
 
 	useEffect(() => {
-		loadCollections();
-	}, [loadCollections]);
+		if (isOpen) {
+			loadCollections();
+		}
+	}, [isOpen, loadCollections]);
 
 	return {
 		plantId,

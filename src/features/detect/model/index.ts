@@ -1,0 +1,1 @@
+export { useDetectPlant } from './useDetectPlant';

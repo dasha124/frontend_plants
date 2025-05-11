@@ -14,6 +14,7 @@ type Props = {
 
 export const Page: React.FC<Props> = ({ id }) => {
 	const {
+		isSuperuser,
 		isLoaded,
 		isFetching,
 		isEditMode,
@@ -89,7 +90,7 @@ export const Page: React.FC<Props> = ({ id }) => {
 
 			<Divider />
 
-			<div>
+			<RenderIf condition={!isSuperuser}>
 				<Button
 					onClick={loadRecommendations}
 					type={'primary'}
@@ -97,7 +98,7 @@ export const Page: React.FC<Props> = ({ id }) => {
 				>
 					Получить рекомендации
 				</Button>
-			</div>
+			</RenderIf>
 
 			<RenderIf condition={plantRecommendations.length > 0}>
 				<div className={'flex flex-wrap justify-center gap-8'}>

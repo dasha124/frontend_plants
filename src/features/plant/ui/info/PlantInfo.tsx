@@ -88,7 +88,7 @@ export const PlantInfo: React.FC<Props> = ({ id }) => {
 
 			<Divider />
 
-			<div>
+			<RenderIf condition={!isSuperuser}>
 				<Button
 					onClick={loadRecommendations}
 					type={'primary'}
@@ -96,7 +96,7 @@ export const PlantInfo: React.FC<Props> = ({ id }) => {
 				>
 					Получить рекомендации
 				</Button>
-			</div>
+			</RenderIf>
 
 			<RenderIf condition={plantRecommendations.length > 0}>
 				<div className={'flex flex-wrap justify-center gap-8'}>

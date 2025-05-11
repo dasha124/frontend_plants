@@ -9,12 +9,14 @@ import {
 } from '@/entities/collection/model';
 import { formatDate } from '@/entities/collection/utils';
 import { TPlantRecommendation } from '@/entities/plant/model';
+import { selectCurrentUser } from '@/entities/user/model';
 import { RecommendationService } from '@/shared/api';
 import { emitEvent, EmitterEvents, showError, showToast } from '@/shared/utils';
 
 export const useCollection = (id: string) => {
 	const dispatch = useDispatch();
 
+	const user = useSelector(selectCurrentUser);
 	const collectionInfo = useSelector(selectCollection);
 
 	const [isLoaded, setIsLoaded] = useState(false);
@@ -128,6 +130,7 @@ export const useCollection = (id: string) => {
 	}, [id, loadCollectionInfo]);
 
 	return {
+		isSuperuser: !!user?.isSuperuser,
 		isLoaded,
 		isFetching,
 		isEditMode,
