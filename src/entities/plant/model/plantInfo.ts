@@ -1,3 +1,5 @@
+export type TPlantStatus = 'Удалено' | 'Активно';
+
 export type TPlantInfoApi = {
 	plant_id: string;
 	plant_name: string;
@@ -6,6 +8,7 @@ export type TPlantInfoApi = {
 	plant_type: string;
 	image_url_plant: string;
 	general_info: string;
+	status: TPlantStatus;
 	properties: {
 		add: string[];
 		pests: string | null;
@@ -32,8 +35,9 @@ export type TPlantInfoModel = {
 	class: string;
 	subclass: string;
 	type: string;
-	image: string; // -
+	image: string;
 	info: string;
+	status: TPlantStatus;
 	properties: {
 		add: string[];
 		pests: string | null;
@@ -56,7 +60,12 @@ export type TPlantInfoModel = {
 
 export type TPlantShortInfo = Pick<TPlantInfoModel, 'id' | 'name' | 'image'>;
 
-export type TPlantCreate = Omit<TPlantInfoModel, 'id'>;
+export type TPlantRecommendation = Pick<
+	TPlantInfoModel,
+	'id' | 'name' | 'image'
+>;
+
+export type TPlantCreate = Omit<TPlantInfoModel, 'id' | 'status'>;
 
 export class PlantInfo {
 	id: string;
@@ -66,6 +75,7 @@ export class PlantInfo {
 	type: string;
 	image: string;
 	info: string;
+	status: TPlantStatus;
 	properties: {
 		add: string[];
 		pests: string | null;
@@ -93,6 +103,7 @@ export class PlantInfo {
 		type,
 		image,
 		info,
+		status,
 		properties,
 	}: TPlantInfoModel) {
 		this.id = id;
@@ -102,6 +113,7 @@ export class PlantInfo {
 		this.type = type;
 		this.image = image;
 		this.info = info;
+		this.status = status;
 		this.properties = properties;
 	}
 
@@ -114,6 +126,7 @@ export class PlantInfo {
 			type: plantInfo.plant_type,
 			image: plantInfo.image_url_plant,
 			info: plantInfo.general_info,
+			status: plantInfo.status,
 			properties: {
 				...plantInfo.properties,
 				phSoil: plantInfo.properties.ph_soil,
@@ -131,6 +144,16 @@ export class PlantInfo {
 		};
 	}
 
+	static createRecommendationFromApi(
+		plantInfo: TPlantInfoApi,
+	): TPlantRecommendation {
+		return {
+			id: plantInfo.plant_id,
+			name: plantInfo.plant_name,
+			image: plantInfo.image_url_plant,
+		};
+	}
+
 	toApi(): TPlantInfoApi {
 		return {
 			plant_id: this.id,
@@ -140,6 +163,7 @@ export class PlantInfo {
 			plant_type: this.type,
 			image_url_plant: this.image,
 			general_info: this.info,
+			status: this.status,
 			properties: {
 				...this.properties,
 				ph_soil: this.properties.phSoil,

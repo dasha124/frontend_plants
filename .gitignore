@@ -33,3 +33,6 @@ tsconfig.tsbuildinfo
 *.sw?
 
 .env
+
+# Cursor IDE files
+.cursor/

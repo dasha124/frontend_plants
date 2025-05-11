@@ -1,8 +1,9 @@
-import { Button, Form, Input, Select } from 'antd';
+import { Button, Form, Input, Radio, Select } from 'antd';
 import React from 'react';
 
 import { usePlantEdit, TField } from '@/features/plant/model';
 import { cn } from '@/shared/lib';
+import { UploadImage } from '@/shared/ui';
 import { RenderIf } from '@/shared/utils';
 
 type Props = {
@@ -17,6 +18,12 @@ export const PlantEdit: React.FC<Props> = ({ id }) => {
 		classOptionValues,
 		subClassOptionValues,
 		typeOptionValues,
+		imageUrl,
+		imageName,
+		form,
+		setImageName,
+		setLink,
+		removeLink,
 		onFinish,
 		onFinishFailed,
 	} = usePlantEdit(id);
@@ -28,7 +35,8 @@ export const PlantEdit: React.FC<Props> = ({ id }) => {
 		>
 			<h1 className={'text-center text-4xl font-bold'}>{plantInfo?.name}</h1>
 
-			<Form
+			<Form<TField>
+				form={form}
 				name='edit-plant-form'
 				labelCol={{ span: 8 }}
 				wrapperCol={{ span: 16 }}
@@ -43,7 +51,22 @@ export const PlantEdit: React.FC<Props> = ({ id }) => {
 					name={'name'}
 					rules={[{ required: true, message: 'Введите название растения' }]}
 				>
-					<Input />
+					<Input onBlur={(event) => setImageName(event.target.value)} />
+				</Form.Item>
+
+				<Form.Item<TField>
+					label='Изображение'
+					name={'image'}
+					rules={[
+						{ required: true, message: 'Загрузите изображение растения' },
+					]}
+				>
+					<UploadImage
+						initialFile={imageUrl}
+						fileName={imageName}
+						setLink={setLink}
+						removeLink={removeLink}
+					/>
 				</Form.Item>
 
 				<Form.Item<TField>
@@ -206,6 +229,17 @@ export const PlantEdit: React.FC<Props> = ({ id }) => {
 					name={['properties', 'propagation']}
 				>
 					<Input />
+				</Form.Item>
+
+				<Form.Item<TField>
+					label='Статус'
+					name='status'
+					rules={[{ required: true, message: 'Выберите статус растения' }]}
+				>
+					<Radio.Group>
+						<Radio value='Активно'>Активно</Radio>
+						<Radio value='Удалено'>Удалено</Radio>
+					</Radio.Group>
 				</Form.Item>
 
 				<Form.Item label={null}>

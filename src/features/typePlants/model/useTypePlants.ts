@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { PlantsService } from '@/entities/plant/api';
 import { TypePlantsInfo } from '@/entities/typePlants/model';
-import { showToast } from '@/shared/utils';
+import { showError } from '@/shared/utils';
 
 export const useTypePlants = () => {
 	const [typePlants, setTypePlants] = useState<TypePlantsInfo[]>([]);
@@ -17,11 +17,7 @@ export const useTypePlants = () => {
 		} catch (error: unknown) {
 			setTypePlants([]);
 
-			if (error instanceof Error) {
-				showToast('error', error.message);
-			} else {
-				showToast('error', 'Ошибка при выполнеии действия');
-			}
+			showError(error);
 		} finally {
 			setIsLoaded(true);
 		}

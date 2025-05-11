@@ -1,0 +1,33 @@
+[
+  {
+    "plant_id": 16,
+    "plant_name": "Американская жимолость",
+    "image_url_plant": "http://localhost:9000/logo/Фонтанная трава \"Рыжая Голова\".png"
+  },
+  {
+    "plant_id": 2,
+    "plant_name": "Японская глициния \"Каролина\"",
+    "image_url_plant": "http://localhost:9000/logo/Фонтанная трава \"Рыжая Голова\".png"
+  },
+  {
+    "plant_id": 15,
+    "plant_name": "Мандариновая жимолость",
+    "image_url_plant": "http://localhost:9000/logo/Фонтанная трава \"Рыжая Голова\".png"
+  },
+  {
+    "plant_id": 16,
+    "plant_name": "Американская жимолость",
+    "image_url_plant": "http://localhost:9000/logo/Фонтанная трава \"Рыжая Голова\".png"
+  },
+  {
+    "plant_id": 2,
+    "plant_name": "Японская глициния \"Каролина\"",
+    "image_url_plant": "http://localhost:9000/logo/Фонтанная трава \"Рыжая Голова\".png"
+  },
+  {
+    "plant_id": 15,
+    "plant_name": "Мандариновая жимолость",
+    "image_url_plant": "http://localhost:9000/logo/Фонтанная трава \"Рыжая Голова\".png"
+  }
+]
+

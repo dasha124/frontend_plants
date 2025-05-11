@@ -7,7 +7,10 @@ import {
 	selectCollection,
 	setCollectionAction,
 } from '@/entities/collection/model';
-import { emitEvent, EmitterEvents, showToast } from '@/shared/utils';
+import { formatDate } from '@/entities/collection/utils';
+import { TPlantRecommendation } from '@/entities/plant/model';
+import { RecommendationService } from '@/shared/api';
+import { emitEvent, EmitterEvents, showError, showToast } from '@/shared/utils';
 
 export const useCollection = (id: string) => {
 	const dispatch = useDispatch();
@@ -15,8 +18,12 @@ export const useCollection = (id: string) => {
 	const collectionInfo = useSelector(selectCollection);
 
 	const [isLoaded, setIsLoaded] = useState(false);
+	const [isFetching, setIsFetching] = useState(false);
 	const [isEditMode, setIsEditMode] = useState(false);
 	const [collectionName, setCollectionName] = useState('');
+	const [plantRecommendations, setPlantRecommendations] = useState<
+		TPlantRecommendation[]
+	>([]);
 
 	const fields = useMemo(
 		() =>
@@ -25,7 +32,10 @@ export const useCollection = (id: string) => {
 						{
 							key: '1',
 							label: 'Дата создания',
-							value: collectionInfo.dateCreate + collectionInfo.timeCreate,
+							value: formatDate(
+								collectionInfo.dateCreate,
+								collectionInfo.timeCreate,
+							),
 						},
 						{
 							key: '2',
@@ -49,17 +59,34 @@ export const useCollection = (id: string) => {
 			} catch (error: unknown) {
 				dispatch(deleteCollectionAction());
 
-				if (error instanceof Error) {
-					showToast('error', error.message);
-				} else {
-					showToast('error', 'Ошибка при выполнеии действия');
-				}
+				showError(error);
 			} finally {
 				setIsLoaded(true);
 			}
 		},
 		[dispatch],
 	);
+
+	const loadRecommendations = async () => {
+		if (plantRecommendations.length > 0) return;
+
+		try {
+			setIsFetching(true);
+
+			const recommendationsService = new RecommendationService();
+
+			const recommendations =
+				await recommendationsService.getRecommendationsByCollection(id);
+
+			setPlantRecommendations(recommendations);
+		} catch (error: unknown) {
+			setPlantRecommendations([]);
+
+			showError(error);
+		} finally {
+			setIsFetching(false);
+		}
+	};
 
 	const handleEditBtnClick = () => setIsEditMode(true);
 
@@ -88,12 +115,7 @@ export const useCollection = (id: string) => {
 
 			setIsEditMode(false);
 		} catch (error: unknown) {
-			showToast(
-				'error',
-				error instanceof Error && error.message
-					? error.message
-					: 'Ошибка при выполнеии действия',
-			);
+			showError(error);
 		}
 	};
 
@@ -107,13 +129,16 @@ export const useCollection = (id: string) => {
 
 	return {
 		isLoaded,
+		isFetching,
 		isEditMode,
 		collectionInfo,
 		fields,
 		collectionName,
+		plantRecommendations,
 		handleEditBtnClick,
 		handleChangeCollectionName,
 		handleSaveCollectionName,
 		handleDeleteCollection,
+		loadRecommendations,
 	};
 };

@@ -1,0 +1,1 @@
+export { PlantRecommendationItem } from './PlantRecommendationItem';

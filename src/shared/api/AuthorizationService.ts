@@ -8,6 +8,18 @@ export class AuthorizationService extends ServiceBase {
 	private static instance: AuthorizationService;
 	private baseUrl = '/api/';
 
+	private readonly mockUserData: TUserInfoApi = {
+		user_id: '1',
+		user_name: 'roman',
+		is_superuser: false,
+	};
+
+	private readonly mockAdminData: TUserInfoApi = {
+		user_id: '1',
+		user_name: 'roman',
+		is_superuser: true,
+	};
+
 	constructor() {
 		super();
 		if (AuthorizationService.instance) {
@@ -55,7 +67,11 @@ export class AuthorizationService extends ServiceBase {
 		} catch (error) {
 			console.error(error);
 
-			response = { user_id: '1', user_name: 'roman', is_superuser: true };
+			if (this.isDebugMode) {
+				response = this.mockAdminData;
+			} else {
+				throw error;
+			}
 		}
 
 		return UserInfo.createFromApi(response);
@@ -67,10 +83,18 @@ export class AuthorizationService extends ServiceBase {
 	async signup(username: string, password: string): Promise<void> {
 		const configItem = this.getConfigItem('signup');
 
-		await this.makeHttpRequest(configItem.method, configItem.url, {
-			username,
-			password,
-		});
+		try {
+			await this.makeHttpRequest(configItem.method, configItem.url, {
+				username,
+				password,
+			});
+		} catch (error) {
+			console.error(error);
+
+			if (!this.isDebugMode) {
+				throw error;
+			}
+		}
 	}
 
 	/**
@@ -83,6 +107,10 @@ export class AuthorizationService extends ServiceBase {
 			await this.makeHttpRequest(configItem.method, configItem.url);
 		} catch (error) {
 			console.error(error);
+
+			if (!this.isDebugMode) {
+				throw error;
+			}
 		}
 	}
 
@@ -99,7 +127,11 @@ export class AuthorizationService extends ServiceBase {
 		} catch (error) {
 			console.error(error);
 
-			response = { user_id: '1', user_name: 'roman', is_superuser: true };
+			if (this.isDebugMode) {
+				response = this.mockUserData;
+			} else {
+				throw error;
+			}
 		}
 
 		return UserInfo.createFromApi(response);

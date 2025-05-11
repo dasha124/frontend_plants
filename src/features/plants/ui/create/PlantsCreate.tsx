@@ -1,6 +1,7 @@
 import { Button, Form, Input, Select } from 'antd';
 
 import { usePlantsCreate, TField } from '@/features/plants/model';
+import { UploadImage } from '@/shared/ui';
 
 export const PlantsCreate = () => {
 	const {
@@ -8,6 +9,12 @@ export const PlantsCreate = () => {
 		classOptionValues,
 		subClassOptionValues,
 		typeOptionValues,
+		imageUrl,
+		form,
+		imageName,
+		setImageName,
+		setLink,
+		removeLink,
 		onFinish,
 		onFinishFailed,
 	} = usePlantsCreate();
@@ -19,6 +26,7 @@ export const PlantsCreate = () => {
 			</h1>
 
 			<Form
+				form={form}
 				name='create-plant-form'
 				labelCol={{ span: 8 }}
 				wrapperCol={{ span: 16 }}
@@ -33,7 +41,22 @@ export const PlantsCreate = () => {
 					name={'name'}
 					rules={[{ required: true, message: 'Введите название растения' }]}
 				>
-					<Input />
+					<Input onBlur={(event) => setImageName(event.target.value)} />
+				</Form.Item>
+
+				<Form.Item<TField>
+					label='Изображение'
+					name={'image'}
+					rules={[
+						{ required: true, message: 'Загрузите изображение растения' },
+					]}
+				>
+					<UploadImage
+						initialFile={imageUrl}
+						fileName={imageName}
+						setLink={setLink}
+						removeLink={removeLink}
+					/>
 				</Form.Item>
 
 				<Form.Item<TField>

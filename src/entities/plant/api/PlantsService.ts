@@ -2,12 +2,9 @@
 
 import { PlantInfo, TPlantInfoApi } from '@/entities/plant/model';
 import { TypePlantsInfo } from '@/entities/typePlants/model';
+import { TPlantSearchParams } from '@/features/plants/model';
 import { ServiceBase } from '@/shared/api';
 import { ERequestMethods } from '@/shared/model/enums';
-
-import plantMocked from './mocks/plant.json';
-import plantsMocked from './mocks/plants.json';
-import typePlants from './mocks/typePlants.json';
 
 export class PlantsService extends ServiceBase {
 	private static instance: PlantsService;
@@ -56,18 +53,37 @@ export class PlantsService extends ServiceBase {
 
 	/**
 	 * Получение списка всех растений
+	 * @param params - Параметры поиска растений
 	 */
-	async getPlants(): Promise<PlantInfo[]> {
+	async getPlants(params?: TPlantSearchParams): Promise<PlantInfo[]> {
 		const configItem = this.getConfigItem('getPlants');
 
 		let response;
 
 		try {
-			response = await this.makeHttpRequest(configItem.method, configItem.url);
+			const searchParams = new URLSearchParams();
+			if (params) {
+				Object.entries(params).forEach(([key, value]) => {
+					if (value !== undefined && value !== null) {
+						searchParams.append(key, value);
+					}
+				});
+			}
+
+			const queryString = searchParams.toString();
+			response = await this.makeHttpRequest(
+				configItem.method,
+				`${configItem.url}${queryString ? `?${queryString}` : ''}`,
+			);
 		} catch (error) {
 			console.error(error);
 
-			response = plantsMocked;
+			if (this.isDebugMode) {
+				const { default: plantsMocked } = await import('./mocks/plants.json');
+				response = plantsMocked;
+			} else {
+				throw error;
+			}
 		}
 
 		return response.map(PlantInfo.createFromApi);
@@ -90,7 +106,12 @@ export class PlantsService extends ServiceBase {
 		} catch (error) {
 			console.error(error);
 
-			response = plantMocked;
+			if (this.isDebugMode) {
+				const { default: plantMocked } = await import('./mocks/plant.json');
+				response = plantMocked;
+			} else {
+				throw error;
+			}
 		}
 
 		return PlantInfo.createFromApi(response);
@@ -114,7 +135,12 @@ export class PlantsService extends ServiceBase {
 		} catch (error) {
 			console.error(error);
 
-			response = plantMocked;
+			if (this.isDebugMode) {
+				const { default: plantMocked } = await import('./mocks/plant.json');
+				response = plantMocked;
+			} else {
+				throw error;
+			}
 		}
 
 		return PlantInfo.createFromApi(response);
@@ -138,7 +164,12 @@ export class PlantsService extends ServiceBase {
 		} catch (error) {
 			console.error(error);
 
-			response = plantMocked;
+			if (this.isDebugMode) {
+				const { default: plantMocked } = await import('./mocks/plant.json');
+				response = plantMocked;
+			} else {
+				throw error;
+			}
 		}
 
 		return PlantInfo.createFromApi(response);
@@ -157,7 +188,12 @@ export class PlantsService extends ServiceBase {
 		} catch (error) {
 			console.error(error);
 
-			response = typePlants;
+			if (this.isDebugMode) {
+				const { default: typePlants } = await import('./mocks/typePlants.json');
+				response = typePlants;
+			} else {
+				throw error;
+			}
 		}
 
 		return response.map(TypePlantsInfo.createFromApi);
@@ -177,6 +213,10 @@ export class PlantsService extends ServiceBase {
 			);
 		} catch (error) {
 			console.error(error);
+
+			if (!this.isDebugMode) {
+				throw error;
+			}
 		}
 	}
 }

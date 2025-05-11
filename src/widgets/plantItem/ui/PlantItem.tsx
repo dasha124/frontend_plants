@@ -11,7 +11,7 @@ type Props = {
 };
 
 export const PlantItem: React.FC<Props> = ({ plant }) => {
-	const { actions, handleCardClick } = usePlantItem(plant);
+	const { actions, isDebugMode, handleCardClick } = usePlantItem(plant);
 
 	return (
 		<Card
@@ -19,8 +19,13 @@ export const PlantItem: React.FC<Props> = ({ plant }) => {
 			style={{ width: 240 }}
 			cover={
 				<img
-					src={defaultImage || plant.image}
+					src={isDebugMode ? defaultImage : plant?.image}
 					alt={plant.name}
+					style={{
+						width: '100%',
+						aspectRatio: '16 / 9',
+						objectFit: 'cover',
+					}}
 				/>
 			}
 			actions={actions}

@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { CollectionsService } from '@/entities/collection/api';
 import { setCollectionAction } from '@/entities/collection/model';
-import { showToast } from '@/shared/utils';
+import { showError, showToast } from '@/shared/utils';
 
 export const useDeleteBtn = (plantId: string, collectionId: string | null) => {
 	const dispatch = useDispatch();
@@ -25,12 +25,7 @@ export const useDeleteBtn = (plantId: string, collectionId: string | null) => {
 
 			dispatch(setCollectionAction(collectionInfo));
 		} catch (error: unknown) {
-			showToast(
-				'error',
-				error instanceof Error && error.message
-					? error.message
-					: 'Ошибка при выполнеии действия',
-			);
+			showError(error);
 		}
 	};
 

@@ -5,6 +5,7 @@ import defaultImage from '@/assets/images/default-image.png';
 import { usePlantInfo } from '@/features/plant/model';
 import { cn } from '@/shared/lib';
 import { RenderIf } from '@/shared/utils';
+import { PlantRecommendationItem } from '@/widgets/plantRecommendationItem/ui';
 
 type Props = {
 	id: string;
@@ -13,13 +14,18 @@ type Props = {
 export const PlantInfo: React.FC<Props> = ({ id }) => {
 	const {
 		isLoaded,
+		isFetching,
 		plantInfo,
 		mainFields,
 		part1,
 		part2,
 		part3,
 		isSuperuser,
+		plantRecommendations,
+		isDebugMode,
 		handleDelete,
+		handleAddToCollection,
+		loadRecommendations,
 	} = usePlantInfo(id);
 
 	return (
@@ -31,9 +37,14 @@ export const PlantInfo: React.FC<Props> = ({ id }) => {
 
 			<div className={'flex flex-col md:flex-row gap-4'}>
 				<img
-					src={defaultImage || plantInfo?.image}
+					src={isDebugMode ? defaultImage : plantInfo?.image}
 					alt={plantInfo?.name}
 					className={'h-full'}
+					style={{
+						maxWidth: '400px',
+						aspectRatio: '16 / 9',
+						objectFit: 'cover',
+					}}
 				/>
 
 				<Descriptions column={1}>
@@ -48,14 +59,18 @@ export const PlantInfo: React.FC<Props> = ({ id }) => {
 				</Descriptions>
 			</div>
 
-			<RenderIf condition={isSuperuser}>
-				<Button
-					className={'block'}
-					onClick={handleDelete}
-				>
-					Удалить
-				</Button>
-			</RenderIf>
+			<div>
+				{isSuperuser ? (
+					<Button onClick={handleDelete}>Удалить</Button>
+				) : (
+					<Button
+						type={'primary'}
+						onClick={handleAddToCollection}
+					>
+						Добавить в коллекцию
+					</Button>
+				)}
+			</div>
 
 			<Divider orientation={'left'}>Информация</Divider>
 
@@ -70,6 +85,29 @@ export const PlantInfo: React.FC<Props> = ({ id }) => {
 					<Collapse items={part3} />
 				</div>
 			</div>
+
+			<Divider />
+
+			<div>
+				<Button
+					onClick={loadRecommendations}
+					type={'primary'}
+					loading={isFetching}
+				>
+					Получить рекомендации
+				</Button>
+			</div>
+
+			<RenderIf condition={plantRecommendations.length > 0}>
+				<div className={'flex flex-wrap justify-center gap-8'}>
+					{plantRecommendations.map((plant) => (
+						<PlantRecommendationItem
+							key={plant.id}
+							plant={plant}
+						/>
+					))}
+				</div>
+			</RenderIf>
 		</RenderIf>
 	);
 };

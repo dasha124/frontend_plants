@@ -4,11 +4,14 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 import { TPlantShortInfo } from '@/entities/plant/model';
 import { selectIsSuperuser } from '@/entities/user/model';
+import { useEnv } from '@/shared/contexts';
 import { AddBtn, DeleteBtn, EditBtn } from '@/widgets/plantItem/ui';
 
 export const usePlantItem = (plant: TPlantShortInfo) => {
 	const navigate = useNavigate();
 	const location = useLocation();
+
+	const { isDebugMode } = useEnv();
 
 	const isSuperuser = useSelector(selectIsSuperuser);
 
@@ -54,5 +57,5 @@ export const usePlantItem = (plant: TPlantShortInfo) => {
 
 	const handleCardClick = () => navigate(`/plants/${plant.id}`);
 
-	return { actions, handleCardClick };
+	return { actions, isDebugMode, handleCardClick };
 };

@@ -7,7 +7,7 @@ import {
 	selectCollections,
 	setCollectionsAction,
 } from '@/entities/collection/model';
-import { showToast } from '@/shared/utils';
+import { showError } from '@/shared/utils';
 
 export const useCollections = () => {
 	const dispatch = useDispatch();
@@ -26,11 +26,7 @@ export const useCollections = () => {
 		} catch (error: unknown) {
 			dispatch(deleteCollectionsAction());
 
-			if (error instanceof Error) {
-				showToast('error', error.message);
-			} else {
-				showToast('error', 'Ошибка при выполнеии действия');
-			}
+			showError(error);
 		} finally {
 			setIsLoaded(true);
 		}

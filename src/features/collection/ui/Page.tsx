@@ -6,6 +6,7 @@ import { useCollection } from '@/features/collection/model';
 import { cn } from '@/shared/lib';
 import { RenderIf } from '@/shared/utils';
 import { PlantItem } from '@/widgets/plantItem/ui';
+import { PlantRecommendationItem } from '@/widgets/plantRecommendationItem/ui';
 
 type Props = {
 	id: string;
@@ -14,14 +15,17 @@ type Props = {
 export const Page: React.FC<Props> = ({ id }) => {
 	const {
 		isLoaded,
+		isFetching,
 		isEditMode,
 		collectionInfo,
 		fields,
 		collectionName,
+		plantRecommendations,
 		handleEditBtnClick,
 		handleChangeCollectionName,
 		handleSaveCollectionName,
 		handleDeleteCollection,
+		loadRecommendations,
 	} = useCollection(id);
 
 	return (
@@ -82,6 +86,29 @@ export const Page: React.FC<Props> = ({ id }) => {
 					/>
 				))}
 			</div>
+
+			<Divider />
+
+			<div>
+				<Button
+					onClick={loadRecommendations}
+					type={'primary'}
+					loading={isFetching}
+				>
+					Получить рекомендации
+				</Button>
+			</div>
+
+			<RenderIf condition={plantRecommendations.length > 0}>
+				<div className={'flex flex-wrap justify-center gap-8'}>
+					{plantRecommendations.map((plant) => (
+						<PlantRecommendationItem
+							key={plant.id}
+							plant={plant}
+						/>
+					))}
+				</div>
+			</RenderIf>
 		</RenderIf>
 	);
 };

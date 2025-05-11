@@ -1,4 +1,4 @@
-import type { FormProps } from 'antd';
+import { Form, FormProps } from 'antd';
 import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -10,14 +10,42 @@ import {
 	PlantInfo,
 	TPlantCreate,
 } from '@/entities/plant/model';
-import { showToast } from '@/shared/utils';
+import { convertPropertiesToArray, sanitizePropertyValue } from '@/shared/lib';
+import { showError, showToast } from '@/shared/utils';
 
-export type TField = Partial<TPlantCreate>;
+export type TField = Partial<
+	Omit<TPlantCreate, 'properties'> & {
+		properties: Omit<
+			TPlantCreate['properties'],
+			| 'add'
+			| 'phSoil'
+			| 'season'
+			| 'drainage'
+			| 'position'
+			| 'inGarden'
+			| 'soilType'
+			| 'tolerance'
+		> & {
+			add: string;
+			phSoil: string;
+			season: string;
+			drainage: string;
+			position: string;
+			inGarden: string;
+			soilType: string;
+			tolerance: string;
+		};
+	}
+>;
 
 export const usePlantsCreate = () => {
 	const navigate = useNavigate();
 
+	const [form] = Form.useForm();
+
 	const [isFetching, setIsFetching] = useState(false);
+	const [imageUrl, setImageUrl] = useState<string | null>(null);
+	const [imageName, setImageName] = useState<string>('');
 
 	const classOptionValues = useMemo(
 		() => Object.values(EPlantClass).map((key) => ({ value: key, label: key })),
@@ -45,6 +73,7 @@ export const usePlantsCreate = () => {
 			!values.class ||
 			!values.subclass ||
 			!values.type ||
+			!values.image ||
 			!values.info
 		) {
 			showToast('error', 'Введите все обязательные поля');
@@ -57,25 +86,26 @@ export const usePlantsCreate = () => {
 			class: values.class,
 			subclass: values.subclass,
 			type: values.type,
-			image: '',
+			image: values.image,
 			info: values.info,
+			status: 'Активно',
 			properties: {
-				add: values.properties?.add ?? [],
-				pests: values.properties?.pests ?? null,
-				toxic: values.properties?.toxic ?? null,
-				water: values.properties?.water ?? null,
-				height: values.properties?.height ?? null,
-				spread: values.properties?.spread ?? null,
-				phSoil: values.properties?.phSoil ?? [],
-				season: values.properties?.season ?? [],
-				diseases: values.properties?.diseases ?? null,
-				drainage: values.properties?.drainage ?? [],
-				position: values.properties?.position ?? [],
-				inGarden: values.properties?.inGarden ?? [],
-				soilType: values.properties?.soilType ?? [],
-				tolerance: values.properties?.tolerance ?? [],
-				maintenance: values.properties?.maintenance ?? null,
-				propagation: values.properties?.propagation ?? null,
+				add: convertPropertiesToArray(values.properties?.add),
+				pests: sanitizePropertyValue(values.properties?.pests),
+				toxic: sanitizePropertyValue(values.properties?.toxic),
+				water: sanitizePropertyValue(values.properties?.water),
+				height: sanitizePropertyValue(values.properties?.height),
+				spread: sanitizePropertyValue(values.properties?.spread),
+				phSoil: convertPropertiesToArray(values.properties?.phSoil),
+				season: convertPropertiesToArray(values.properties?.season),
+				diseases: sanitizePropertyValue(values.properties?.diseases),
+				drainage: convertPropertiesToArray(values.properties?.drainage),
+				position: convertPropertiesToArray(values.properties?.position),
+				inGarden: convertPropertiesToArray(values.properties?.inGarden),
+				soilType: convertPropertiesToArray(values.properties?.soilType),
+				tolerance: convertPropertiesToArray(values.properties?.tolerance),
+				maintenance: sanitizePropertyValue(values.properties?.maintenance),
+				propagation: sanitizePropertyValue(values.properties?.propagation),
 			},
 		});
 
@@ -90,15 +120,20 @@ export const usePlantsCreate = () => {
 
 			navigate(`/plants/${response.id}`);
 		} catch (error: unknown) {
-			showToast(
-				'error',
-				error instanceof Error
-					? error.message
-					: 'Ошибка при выполнении действия',
-			);
+			showError(error);
 		} finally {
 			setIsFetching(false);
 		}
+	};
+
+	const setLink = (url: string) => {
+		setImageUrl(url);
+		form.setFieldsValue({ image: url });
+	};
+
+	const removeLink = () => {
+		setImageUrl(null);
+		form.setFieldsValue({ image: null });
 	};
 
 	return {
@@ -106,6 +141,12 @@ export const usePlantsCreate = () => {
 		classOptionValues,
 		subClassOptionValues,
 		typeOptionValues,
+		imageUrl,
+		form,
+		imageName,
+		setImageName,
+		setLink,
+		removeLink,
 		onFinish,
 		onFinishFailed,
 	};

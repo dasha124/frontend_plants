@@ -4,9 +4,6 @@ import { CollectionInfo } from '@/entities/collection/model';
 import { ServiceBase } from '@/shared/api';
 import { ERequestMethods } from '@/shared/model/enums';
 
-import collectionMocked from './mocks/collection.json';
-import collectionsMocked from './mocks/collections.json';
-
 export class CollectionsService extends ServiceBase {
 	private static instance: CollectionsService;
 	private baseUrl = '/api/collections/';
@@ -54,6 +51,11 @@ export class CollectionsService extends ServiceBase {
 				url: this.baseUrl,
 				method: ERequestMethods.DELETE,
 			},
+			{
+				name: 'getRecommendations',
+				url: `/api/recommendations/coll/`,
+				method: ERequestMethods.GET,
+			},
 		];
 	}
 
@@ -70,7 +72,14 @@ export class CollectionsService extends ServiceBase {
 		} catch (error) {
 			console.error(error);
 
-			response = collectionsMocked;
+			if (this.isDebugMode) {
+				const { default: collectionsMocked } = await import(
+					'./mocks/collections.json'
+				);
+				response = collectionsMocked;
+			} else {
+				throw error;
+			}
 		}
 
 		return response.map(CollectionInfo.createFromApi);
@@ -93,7 +102,14 @@ export class CollectionsService extends ServiceBase {
 		} catch (error) {
 			console.error(error);
 
-			response = collectionMocked;
+			if (this.isDebugMode) {
+				const { default: collectionMocked } = await import(
+					'./mocks/collection.json'
+				);
+				response = collectionMocked;
+			} else {
+				throw error;
+			}
 		}
 
 		return CollectionInfo.createFromApi(response);
@@ -115,7 +131,14 @@ export class CollectionsService extends ServiceBase {
 		} catch (error) {
 			console.error(error);
 
-			response = collectionMocked;
+			if (this.isDebugMode) {
+				const { default: collectionMocked } = await import(
+					'./mocks/collection.json'
+				);
+				response = collectionMocked;
+			} else {
+				throw error;
+			}
 		}
 
 		return CollectionInfo.createFromApi(response);
@@ -145,7 +168,14 @@ export class CollectionsService extends ServiceBase {
 		} catch (error) {
 			console.error(error);
 
-			response = collectionMocked;
+			if (this.isDebugMode) {
+				const { default: collectionMocked } = await import(
+					'./mocks/collection.json'
+				);
+				response = collectionMocked;
+			} else {
+				throw error;
+			}
 		}
 
 		return CollectionInfo.createFromApi(response);
@@ -165,6 +195,10 @@ export class CollectionsService extends ServiceBase {
 			);
 		} catch (error) {
 			console.error(error);
+
+			if (!this.isDebugMode) {
+				throw error;
+			}
 		}
 	}
 
@@ -184,12 +218,19 @@ export class CollectionsService extends ServiceBase {
 		try {
 			response = await this.makeHttpRequest(
 				configItem.method,
-				`${configItem.url}${collectionId}/${plantId}/add_plant_to_collection/`,
+				`${configItem.url}${plantId}/${collectionId}/add_plant_to_collection/`,
 			);
 		} catch (error) {
 			console.error(error);
 
-			response = collectionMocked;
+			if (this.isDebugMode) {
+				const { default: collectionMocked } = await import(
+					'./mocks/collection.json'
+				);
+				response = collectionMocked;
+			} else {
+				throw error;
+			}
 		}
 
 		return CollectionInfo.createFromApi(response);
@@ -216,7 +257,14 @@ export class CollectionsService extends ServiceBase {
 		} catch (error) {
 			console.error(error);
 
-			response = collectionMocked;
+			if (this.isDebugMode) {
+				const { default: collectionMocked } = await import(
+					'./mocks/collection.json'
+				);
+				response = collectionMocked;
+			} else {
+				throw error;
+			}
 		}
 
 		return CollectionInfo.createFromApi(response);

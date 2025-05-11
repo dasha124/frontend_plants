@@ -1,17 +1,29 @@
 import { CollapseProps } from 'antd';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 import { PlantsService } from '@/entities/plant/api';
-import { PlantInfo } from '@/entities/plant/model';
-import { selectIsSuperuser } from '@/entities/user/model';
-import { emitEvent, EmitterEvents, showToast } from '@/shared/utils';
+import { PlantInfo, TPlantRecommendation } from '@/entities/plant/model';
+import { selectIsAuthorized, selectIsSuperuser } from '@/entities/user/model';
+import { RecommendationService } from '@/shared/api';
+import { useEnv } from '@/shared/contexts';
+import { emitEvent, EmitterEvents, showError, showToast } from '@/shared/utils';
 
 export const usePlantInfo = (id: string) => {
+	const navigate = useNavigate();
+
 	const isSuperuser = useSelector(selectIsSuperuser);
+	const isAuthorized = useSelector(selectIsAuthorized);
+
+	const { isDebugMode } = useEnv();
 
 	const [plantInfo, setPlantInfo] = useState<PlantInfo | null>(null);
 	const [isLoaded, setIsLoaded] = useState(false);
+	const [isFetching, setIsFetching] = useState(false);
+	const [plantRecommendations, setPlantRecommendations] = useState<
+		TPlantRecommendation[]
+	>([]);
 
 	const mainFields = useMemo(
 		() => [
@@ -220,18 +232,48 @@ export const usePlantInfo = (id: string) => {
 		} catch (error: unknown) {
 			setPlantInfo(null);
 
-			if (error instanceof Error) {
-				showToast('error', error.message);
-			} else {
-				showToast('error', 'Ошибка при выполнеии действия');
-			}
+			showError(error);
 		} finally {
 			setIsLoaded(true);
 		}
 	}, []);
 
+	const loadRecommendations = async () => {
+		if (plantRecommendations.length > 0) return;
+
+		try {
+			setIsFetching(true);
+
+			const recommendationsService = new RecommendationService();
+
+			const recommendations =
+				await recommendationsService.getRecommendationsByPlant(id);
+
+			setPlantRecommendations(recommendations);
+		} catch (error: unknown) {
+			setPlantRecommendations([]);
+
+			showError(error);
+		} finally {
+			setIsFetching(false);
+		}
+	};
+
 	const handleDelete = async () => {
 		emitEvent(EmitterEvents.MODAL_OPEN_DELETE_PLANT, {
+			plantId: id,
+		});
+	};
+
+	const handleAddToCollection = async () => {
+		if (!isAuthorized) {
+			showToast('info', 'Авторизуйтесь, чтобы добавить растение в коллекцию');
+			navigate('/login');
+
+			return;
+		}
+
+		emitEvent(EmitterEvents.MODAL_OPEN_PLANT_ADD_TO_COLLECTION, {
 			plantId: id,
 		});
 	};
@@ -242,12 +284,17 @@ export const usePlantInfo = (id: string) => {
 
 	return {
 		isLoaded,
+		isFetching,
 		plantInfo,
 		mainFields,
 		part1,
 		part2,
 		part3,
 		isSuperuser,
+		plantRecommendations,
+		isDebugMode,
 		handleDelete,
+		handleAddToCollection,
+		loadRecommendations,
 	};
 };

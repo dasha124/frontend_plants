@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 
 import { TCollectionShortInfo } from '@/entities/collection/model';
+import { formatDate } from '@/entities/collection/utils';
 
 export const useCollectionItem = (collection: TCollectionShortInfo) => {
 	const fields = useMemo(
@@ -8,7 +9,7 @@ export const useCollectionItem = (collection: TCollectionShortInfo) => {
 			{
 				key: '1',
 				label: 'Дата создания',
-				value: collection.dateCreate + collection.timeCreate,
+				value: formatDate(collection.dateCreate, collection.timeCreate),
 			},
 			{
 				key: '2',
@@ -17,7 +18,7 @@ export const useCollectionItem = (collection: TCollectionShortInfo) => {
 			},
 			{
 				key: '3',
-				label: 'Колличество растений',
+				label: 'Количество растений',
 				value: collection.plantsCount,
 			},
 		],
