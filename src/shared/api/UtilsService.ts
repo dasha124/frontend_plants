@@ -41,9 +41,13 @@ export class UtilsService extends ServiceBase {
 		} catch (error) {
 			console.error(error);
 
-			response = {
-				image_url_plant: 'http://localhost:3000/images/unknown.png',
-			};
+			if (this.isDebugMode) {
+				response = {
+					image_url_plant: 'http://localhost:3000/images/unknown.png',
+				};
+			} else {
+				throw error;
+			}
 		}
 
 		return response.image_url_plant;

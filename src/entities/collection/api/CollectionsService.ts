@@ -75,7 +75,11 @@ export class CollectionsService extends ServiceBase {
 		} catch (error) {
 			console.error(error);
 
-			response = collectionsMocked;
+			if (this.isDebugMode) {
+				response = collectionsMocked;
+			} else {
+				throw error;
+			}
 		}
 
 		return response.map(CollectionInfo.createFromApi);
@@ -98,7 +102,11 @@ export class CollectionsService extends ServiceBase {
 		} catch (error) {
 			console.error(error);
 
-			response = collectionMocked;
+			if (this.isDebugMode) {
+				response = collectionMocked;
+			} else {
+				throw error;
+			}
 		}
 
 		return CollectionInfo.createFromApi(response);
@@ -120,7 +128,11 @@ export class CollectionsService extends ServiceBase {
 		} catch (error) {
 			console.error(error);
 
-			response = collectionMocked;
+			if (this.isDebugMode) {
+				response = collectionMocked;
+			} else {
+				throw error;
+			}
 		}
 
 		return CollectionInfo.createFromApi(response);
@@ -150,7 +162,11 @@ export class CollectionsService extends ServiceBase {
 		} catch (error) {
 			console.error(error);
 
-			response = collectionMocked;
+			if (this.isDebugMode) {
+				response = collectionMocked;
+			} else {
+				throw error;
+			}
 		}
 
 		return CollectionInfo.createFromApi(response);
@@ -170,6 +186,10 @@ export class CollectionsService extends ServiceBase {
 			);
 		} catch (error) {
 			console.error(error);
+
+			if (!this.isDebugMode) {
+				throw error;
+			}
 		}
 	}
 
@@ -194,7 +214,11 @@ export class CollectionsService extends ServiceBase {
 		} catch (error) {
 			console.error(error);
 
-			response = collectionMocked;
+			if (this.isDebugMode) {
+				response = collectionMocked;
+			} else {
+				throw error;
+			}
 		}
 
 		return CollectionInfo.createFromApi(response);
@@ -221,7 +245,11 @@ export class CollectionsService extends ServiceBase {
 		} catch (error) {
 			console.error(error);
 
-			response = collectionMocked;
+			if (this.isDebugMode) {
+				response = collectionMocked;
+			} else {
+				throw error;
+			}
 		}
 
 		return CollectionInfo.createFromApi(response);

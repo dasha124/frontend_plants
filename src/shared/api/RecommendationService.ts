@@ -49,7 +49,11 @@ export class RecommendationService extends ServiceBase {
 		} catch (error) {
 			console.error(error);
 
-			response = recommendationsMocked;
+			if (this.isDebugMode) {
+				response = recommendationsMocked;
+			} else {
+				throw error;
+			}
 		}
 
 		return response.map(PlantInfo.createRecommendationFromApi);
@@ -73,7 +77,11 @@ export class RecommendationService extends ServiceBase {
 		} catch (error) {
 			console.error(error);
 
-			response = recommendationsMocked;
+			if (this.isDebugMode) {
+				response = recommendationsMocked;
+			} else {
+				throw error;
+			}
 		}
 
 		return response.map(PlantInfo.createRecommendationFromApi);

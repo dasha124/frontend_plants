@@ -3,13 +3,17 @@ import Meta from 'antd/es/card/Meta';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import defaultImage from '@/assets/images/default-image.png';
 import { TPlantRecommendation } from '@/entities/plant/model';
+import { usePlantRecommendationItem } from '@/widgets/plantRecommendationItem/model';
 
 type Props = {
 	plant: TPlantRecommendation;
 };
 
 export const PlantRecommendationItem: React.FC<Props> = ({ plant }) => {
+	const { isDebugMode } = usePlantRecommendationItem();
+
 	return (
 		<Link to={`/plants/${plant.id}`}>
 			<Card
@@ -17,7 +21,7 @@ export const PlantRecommendationItem: React.FC<Props> = ({ plant }) => {
 				style={{ width: 360 }}
 				cover={
 					<img
-						src={plant.image}
+						src={isDebugMode ? defaultImage : plant?.image}
 						alt={plant.name}
 						style={{
 							width: '100%',

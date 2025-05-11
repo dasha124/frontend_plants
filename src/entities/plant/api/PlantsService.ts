@@ -82,7 +82,11 @@ export class PlantsService extends ServiceBase {
 		} catch (error) {
 			console.error(error);
 
-			response = plantsMocked;
+			if (this.isDebugMode) {
+				response = plantsMocked;
+			} else {
+				throw error;
+			}
 		}
 
 		return response.map(PlantInfo.createFromApi);
@@ -105,7 +109,11 @@ export class PlantsService extends ServiceBase {
 		} catch (error) {
 			console.error(error);
 
-			response = plantMocked;
+			if (this.isDebugMode) {
+				response = plantMocked;
+			} else {
+				throw error;
+			}
 		}
 
 		return PlantInfo.createFromApi(response);
@@ -120,17 +128,21 @@ export class PlantsService extends ServiceBase {
 
 		let response;
 
-		// try {
-		response = await this.makeHttpRequest(
-			configItem.method,
-			`${configItem.url}add_plant/`,
-			{ ...plantInfo },
-		);
-		// } catch (error) {
-		// 	console.error(error);
+		try {
+			response = await this.makeHttpRequest(
+				configItem.method,
+				`${configItem.url}add_plant/`,
+				{ ...plantInfo },
+			);
+		} catch (error) {
+			console.error(error);
 
-		// 	response = plantMocked;
-		// }
+			if (this.isDebugMode) {
+				response = plantMocked;
+			} else {
+				throw error;
+			}
+		}
 
 		return PlantInfo.createFromApi(response);
 	}
@@ -153,7 +165,11 @@ export class PlantsService extends ServiceBase {
 		} catch (error) {
 			console.error(error);
 
-			response = plantMocked;
+			if (this.isDebugMode) {
+				response = plantMocked;
+			} else {
+				throw error;
+			}
 		}
 
 		return PlantInfo.createFromApi(response);
@@ -172,7 +188,11 @@ export class PlantsService extends ServiceBase {
 		} catch (error) {
 			console.error(error);
 
-			response = typePlants;
+			if (this.isDebugMode) {
+				response = typePlants;
+			} else {
+				throw error;
+			}
 		}
 
 		return response.map(TypePlantsInfo.createFromApi);
@@ -192,6 +212,10 @@ export class PlantsService extends ServiceBase {
 			);
 		} catch (error) {
 			console.error(error);
+
+			if (!this.isDebugMode) {
+				throw error;
+			}
 		}
 	}
 }

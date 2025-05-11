@@ -55,7 +55,11 @@ export class AuthorizationService extends ServiceBase {
 		} catch (error) {
 			console.error(error);
 
-			response = { user_id: '1', user_name: 'roman', is_superuser: true };
+			if (this.isDebugMode) {
+				response = { user_id: '1', user_name: 'roman', is_superuser: true };
+			} else {
+				throw error;
+			}
 		}
 
 		return UserInfo.createFromApi(response);
@@ -67,10 +71,18 @@ export class AuthorizationService extends ServiceBase {
 	async signup(username: string, password: string): Promise<void> {
 		const configItem = this.getConfigItem('signup');
 
-		await this.makeHttpRequest(configItem.method, configItem.url, {
-			username,
-			password,
-		});
+		try {
+			await this.makeHttpRequest(configItem.method, configItem.url, {
+				username,
+				password,
+			});
+		} catch (error) {
+			console.error(error);
+
+			if (!this.isDebugMode) {
+				throw error;
+			}
+		}
 	}
 
 	/**
@@ -83,6 +95,10 @@ export class AuthorizationService extends ServiceBase {
 			await this.makeHttpRequest(configItem.method, configItem.url);
 		} catch (error) {
 			console.error(error);
+
+			if (!this.isDebugMode) {
+				throw error;
+			}
 		}
 	}
 
@@ -99,7 +115,11 @@ export class AuthorizationService extends ServiceBase {
 		} catch (error) {
 			console.error(error);
 
-			response = { user_id: '1', user_name: 'roman', is_superuser: false };
+			if (this.isDebugMode) {
+				response = { user_id: '1', user_name: 'roman', is_superuser: false };
+			} else {
+				throw error;
+			}
 		}
 
 		return UserInfo.createFromApi(response);

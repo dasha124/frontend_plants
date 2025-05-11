@@ -1,6 +1,7 @@
 import { Button, Collapse, Descriptions, Divider } from 'antd';
 import React from 'react';
 
+import defaultImage from '@/assets/images/default-image.png';
 import { usePlantInfo } from '@/features/plant/model';
 import { cn } from '@/shared/lib';
 import { RenderIf } from '@/shared/utils';
@@ -21,6 +22,7 @@ export const PlantInfo: React.FC<Props> = ({ id }) => {
 		part3,
 		isSuperuser,
 		plantRecommendations,
+		isDebugMode,
 		handleDelete,
 		handleAddToCollection,
 		loadRecommendations,
@@ -35,7 +37,7 @@ export const PlantInfo: React.FC<Props> = ({ id }) => {
 
 			<div className={'flex flex-col md:flex-row gap-4'}>
 				<img
-					src={plantInfo?.image}
+					src={isDebugMode ? defaultImage : plantInfo?.image}
 					alt={plantInfo?.name}
 					className={'h-full'}
 					style={{

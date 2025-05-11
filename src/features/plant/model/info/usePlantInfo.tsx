@@ -7,6 +7,7 @@ import { PlantsService } from '@/entities/plant/api';
 import { PlantInfo, TPlantRecommendation } from '@/entities/plant/model';
 import { selectIsAuthorized, selectIsSuperuser } from '@/entities/user/model';
 import { RecommendationService } from '@/shared/api';
+import { useEnv } from '@/shared/contexts';
 import { emitEvent, EmitterEvents, showError, showToast } from '@/shared/utils';
 
 export const usePlantInfo = (id: string) => {
@@ -15,12 +16,15 @@ export const usePlantInfo = (id: string) => {
 	const isSuperuser = useSelector(selectIsSuperuser);
 	const isAuthorized = useSelector(selectIsAuthorized);
 
+	const { isDebugMode } = useEnv();
+
 	const [plantInfo, setPlantInfo] = useState<PlantInfo | null>(null);
 	const [isLoaded, setIsLoaded] = useState(false);
 	const [isFetching, setIsFetching] = useState(false);
 	const [plantRecommendations, setPlantRecommendations] = useState<
 		TPlantRecommendation[]
 	>([]);
+
 	const mainFields = useMemo(
 		() => [
 			{
@@ -288,6 +292,7 @@ export const usePlantInfo = (id: string) => {
 		part3,
 		isSuperuser,
 		plantRecommendations,
+		isDebugMode,
 		handleDelete,
 		handleAddToCollection,
 		loadRecommendations,
