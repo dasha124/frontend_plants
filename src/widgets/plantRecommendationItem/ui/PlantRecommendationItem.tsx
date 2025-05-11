@@ -17,7 +17,6 @@ export const PlantRecommendationItem: React.FC<Props> = ({ plant }) => {
 				style={{ width: 360 }}
 				cover={
 					<img
-						// src={defaultImage || plant.image}
 						src={plant.image}
 						alt={plant.name}
 						style={{

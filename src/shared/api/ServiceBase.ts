@@ -2,6 +2,8 @@ import { ERequestMethods } from '@/shared/model/enums';
 import { TServiceConfig } from '@/shared/model/types';
 
 export abstract class ServiceBase {
+	protected isDebugMode: boolean =
+		import.meta.env.VITE_IS_DEBUG_MODE === 'true';
 	protected pendingRequests: { [key: string]: boolean } = {};
 	protected config: TServiceConfig[] = [];
 

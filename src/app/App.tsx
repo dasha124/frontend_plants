@@ -1,6 +1,5 @@
 import { ConfigProvider, ConfigProviderProps, theme } from 'antd';
 import ruRu from 'antd/locale/ru_RU';
-import { Helmet } from 'react-helmet-async';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -27,8 +26,6 @@ export const App = () => {
 
 	return (
 		<div id='app'>
-			<Helmet></Helmet>
-
 			<Provider store={store}>
 				<ConfigProvider
 					locale={locale}
