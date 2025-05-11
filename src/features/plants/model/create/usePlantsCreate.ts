@@ -88,6 +88,7 @@ export const usePlantsCreate = () => {
 			type: values.type,
 			image: values.image,
 			info: values.info,
+			status: 'Активно',
 			properties: {
 				add: convertPropertiesToArray(values.properties?.add),
 				pests: sanitizePropertyValue(values.properties?.pests),

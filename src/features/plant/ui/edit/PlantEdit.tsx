@@ -1,4 +1,4 @@
-import { Button, Form, Input, Select } from 'antd';
+import { Button, Form, Input, Radio, Select } from 'antd';
 import React from 'react';
 
 import { usePlantEdit, TField } from '@/features/plant/model';
@@ -229,6 +229,17 @@ export const PlantEdit: React.FC<Props> = ({ id }) => {
 					name={['properties', 'propagation']}
 				>
 					<Input />
+				</Form.Item>
+
+				<Form.Item<TField>
+					label='Статус'
+					name='status'
+					rules={[{ required: true, message: 'Выберите статус растения' }]}
+				>
+					<Radio.Group>
+						<Radio value='Активно'>Активно</Radio>
+						<Radio value='Удалено'>Удалено</Radio>
+					</Radio.Group>
 				</Form.Item>
 
 				<Form.Item label={null}>

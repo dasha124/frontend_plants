@@ -13,6 +13,7 @@ import {
 	TPlantCreate,
 	TPlantInfoModel,
 } from '@/entities/plant/model';
+import { TPlantStatus } from '@/entities/plant/model';
 import { convertPropertiesToArray, sanitizePropertyValue } from '@/shared/lib';
 import { showError, showToast } from '@/shared/utils';
 
@@ -39,6 +40,7 @@ type TPlantProperties = Omit<
 
 export type TField = Omit<TPlantInfoModel, 'properties'> & {
 	properties: TPlantProperties;
+	status: TPlantStatus;
 };
 
 type TSelectOption = {
@@ -101,6 +103,7 @@ export const usePlantEdit = (id: string) => {
 			type: values.type,
 			image: values.image,
 			info: values.info,
+			status: values.status,
 			properties: {
 				add: convertPropertiesToArray(values.properties?.add),
 				pests: sanitizePropertyValue(values.properties?.pests),
