@@ -19,6 +19,11 @@ export const TypePlantItem: React.FC<Props> = ({ typePlant }) => {
 					<img
 						src={typePlant.image}
 						alt={typePlant.name}
+						style={{
+							width: '100%',
+							aspectRatio: '16 / 9',
+							objectFit: 'cover',
+						}}
 					/>
 				}
 			>

@@ -35,10 +35,14 @@ export const PlantInfo: React.FC<Props> = ({ id }) => {
 
 			<div className={'flex flex-col md:flex-row gap-4'}>
 				<img
-					// src={defaultImage || plantInfo?.image}
 					src={plantInfo?.image}
 					alt={plantInfo?.name}
 					className={'h-full'}
+					style={{
+						maxWidth: '400px',
+						aspectRatio: '16 / 9',
+						objectFit: 'cover',
+					}}
 				/>
 
 				<Descriptions column={1}>
