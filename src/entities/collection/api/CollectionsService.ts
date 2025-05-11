@@ -4,9 +4,6 @@ import { CollectionInfo } from '@/entities/collection/model';
 import { ServiceBase } from '@/shared/api';
 import { ERequestMethods } from '@/shared/model/enums';
 
-import collectionMocked from './mocks/collection.json';
-import collectionsMocked from './mocks/collections.json';
-
 export class CollectionsService extends ServiceBase {
 	private static instance: CollectionsService;
 	private baseUrl = '/api/collections/';
@@ -76,6 +73,9 @@ export class CollectionsService extends ServiceBase {
 			console.error(error);
 
 			if (this.isDebugMode) {
+				const { default: collectionsMocked } = await import(
+					'./mocks/collections.json'
+				);
 				response = collectionsMocked;
 			} else {
 				throw error;
@@ -103,6 +103,9 @@ export class CollectionsService extends ServiceBase {
 			console.error(error);
 
 			if (this.isDebugMode) {
+				const { default: collectionMocked } = await import(
+					'./mocks/collection.json'
+				);
 				response = collectionMocked;
 			} else {
 				throw error;
@@ -129,6 +132,9 @@ export class CollectionsService extends ServiceBase {
 			console.error(error);
 
 			if (this.isDebugMode) {
+				const { default: collectionMocked } = await import(
+					'./mocks/collection.json'
+				);
 				response = collectionMocked;
 			} else {
 				throw error;
@@ -163,6 +169,9 @@ export class CollectionsService extends ServiceBase {
 			console.error(error);
 
 			if (this.isDebugMode) {
+				const { default: collectionMocked } = await import(
+					'./mocks/collection.json'
+				);
 				response = collectionMocked;
 			} else {
 				throw error;
@@ -215,6 +224,9 @@ export class CollectionsService extends ServiceBase {
 			console.error(error);
 
 			if (this.isDebugMode) {
+				const { default: collectionMocked } = await import(
+					'./mocks/collection.json'
+				);
 				response = collectionMocked;
 			} else {
 				throw error;
@@ -246,6 +258,9 @@ export class CollectionsService extends ServiceBase {
 			console.error(error);
 
 			if (this.isDebugMode) {
+				const { default: collectionMocked } = await import(
+					'./mocks/collection.json'
+				);
 				response = collectionMocked;
 			} else {
 				throw error;

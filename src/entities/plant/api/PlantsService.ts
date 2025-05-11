@@ -6,10 +6,6 @@ import { TPlantSearchParams } from '@/features/plants/model';
 import { ServiceBase } from '@/shared/api';
 import { ERequestMethods } from '@/shared/model/enums';
 
-import plantMocked from './mocks/plant.json';
-import plantsMocked from './mocks/plants.json';
-import typePlants from './mocks/typePlants.json';
-
 export class PlantsService extends ServiceBase {
 	private static instance: PlantsService;
 	private baseUrl = '/api/plants/';
@@ -83,6 +79,7 @@ export class PlantsService extends ServiceBase {
 			console.error(error);
 
 			if (this.isDebugMode) {
+				const { default: plantsMocked } = await import('./mocks/plants.json');
 				response = plantsMocked;
 			} else {
 				throw error;
@@ -110,6 +107,7 @@ export class PlantsService extends ServiceBase {
 			console.error(error);
 
 			if (this.isDebugMode) {
+				const { default: plantMocked } = await import('./mocks/plant.json');
 				response = plantMocked;
 			} else {
 				throw error;
@@ -138,6 +136,7 @@ export class PlantsService extends ServiceBase {
 			console.error(error);
 
 			if (this.isDebugMode) {
+				const { default: plantMocked } = await import('./mocks/plant.json');
 				response = plantMocked;
 			} else {
 				throw error;
@@ -166,6 +165,7 @@ export class PlantsService extends ServiceBase {
 			console.error(error);
 
 			if (this.isDebugMode) {
+				const { default: plantMocked } = await import('./mocks/plant.json');
 				response = plantMocked;
 			} else {
 				throw error;
@@ -189,6 +189,7 @@ export class PlantsService extends ServiceBase {
 			console.error(error);
 
 			if (this.isDebugMode) {
+				const { default: typePlants } = await import('./mocks/typePlants.json');
 				response = typePlants;
 			} else {
 				throw error;

@@ -4,8 +4,6 @@ import { PlantInfo, TPlantRecommendation } from '@/entities/plant/model';
 import { ServiceBase } from '@/shared/api';
 import { ERequestMethods } from '@/shared/model/enums';
 
-import recommendationsMocked from './mocks/recommendations.json';
-
 export class RecommendationService extends ServiceBase {
 	private static instance: RecommendationService;
 	private baseUrl = '/api/recommendations/';
@@ -50,6 +48,9 @@ export class RecommendationService extends ServiceBase {
 			console.error(error);
 
 			if (this.isDebugMode) {
+				const { default: recommendationsMocked } = await import(
+					'./mocks/recommendations.json'
+				);
 				response = recommendationsMocked;
 			} else {
 				throw error;
@@ -78,6 +79,9 @@ export class RecommendationService extends ServiceBase {
 			console.error(error);
 
 			if (this.isDebugMode) {
+				const { default: recommendationsMocked } = await import(
+					'./mocks/recommendations.json'
+				);
 				response = recommendationsMocked;
 			} else {
 				throw error;

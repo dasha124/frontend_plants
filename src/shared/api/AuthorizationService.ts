@@ -8,6 +8,18 @@ export class AuthorizationService extends ServiceBase {
 	private static instance: AuthorizationService;
 	private baseUrl = '/api/';
 
+	private readonly mockUserData: TUserInfoApi = {
+		user_id: '1',
+		user_name: 'roman',
+		is_superuser: false,
+	};
+
+	private readonly mockAdminData: TUserInfoApi = {
+		user_id: '1',
+		user_name: 'roman',
+		is_superuser: true,
+	};
+
 	constructor() {
 		super();
 		if (AuthorizationService.instance) {
@@ -56,7 +68,7 @@ export class AuthorizationService extends ServiceBase {
 			console.error(error);
 
 			if (this.isDebugMode) {
-				response = { user_id: '1', user_name: 'roman', is_superuser: true };
+				response = this.mockAdminData;
 			} else {
 				throw error;
 			}
@@ -116,7 +128,7 @@ export class AuthorizationService extends ServiceBase {
 			console.error(error);
 
 			if (this.isDebugMode) {
-				response = { user_id: '1', user_name: 'roman', is_superuser: false };
+				response = this.mockUserData;
 			} else {
 				throw error;
 			}

@@ -8,6 +8,10 @@ export class UtilsService extends ServiceBase {
 	private static instance: UtilsService;
 	private baseUrl = '/api/';
 
+	private readonly mockImageResponse = {
+		image_url_plant: 'http://localhost:3000/images/unknown.png',
+	};
+
 	constructor() {
 		super();
 		if (UtilsService.instance) {
@@ -42,9 +46,7 @@ export class UtilsService extends ServiceBase {
 			console.error(error);
 
 			if (this.isDebugMode) {
-				response = {
-					image_url_plant: 'http://localhost:3000/images/unknown.png',
-				};
+				response = this.mockImageResponse;
 			} else {
 				throw error;
 			}
