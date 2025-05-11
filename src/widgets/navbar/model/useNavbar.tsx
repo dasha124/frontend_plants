@@ -26,7 +26,7 @@ type MenuItem = Required<MenuProps>['items'][number];
 
 const getMenuItems = (user: UserInfo | null): MenuItem[] => [
 	{
-		label: 'Виды растений',
+		label: 'Типы растений',
 		key: 'typePlants',
 		icon: <IconListDetails width={20} />,
 	},
