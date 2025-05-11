@@ -10,6 +10,7 @@ import {
 	PlantInfo,
 	TPlantCreate,
 } from '@/entities/plant/model';
+import { convertPropertiesToArray, sanitizePropertyValue } from '@/shared/lib';
 import { showError, showToast } from '@/shared/utils';
 
 export type TField = Partial<
@@ -88,36 +89,22 @@ export const usePlantsCreate = () => {
 			image: values.image,
 			info: values.info,
 			properties: {
-				add: values.properties?.add ? values.properties.add.split(',') : [],
-				pests: values.properties?.pests ?? null,
-				toxic: values.properties?.toxic ?? null,
-				water: values.properties?.water ?? null,
-				height: values.properties?.height ?? null,
-				spread: values.properties?.spread ?? null,
-				phSoil: values.properties?.phSoil
-					? values.properties.phSoil.split(',')
-					: [],
-				season: values.properties?.season
-					? values.properties.season.split(',')
-					: [],
-				diseases: values.properties?.diseases ?? null,
-				drainage: values.properties?.drainage
-					? values.properties.drainage.split(',')
-					: [],
-				position: values.properties?.position
-					? values.properties.position.split(',')
-					: [],
-				inGarden: values.properties?.inGarden
-					? values.properties.inGarden.split(',')
-					: [],
-				soilType: values.properties?.soilType
-					? values.properties.soilType.split(',')
-					: [],
-				tolerance: values.properties?.tolerance
-					? values.properties.tolerance.split(',')
-					: [],
-				maintenance: values.properties?.maintenance ?? null,
-				propagation: values.properties?.propagation ?? null,
+				add: convertPropertiesToArray(values.properties?.add),
+				pests: sanitizePropertyValue(values.properties?.pests),
+				toxic: sanitizePropertyValue(values.properties?.toxic),
+				water: sanitizePropertyValue(values.properties?.water),
+				height: sanitizePropertyValue(values.properties?.height),
+				spread: sanitizePropertyValue(values.properties?.spread),
+				phSoil: convertPropertiesToArray(values.properties?.phSoil),
+				season: convertPropertiesToArray(values.properties?.season),
+				diseases: sanitizePropertyValue(values.properties?.diseases),
+				drainage: convertPropertiesToArray(values.properties?.drainage),
+				position: convertPropertiesToArray(values.properties?.position),
+				inGarden: convertPropertiesToArray(values.properties?.inGarden),
+				soilType: convertPropertiesToArray(values.properties?.soilType),
+				tolerance: convertPropertiesToArray(values.properties?.tolerance),
+				maintenance: sanitizePropertyValue(values.properties?.maintenance),
+				propagation: sanitizePropertyValue(values.properties?.propagation),
 			},
 		});
 

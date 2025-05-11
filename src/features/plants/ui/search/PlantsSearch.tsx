@@ -20,7 +20,7 @@ export const PlantsSearch = () => {
 			<PlantsFilters />
 			<Search
 				allowClear
-				placeholder='Введите название растения'
+				placeholder='Название растения'
 				onSearch={handleSearch}
 				defaultValue={searchValue}
 				style={{ width: 250 }}

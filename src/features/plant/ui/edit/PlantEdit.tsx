@@ -35,7 +35,7 @@ export const PlantEdit: React.FC<Props> = ({ id }) => {
 		>
 			<h1 className={'text-center text-4xl font-bold'}>{plantInfo?.name}</h1>
 
-			<Form
+			<Form<TField>
 				form={form}
 				name='edit-plant-form'
 				labelCol={{ span: 8 }}

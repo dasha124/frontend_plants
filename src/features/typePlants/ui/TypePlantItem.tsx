@@ -11,13 +11,12 @@ type Props = {
 
 export const TypePlantItem: React.FC<Props> = ({ typePlant }) => {
 	return (
-		<Link to={`/plants/`}>
+		<Link to={`/plants/?type=${typePlant.name}`}>
 			<Card
 				hoverable
 				style={{ width: 240 }}
 				cover={
 					<img
-						// src={defaultImage || typePlant.image}
 						src={typePlant.image}
 						alt={typePlant.name}
 					/>
